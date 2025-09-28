@@ -15,6 +15,7 @@ export default {
 
 <style scoped>
 .app-wrapper {
+  overflow-y: auto;
   min-height: 100vh;
   background: url('@/assets/back.jpeg') no-repeat center center;
   background-size: cover;

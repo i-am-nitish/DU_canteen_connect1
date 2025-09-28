@@ -18,7 +18,6 @@
         <button type="submit" class="signup-btn">Signup</button>
       </form>
 
-      <!-- Signup prompt -->
       <div class="login-prompt">
         <p>Already have an account?</p>
         <router-link to="/login" class="signup-link">Login</router-link>
@@ -33,14 +32,26 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
 
-const phone = ref('')
-const password = ref('')
-const router = useRouter()
+export default {
+  components: { Header },
+  setup() {
+    const phone = ref('')
+    const password = ref('')
+    const router = useRouter()
 
-function handleSignup(){
-    router.push('/signup/profile')
+    function handleSignup() {
+        router.push('/signup/profile')
+    }
+
+    return {
+      phone,
+      password,
+      handleSignup
+    }
+  }
 }
 </script>
+
 
 <style scoped>
 .wrapper{
