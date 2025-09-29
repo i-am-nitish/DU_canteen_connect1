@@ -130,7 +130,7 @@ export default {
   width: 30%;
   height: 50px;
   left: 500px;
-  top: 50px;
+  top: 40px;
 
   background: #D9D9D9;
   border-radius: 25px;
