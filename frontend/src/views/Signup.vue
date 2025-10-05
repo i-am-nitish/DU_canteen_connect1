@@ -6,8 +6,29 @@
       <h2>Signup</h2>
       <form @submit.prevent="handleSignup">
         <div class="form-group">
-          <label for="email">Phone</label>
+          <label for="name">Name</label>
+          <input v-model="name" type="name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
           <input v-model="phone" type="phone" id="phone" />
+        </div>
+        
+        <div class="form-group radio-group">
+          <label>User</label>
+          <div class="radio-container">
+            <div class="radio-option" v-for="option in roles" :key="option">
+              <label>
+                <input
+                  type="radio"
+                  :value="option"
+                  v-model="selectedRole"
+                  name="user-role"
+                />
+                {{ option }}
+              </label>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">
@@ -15,7 +36,7 @@
           <input v-model="password" type="password" id="password" />
         </div>
 
-        <button type="submit" class="signup-btn">Signup</button>
+        <button @click="handleProfile" type="submit" class="signup-btn">Signup</button>
       </form>
 
       <div class="login-prompt">
@@ -23,6 +44,7 @@
         <router-link to="/login" class="signup-link">Login</router-link>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -31,25 +53,38 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
-  components: { Header },
-  setup() {
-    const phone = ref('')
-    const password = ref('')
-    const router = useRouter()
+  components: { Header, Footer },
 
-    function handleSignup() {
-        router.push('/signup/profile')
-    }
 
-    return {
-      phone,
-      password,
-      handleSignup
+    setup() {
+        const name = ref('')
+        const phone = ref('')
+        const password = ref('')
+        const roles = ['General', 'Canteen Owner'] 
+        const selectedRole = ref('')
+        
+        const router = useRouter()
+
+        function handleProfile() {
+            if(selectedRole.value === "General"){
+                router.push('/home');
+            } else {
+                router.push('/signup/canteenprofile');
+            } 
+        }
+        return {
+            name,  
+            phone,
+            password,
+            roles,        
+            selectedRole, 
+            handleProfile  
+        }
     }
   }
-}
 </script>
 
 

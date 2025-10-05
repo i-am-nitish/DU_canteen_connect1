@@ -20,5 +20,6 @@ export default {
   background: url('@/assets/back.jpeg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
+  overflow: hidden;
 }
 </style>

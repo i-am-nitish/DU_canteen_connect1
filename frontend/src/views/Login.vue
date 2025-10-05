@@ -24,6 +24,7 @@
         <router-link to="/signup" class="signup-link">Sign up</router-link>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -32,9 +33,10 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
-  components: { Header },
+  components: { Header, Footer },
   setup() {
     const phone = ref('')
     const password = ref('')

@@ -35,12 +35,22 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="timings">Timings</label>
-            <input v-model="timings" type="text" id="timings" />
+            <label for="timings">Opening Time</label>
+            <input v-model="timings" type="text" id="atimings" />
           </div>
           <div class="form-group">
-            <label for="peakHours">Peak Hours</label>
-            <input v-model="peakHours" type="text" id="peakHours" />
+            <label for="timings">Closing Time</label>
+            <input v-model="timings" type="text" id="btimings" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="peakHours">Starting Peak Hour</label>
+            <input v-model="peakHours" type="text" id="apeakHours" />
+          </div>
+          <div class="form-group">
+            <label for="peakHours">Closing Peak Hour</label>
+            <input v-model="peakHours" type="text" id="bpeakHours" />
           </div>
         </div>
 
@@ -52,6 +62,7 @@
         <button type="submit" class="create-btn">Create</button>
       </form>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -59,9 +70,10 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '../components/Header.vue'
+import Footer from '../components/Footer.vue'
 
 export default {
-  components: { Header },
+  components: { Header, Footer },
   setup() {
     const router = useRouter()
 
