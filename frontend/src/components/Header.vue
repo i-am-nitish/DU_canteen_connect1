@@ -29,12 +29,14 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { ref, computed, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
-  setup() {
+  emits: ['search'],
+  setup(props, { emit }) {
     const route = useRoute()
+    const router = useRouter()
     const isLoggedIn = ref(true)
     const searchQuery = ref('')
 
@@ -42,13 +44,23 @@ export default {
       ['/login', '/signup', '/signup/profile', '/signup/canteenprofile'].includes(route.path)
     )
 
+    // Watch for search query changes and emit to parent
+    watch(searchQuery, (newQuery) => {
+      emit('search', newQuery)
+    })
+
     function logout() {
       isLoggedIn.value = false
       alert('Logged out!')
     }
 
     function handleSearch() {
-      console.log('Searching for:', searchQuery.value)
+      // If on canteen page, emit search; if not, navigate to canteen page with search
+      if (route.path === '/canteens') {
+        emit('search', searchQuery.value)
+      } else {
+        router.push({ path: '/canteens', query: { search: searchQuery.value } })
+      }
     }
 
     return {

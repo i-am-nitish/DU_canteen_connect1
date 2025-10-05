@@ -1,15 +1,34 @@
 <template>
   <div class="app-wrapper">
-    <Header />
-    <router-view />
+    <app-header @search="handleSearch" />
+    <router-view :search-query="searchQuery" />
   </div>
 </template>
 
 <script>
+import { ref, provide } from 'vue'
 import Header from './components/Header.vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'app-header': Header
+  },
+  setup() {
+    const searchQuery = ref('')
+
+    function handleSearch(query) {
+      searchQuery.value = query
+    }
+
+    // Provide search query to all child components
+    provide('searchQuery', searchQuery)
+
+    return {
+      searchQuery,
+      handleSearch
+    }
+  }
 }
 </script>
 
