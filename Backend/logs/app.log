@@ -803,3 +803,17 @@
 2025-10-13 04:16:37,291 - app - INFO - Flask application created successfully
 2025-10-13 04:16:37,360 - werkzeug - WARNING -  * Debugger is active!
 2025-10-13 04:16:37,367 - werkzeug - INFO -  * Debugger PIN: 482-694-864
+2025-11-01 09:16:52,006 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-01 09:16:52,008 - app - INFO - Starting Flask application...
+2025-11-01 09:16:52,020 - app - INFO - Flask application created successfully
+2025-11-01 09:16:52,119 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.80.35.50:5000
+2025-11-01 09:16:52,119 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-01 09:16:52,123 - werkzeug - INFO -  * Restarting with stat
+2025-11-01 09:16:52,704 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-01 09:16:52,704 - app - INFO - Starting Flask application...
+2025-11-01 09:16:52,704 - app - INFO - Flask application created successfully
+2025-11-01 09:16:52,734 - werkzeug - WARNING -  * Debugger is active!
+2025-11-01 09:16:52,742 - werkzeug - INFO -  * Debugger PIN: 130-865-891

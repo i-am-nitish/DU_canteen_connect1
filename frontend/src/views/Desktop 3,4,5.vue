@@ -62,7 +62,7 @@
 
       <div class="login-prompt">
         <p>Already have an account?</p>
-        <router-link to="/login" class="signup-link">Login</router-link>
+        <router-link to="/desktop6" class="signup-link">Login</router-link>
       </div>
     </div>
     <Footer />
@@ -165,99 +165,82 @@ export default {
 }
 
 .wrapper {
-  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  background: transparent;
 }
 
 .signup-container {
-  position: relative;
-  max-width: 500px;
-  margin: 5rem auto;
-  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  margin: auto;
+  padding: 2rem 2.5rem;
   background: rgba(219, 223, 208, 0.18);
-  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #474747;
+  margin-bottom: 1rem;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-label,
-h2 {
-  display: block;
-  margin-bottom: 0.5rem;
+label {
+  font-size: 1rem;
   font-weight: 500;
   color: #696d5f;
 }
 
-h2 {
-  position: relative;
-  text-align: center;
-}
-
 input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 10px;
   border: none;
   background: rgba(71, 71, 71, 0.41);
   color: white;
   font-size: 1rem;
-  backdrop-filter: blur(2px);
 }
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.58);
 }
 
-.signup-btn {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #474747;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.signup-btn:hover {
-  background-color: #333;
-}
-
-.login-prompt {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1rem;
-  color: #696d5f;
-}
-
-.login-prompt a {
-  text-decoration: underline;
-  color: #696d5f;
-}
-
-.radio-group label {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #696d5f;
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .radio-container {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .radio-option {
+  flex: 1;
   background: rgba(71, 71, 71, 0.3);
-  padding: 0.5rem 1rem;
+  padding: 0.75rem;
   border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  text-align: center;
   border: 2px solid transparent;
+  transition: background 0.3s ease, border 0.3s ease;
 }
 
 .radio-option:hover {
@@ -279,20 +262,58 @@ input::placeholder {
   font-weight: 500;
 }
 
+.signup-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background-color: #474747;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #333;
+}
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.login-prompt {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  color: #696d5f;
+}
+
+.signup-link {
+  text-decoration: underline;
+  color: #696d5f;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .signup-container {
     margin: 3rem 1rem;
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
   }
 
   input {
     font-size: 0.95rem;
-    padding: 0.65rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .signup-btn {
@@ -316,7 +337,7 @@ input::placeholder {
 
   .login-prompt {
     font-size: 0.95rem;
-    margin-top: 1.5rem;
   }
 }
+
 </style>
