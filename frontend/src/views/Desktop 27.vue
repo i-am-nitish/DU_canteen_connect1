@@ -101,12 +101,31 @@
           <h4>Write a review...</h4>
           <textarea v-model="newReviewText" placeholder="Type here..."></textarea>
           <div class="rating-select">
-            <label>Rating:</label>
-            <select v-model="newReviewRating">
+            <label>Food:</label>
+            <select v-model="newFoodRating">
               <option disabled value="">Select</option>
-              <option v-for="n in 5" :key="n" :value="n">{{ n }} ★</option>
+              <option v-for="n in 5" :key="'food' + n" :value="n">{{ n }} ★</option>
+            </select>
+
+            <label>Staff:</label>
+            <select v-model="newStaffRating">
+              <option disabled value="">Select</option>
+              <option v-for="n in 5" :key="'staff' + n" :value="n">{{ n }} ★</option>
+            </select>
+
+            <label>Hygiene:</label>
+            <select v-model="newHygieneRating">
+              <option disabled value="">Select</option>
+              <option v-for="n in 5" :key="'hygiene' + n" :value="n">{{ n }} ★</option>
+            </select>
+
+            <label>Facility:</label>
+            <select v-model="newFacilityRating">
+              <option disabled value="">Select</option>
+              <option v-for="n in 5" :key="'facility' + n" :value="n">{{ n }} ★</option>
             </select>
           </div>
+
           <button @click="submitReview" class="submit-review-btn">Post Review</button>
         </div>
       </div>
@@ -135,7 +154,11 @@ export default {
       errorMsg: '',
       isLoggedIn: true,
       newReviewText: '',
-      newReviewRating: ''
+      newFoodRating: '',
+      newStaffRating: '',
+      newHygieneRating: '',
+      newFacilityRating: '',
+
     }
   },
 
@@ -146,19 +169,32 @@ export default {
     },
 
     submitReview() {
-      if (!this.newReviewText || !this.newReviewRating) {
-        alert('Please enter review text and rating')
+      if (
+        !this.newReviewText ||
+        !this.newFoodRating ||
+        !this.newStaffRating ||
+        !this.newHygieneRating ||
+        !this.newFacilityRating
+      ) {
+        alert('Please fill in all ratings and review text')
         return
       }
 
       const newReview = {
         text: this.newReviewText,
-        rating: this.newReviewRating
+        foodRating: this.newFoodRating,
+        staffRating: this.newStaffRating,
+        hygieneRating: this.newHygieneRating,
+        facilityRating: this.newFacilityRating
       }
 
       this.reviews.unshift(newReview)
       this.newReviewText = ''
-      this.newReviewRating = ''
+      this.newFoodRating = ''
+      this.newStaffRating = ''
+      this.newHygieneRating = ''
+      this.newFacilityRating = ''
+
       alert('Review posted!')
     }
   },
