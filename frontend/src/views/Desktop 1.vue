@@ -7,12 +7,13 @@
       <!-- Canteens Around You -->
       <section class="card canteen-section">
         <h2>Canteens around you</h2>
+        <p style="color: #666; padding: 10px;">Total canteens: {{ canteens.length }}</p>
         <div class="canteen-grid">
-          <div class="canteen-box" v-for="(canteen, index) in filteredCanteens" :key="index">
+          <div class="canteen-box" v-for="canteen in filteredCanteens" :key="canteen.canteen_id">
             <p><strong>Name:</strong> {{ canteen.name }}</p>
             <p><strong>Location:</strong> {{ canteen.location }}</p>
-            <p><strong>Timings:</strong> {{ canteen.timings }}</p>
-            <p><strong>Rating:</strong> {{ getStars(canteen.rating) }}</p>
+            <p><strong>Timings:</strong> {{ canteen.opening_time }} – {{ canteen.closing_time }}</p>
+            <p><strong>Rating:</strong> {{ getStars(canteen.overall_rating) }}</p>
             <div class="arrow">→</div>
           </div>
         </div>
@@ -36,6 +37,7 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import { fetchAllCanteens } from '@/services/canteen.js'
 
 export default {
   name: 'HomeDashboard',
@@ -43,12 +45,7 @@ export default {
   data() {
     return {
       searchQuery: '',
-      canteens: [
-        { name: 'Canteen A', location: 'North Campus', timings: '9 AM – 6 PM', rating: 4 },
-        { name: 'Canteen B', location: 'South Campus', timings: '10 AM – 5 PM', rating: 5 },
-        { name: 'Canteen C', location: 'East Block', timings: '8 AM – 4 PM', rating: 3 },
-        { name: 'Canteen D', location: 'West Wing', timings: '11 AM – 7 PM', rating: 4 }
-      ]
+      canteens: []
     }
   },
   computed: {
@@ -56,15 +53,29 @@ export default {
       if (!this.searchQuery) return this.canteens
       const query = this.searchQuery.toLowerCase()
       return this.canteens.filter(c =>
-        c.name.toLowerCase().includes(query) ||
-        c.location.toLowerCase().includes(query)
+        c.name?.toLowerCase().includes(query) ||
+        c.location?.toLowerCase().includes(query)
       )
     }
   },
   methods: {
     getStars(rating) {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
+    },
+    async loadCanteens() {
+      try {
+        console.log('Fetching canteens...')
+        const data = await fetchAllCanteens()
+        console.log('Canteens received:', data)
+        this.canteens = data
+        console.log('this.canteens now:', this.canteens)
+      } catch (error) {
+        console.error('Error loading canteens:', error)
+      }
     }
+  },
+  mounted() {
+    this.loadCanteens()
   }
 }
 </script>

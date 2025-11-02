@@ -1,4 +1,10 @@
 import api from './api'
+
+export const fetchAllCanteens = async () => {
+  const res = await api.get('/canteens')
+  return res.data.canteens || []
+}
+
 export const fetchCanteenInfo = async (canteenId) => {
   const res = await api.get(`/canteen_info?canteen_id=${canteenId}`)
   return res.data.canteen_info || {}
