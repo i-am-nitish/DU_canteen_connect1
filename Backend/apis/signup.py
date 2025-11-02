@@ -5,6 +5,7 @@ import logging
 import jwt
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
+import re
 
 
 
@@ -21,6 +22,14 @@ def signup_api():
 
         if not all([name, phone_number, set_password, confirm_password, role]):
             return jsonify({"message": "Missing required fields"}), 400
+        
+         # Validate phone number format (10 digits)
+        if not re.match(r"^[6-9]\d{9}$", phone_number):
+            return jsonify({"message": "Invalid format for phone number"}), 400
+
+        # Validate email format
+        if not re.match(r"^[\w\.-]+@[\w\.-]+\.\w{2,4}$", email):
+            return jsonify({"message": "Invalid format for email"}), 400
 
         role = role.lower()
         if role not in ["general", "canteen_owner"]:
@@ -145,11 +154,8 @@ def login_api():
             return jsonify({"message": "Invalid phone number or password"}), 401
 
         access_token = create_access_token(
-            identity={
-                "user_id": user["user_id"],
-                "phone_number": user["phone_number"],
-                "role": user["role"]
-            },
+            identity=user["user_id"],
+            
             expires_delta=timedelta(hours=24)
         )
 

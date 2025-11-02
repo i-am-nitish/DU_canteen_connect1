@@ -7,11 +7,11 @@ from flask_jwt_extended import JWTManager, create_access_token, get_jwt, jwt_req
 import os 
 from apis.signup import signup_api, create_canteen_profile_api, login_api
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api,  search_canteens_handler, search_food_items_handler
-from apis.need_login import submit_canteen_review_handler, admin_get_open_issues_handler, admin_get_app_feedbacks_handler
-import logging
+from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api
+from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler
 from flask_cors import CORS
-
+from app.models import get_user_by_id_db
+import logging
 app = create_app()
 CORS(app)
 
@@ -75,111 +75,138 @@ def canteen_menu_details_route():
     except Exception as e:
         return jsonify({"message": "Internal Server Error"}), 500
     
-@app.route('/add_review_rating', methods=['POST'])
-@jwt_required()
-def submit_review_route():
-    
+@app.route('/display_user_info', methods=['GET'])
+def display_user_info_route():
     try:
+        user_id = get_jwt_identity()
+        if not user_id:
+            return jsonify({"message": "user_id is required"}), 400
+        return display_user_info_api(user_id)
+    except Exception as e:
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+@app.route('/display_user_reviews', methods=['GET'])
+def display_user_reviews_route():
+    try:
+        user_id = get_jwt_identity()
+        if not user_id:
+            return jsonify({"message": "user_id is required"}), 400
+        user_info = get_user_by_id_db(user_id)
+        if not user_info:
+            return jsonify({"message": "User not found"}), 404
+
+        role = user_info.get("role")
+        if not role or str(role).lower() != "general":
+            return jsonify({"message": "Access denied. Only general users can access this page."}), 403
+
+        return display_user_reviews_api(user_id)
+    except Exception as e:
+        return jsonify({"message": "Internal Server Error"}), 500
+
+@app.route('/give_app_feedback', methods=['POST'])
+def give_app_feedback_route():
+    try:
+        user_id = get_jwt_identity()
+        if not user_id:
+            return jsonify({"message": "user_id is required"}), 400
         
+        user_info = get_user_by_id_db(user_id)
+        if not user_info:
+            return jsonify({"message": "User not found"}), 404
+
+        role = user_info.get("role")
+        if not role or str(role).lower() != "general":
+            return jsonify({"message": "Access denied. Only general users can access this page."}), 403
+        return give_app_feedback_api(user_id)
+    except Exception as e:
+        return jsonify({"message": "Internal Server Error"}), 500
+
+@app.route('/report_app_issue', methods=['POST'])
+def report_app_issue_route():
+    try:
         user_id = get_jwt_identity()
         if not user_id:
-            return jsonify({"message": "Invalid token / user identity"}), 401
+            return jsonify({"message": "user_id is required"}), 400
+        
+        user_info = get_user_by_id_db(user_id)
+        if not user_info:
+            return jsonify({"message": "User not found"}), 404
 
-        # form fields
-        canteen_id = request.form.get("canteen_id")
-        overall_rating = request.form.get("overall_rating")
-        food_rating = request.form.get("food_rating")
-        hygiene_rating = request.form.get("hygiene_rating")
-        staff_rating = request.form.get("staff_rating")
-        facilities_rating = request.form.get("facilities_rating")
-        review_text = request.form.get("review_text", "").strip()
-
-        # files
-        image_1 = request.files.get("image_1")
-        image_2 = request.files.get("image_2")
-        image_3 = request.files.get("image_3")
-
-        return submit_canteen_review_handler(
-            user_id=user_id,
-            canteen_id=canteen_id,
-            overall_rating=overall_rating,
-            food_rating=food_rating,
-            hygiene_rating=hygiene_rating,
-            staff_rating=staff_rating,
-            facilities_rating=facilities_rating,
-            review_text=review_text
-        )
-
+        role = user_info.get("role")
+        if not role or str(role).lower() != "general":
+            return jsonify({"message": "Access denied. Only general users can access this page."}), 403
+        return report_app_issue_api(user_id)
     except Exception as e:
-        logging.exception("Unexpected error in submit_review_route")
         return jsonify({"message": "Internal Server Error"}), 500
     
-# for the admin panel 
+@app.route('/get_canteen_info_owner', methods=['GET'])
+def get_canteen_info_owner_route():
+    try:
+        owner_id = get_jwt_identity()
+        if not owner_id:
+            return jsonify({"message": "owner_id is required"}), 400
+        
+    
+        return fetch_canteen_info_handler(owner_id)
 
+    except Exception as e:
+        logging.exception("Unexpected error in canteen_info_route")
+        return jsonify({"message": "Internal Server Error"}), 500
+    
 
+@app.route('/add_food_item', methods=['POST'])
+def add_food_item_route():
+    try:
+        owner_id = get_jwt_identity()
+        if not owner_id:
+            return jsonify({"message": "owner_id is required"}), 400
+        
+        item_name = request.form.get("item_name", "").strip()
+        item_price = request.form.get("item_price")
 
-@app.route('/admin/app_issues/open', methods=['GET'])
+        description = request.form.get("description", "").strip()
+        status = request.form.get("status")  # optional; we normalize in handler
+
+        return add_food_item_handler(owner_id, item_name, item_price, description, status)
+    except Exception as e:
+        logging.exception("Unexpected error in add_food_item_route")
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+@app.route('/report_issue_canteen_owner', methods=['POST'])
+def report_issue_canteen_owner_route():
+    try:
+        owner_id = get_jwt_identity()
+        if not owner_id:
+            return jsonify({"message": "owner_id is required"}), 400
+        
+        issue_text = request.form.get("issue_text")
+        if not issue_text:
+            return jsonify({"message": "Issue description is required"}), 400
+
+        return report_issue_by_canteen_owner_api(owner_id, issue_text)
+
+    except Exception as e:
+        logging.exception("Unexpected error in report_issue_route")
+        return jsonify({"message": "Internal Server Error"}), 500
+
+@app.route('/canteen_reviews_owner', methods=['GET'])
 @jwt_required()
-def admin_get_open_issues_route():
-    
+def canteen_reviews_Owner_route():
+    """
+    GET /canteen_reviews
+    Returns canteen_info + reviews for the canteen owned by the logged-in canteen_owner.
+    """
     try:
         user_id = get_jwt_identity()
 
         if not user_id:
             return jsonify({"message": "Invalid token / user identity"}), 401
 
-        # delegate to handler (handler will verify role either via token or DB)
-        return admin_get_open_issues_handler(user_id)
+        return fetch_canteen_reviews_owner_handler(user_id)
 
     except Exception as e:
-        logging.exception("Unexpected error in admin_get_open_issues_route")
+        logging.exception("Unexpected error in canteen_reviews_route")
         return jsonify({"message": "Internal Server Error"}), 500
-    
-@app.route('/admin/app_feedbacks', methods=['GET'])
-@jwt_required()
-def admin_get_app_feedbacks_route():
-    
-    try:
-        user_id = get_jwt_identity()
-
-        if not user_id:
-            return jsonify({"message": "Invalid token / user identity"}), 401
-
-        return admin_get_app_feedbacks_handler(user_id)
-    except Exception as e:
-        logging.exception("Unexpected error in admin_get_app_feedbacks_route")
-        return jsonify({"message": "Internal Server Error"}), 500
-    
-# search apis 
-
-@app.route('/search/canteens', methods=['GET'])
-def search_canteens_route():
-    
-    try:
-        q = (request.args.get('q') or "").strip()
-        if not q:
-            return jsonify({"message": "q parameter is required", "results": []}), 400
-
-        return search_canteens_handler(q)
-    except Exception as e:
-        logging.exception("Unexpected error in search_canteens_route")
-        return jsonify({"message": "Internal Server Error"}), 500
-
-
-@app.route('/search/food_items', methods=['GET'])
-def search_food_items_route():
-    
-    try:
-        q = (request.args.get('q') or "").strip()
-        if not q:
-            return jsonify({"message": "q parameter is required", "results": []}), 400
-
-        available_only = str(request.args.get("available_only") or "").lower() in ("1", "true", "yes")
-        return search_food_items_handler(q, available_only=available_only)
-    except Exception as e:
-        logging.exception("Unexpected error in search_food_items_route")
-        return jsonify({"message": "Internal Server Error"}), 500
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
