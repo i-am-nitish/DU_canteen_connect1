@@ -69,10 +69,7 @@ def get_canteen_menu_details_api(canteen_id):
         return jsonify({"message": "Internal Server Error"}), 500
     
 def search_canteens_handler(query: str):
-    """
-    Fetch canteen info (name, location, timings, and rating)
-    matching the search query.
-    """
+   
     try:
         results = get_canteens_by_name(query)
         if results is None:
