@@ -149,6 +149,10 @@ def login_api():
             return jsonify({"message": "Invalid phone number or password"}), 401
 
         logging.debug(f"Attempting login for phone: {phone_number}, hash: {user['password']}")
+        logging.debug(f"Entered password: {password}")
+        logging.debug(f"Stored hash: {user['password']}")
+        logging.debug(f"Password match: {bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8'))}")
+
 
         if not bcrypt.checkpw(password.encode("utf-8"), user["password"].encode("utf-8")):
             return jsonify({"message": "Invalid phone number or password"}), 401

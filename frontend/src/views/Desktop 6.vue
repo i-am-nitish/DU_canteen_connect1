@@ -57,7 +57,7 @@ export default {
         if (data.token) {
           localStorage.setItem('token', data.token)
           localStorage.setItem('user', JSON.stringify(data.user))
-          router.push('/home')
+          router.push('/Desktop1')
         }
       } catch (err) {
         console.error(err)

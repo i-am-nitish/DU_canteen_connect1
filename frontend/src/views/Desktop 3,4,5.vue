@@ -123,7 +123,7 @@ export default {
         if (selectedRole.value === "General" && data.token) {
           localStorage.setItem("token", data.token)
           alert("Signup successful!")
-          router.push("/home")
+          router.push("/Desktop1")
         } else if (selectedRole.value === "Canteen Owner" && data.user?.user_id) {
 
           localStorage.setItem("owner_id", data.user.user_id)

@@ -8,7 +8,11 @@
         </router-link>
       </div>
 
-      <button v-if="!isAuthPage" class="menu-toggle" @click="menuOpen = !menuOpen">
+      <button
+        v-if="!isAuthPage"
+        class="menu-toggle"
+        @click="menuOpen = !menuOpen"
+      >
         ☰
       </button>
     </div>
@@ -17,7 +21,7 @@
       <ul class="nav-links">
         <li><router-link to="/">Home</router-link></li>
         <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
-        <li v-else><router-link to="/account">Account</router-link></li>
+        <li v-else><router-link to="/Desktop8">Account</router-link></li>
         <li v-if="isLoggedIn">
           <button @click="logout" class="logout-btn">Logout</button>
         </li>
@@ -37,30 +41,45 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, computed, onMounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 export default {
   setup() {
-    const route = useRoute()
-    const router = useRouter()
-    const isLoggedIn = ref(false)
-    const searchQuery = ref('')
-    const menuOpen = ref(false)
+    const route = useRoute();
+    const router = useRouter();
+    const isLoggedIn = ref(false);
+    const searchQuery = ref("");
+    const menuOpen = ref(false);
+
+    // ✅ Check login state on mount
+    onMounted(() => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        isLoggedIn.value = true;
+      } else {
+        isLoggedIn.value = false;
+      }
+    });
 
     const isAuthPage = computed(() =>
-      ['/login', '/signup', '/signup/profile', '/signup/canteenprofile'].includes(route.path)
-    )
+      ["/login", "/signup", "/signup/profile", "/signup/canteenprofile"].includes(route.path)
+    );
 
+    // ✅ Logout function clears storage + redirects
     function logout() {
-      isLoggedIn.value = false
-      alert('Logged out!')
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      isLoggedIn.value = false;
+      alert("Logged out!");
+      router.push("/login");
     }
 
+    // ✅ Search
     function handleSearch() {
-      console. log(' Searching for: ',searchQuery.value)
-      if (!searchQuery.value.trim()) return
-      router.push(`/desktop11?q=${encodeURIComponent(searchQuery.value)}`)
+      console.log("Searching for:", searchQuery.value);
+      if (!searchQuery.value.trim()) return;
+      router.push(`/desktop11?q=${encodeURIComponent(searchQuery.value)}`);
     }
 
     return {
@@ -69,10 +88,10 @@ export default {
       searchQuery,
       logout,
       handleSearch,
-      menuOpen
-    }
-  }
-}
+      menuOpen,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -81,7 +100,7 @@ export default {
   width: 100%;
   top: 0;
   left: 0;
-  background: #FFFFFF;
+  background: #ffffff;
   box-sizing: border-box;
   z-index: 1000;
   padding: 1rem 2rem;
@@ -116,7 +135,7 @@ export default {
   font-size: 2rem;
   font-weight: 600;
   color: #474747;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
 }
 
@@ -161,7 +180,7 @@ export default {
 .searchbar {
   width: 30%;
   height: 50px;
-  background: #D9D9D9;
+  background: #d9d9d9;
   border-radius: 25px;
   display: flex;
   align-items: center;

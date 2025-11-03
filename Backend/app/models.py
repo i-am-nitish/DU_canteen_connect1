@@ -174,31 +174,63 @@ def add_canteen_profile(profile_data):
 
         return {"message": "Failed to create canteen profile"}, 500
     
-
 def get_user_by_phone(phone_number):
+    """
+    Returns dict with user fields or None.
+    Uses a buffered dictionary cursor and always closes cursor+connection.
+    """
+    conn = None
+    cursor = None
     try:
         conn = get_db_connection()
-        cursor = conn.cursor()
-        query = "SELECT user_id, name, phone_number, password_hash, role, email FROM users WHERE phone_number = %s"
-        cursor.execute(query, (phone_number,))
-        user = cursor.fetchone()
-        cursor.close()
-        conn.close()
+        if conn is None:
+            logging.error("DB connection is None in get_user_by_phone")
+            return None
 
-        if user:
-            return {
-                "user_id": user[0],
-                "name": user[1],
-                "phone_number": user[2],
-                "password": user[3],
-                "role": user[4],
-                "email": user[5]
-            }
-        return None
+        # buffered=True prevents "Unread result found"
+        cursor = conn.cursor(dictionary=True, buffered=True)
+
+        query = """
+            SELECT user_id, name, phone_number, password_hash AS password,
+                   role, email
+            FROM users
+            WHERE phone_number = %s
+            LIMIT 1
+        """
+        cursor.execute(query, (phone_number,))
+
+        user = cursor.fetchone()   # returns a dict because dictionary=True
+
+        if not user:
+            return None
+
+        # Normalize keys to match existing code expectations
+        return {
+            "user_id": user.get("user_id"),
+            "name": user.get("name"),
+            "phone_number": user.get("phone_number"),
+            "password": user.get("password"),   # password_hash aliased to password
+            "role": user.get("role"),
+            "email": user.get("email")
+        }
 
     except Exception as e:
-        logging.error(f"Error fetching user: {str(e)}")
+        logging.error(f"Error fetching user: {str(e)}", exc_info=True)
         return None
+
+    finally:
+        try:
+            if cursor:
+                cursor.close()
+        except Exception:
+            pass
+        try:
+            if conn:
+                conn.close()
+        except Exception:
+            pass
+
+
 def get_open_app_issues():
     
     conn = None
