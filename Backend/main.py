@@ -11,9 +11,10 @@ from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_revi
 from apis.need_login import submit_canteen_review_handler, admin_get_open_issues_handler, admin_get_app_feedbacks_handler
 import logging
 from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api, fetch_daywise_menu_handler, update_daywise_menu_handler
-from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler
+from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler, update_user_info_handler, update_canteen_profile_handler
 from flask_cors import CORS
 from app.models import get_user_by_id_db
+import bcrypt
 import logging
 app = create_app()
 CORS(app)
@@ -120,6 +121,7 @@ def submit_review_route():
         return jsonify({"message": "Internal Server Error"}), 500
     
 @app.route('/display_user_reviews', methods=['GET'])
+@jwt_required()
 def display_user_reviews_route():
     try:
         user_id = get_jwt_identity()
@@ -218,6 +220,7 @@ def display_user_info_route():
 
 
 @app.route('/give_app_feedback', methods=['POST'])
+@jwt_required()
 def give_app_feedback_route():
     try:
         user_id = get_jwt_identity()
@@ -236,6 +239,7 @@ def give_app_feedback_route():
         return jsonify({"message": "Internal Server Error"}), 500
 
 @app.route('/report_app_issue', methods=['POST'])
+@jwt_required()
 def report_app_issue_route():
     try:
         user_id = get_jwt_identity()
@@ -254,6 +258,7 @@ def report_app_issue_route():
         return jsonify({"message": "Internal Server Error"}), 500
     
 @app.route('/get_canteen_info_owner', methods=['GET'])
+@jwt_required()
 def get_canteen_info_owner_route():
     try:
         owner_id = get_jwt_identity()
@@ -269,6 +274,7 @@ def get_canteen_info_owner_route():
     
 
 @app.route('/add_food_item', methods=['POST'])
+@jwt_required()
 def add_food_item_route():
     try:
         owner_id = get_jwt_identity()
@@ -287,6 +293,7 @@ def add_food_item_route():
         return jsonify({"message": "Internal Server Error"}), 500
     
 @app.route('/report_issue_canteen_owner', methods=['POST'])
+@jwt_required()
 def report_issue_canteen_owner_route():
     try:
         owner_id = get_jwt_identity()
@@ -324,6 +331,7 @@ def canteen_reviews_Owner_route():
     
 
 @app.route('/menu/daywise', methods=['POST'])
+@jwt_required()
 def menu_daywise_route():
     """
     Expects form-data: canteen_id (required)
@@ -369,6 +377,72 @@ def update_daywise_menu_route():
 
     except Exception as e:
         logging.exception("Unexpected error in update_daywise_menu_route")
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+
+@app.route("/user_profile_update", methods=["POST"])
+@jwt_required()
+def update_user_info_route():
+    
+    try:
+        identity = get_jwt_identity()
+        user_id = identity.get("user_id") if isinstance(identity, dict) else identity
+        if not user_id:
+            return jsonify({"message": "Invalid token / user identity"}), 401
+
+        name = request.form.get("name")
+        phone_number = request.form.get("phone_number")
+        email = request.form.get("email")
+        new_password = request.form.get("password")
+
+        hashed_password = None
+        if new_password:
+            hashed_password = bcrypt.hashpw(
+                new_password.encode("utf-8"), bcrypt.gensalt()
+            ).decode("utf-8")
+
+        return update_user_info_handler(
+            user_id=user_id,
+            name=name,
+            phone_number=phone_number,
+            email=email,
+            password_hash=hashed_password
+        )
+
+    except Exception as e:
+        logging.exception("Error in /user/update route")
+        return jsonify({"message": "Internal Server Error"}), 500
+
+@app.route("/canteen_profile_update", methods=["POST"])
+@jwt_required()
+def update_canteen_profile_route():
+   
+    try:
+        identity = get_jwt_identity()
+        user_id = identity.get("user_id") if isinstance(identity, dict) else identity
+        if not user_id:
+            return jsonify({"message": "Invalid token / user identity"}), 401
+
+        # Read form fields (all optional)
+        payload = {
+            "name": request.form.get("name"),
+            "location": request.form.get("location"),
+            "description": request.form.get("description"),
+            "contact_no": request.form.get("contact_no"),
+            "days_open": request.form.get("days_open"),
+            "opening_time": request.form.get("opening_time"),
+            "closing_time": request.form.get("closing_time"),
+            "peak_hr_start_time": request.form.get("peak_hr_start_time"),
+            "peak_hr_end_time": request.form.get("peak_hr_end_time"),
+        }
+
+        # Remove None values (only update provided fields)
+        update_payload = {k: v for k, v in payload.items() if v is not None}
+
+        return update_canteen_profile_handler(user_id=user_id, update_payload=update_payload)
+
+    except Exception as e:
+        logging.exception("Unexpected error in /canteen/update")
         return jsonify({"message": "Internal Server Error"}), 500
 
 if __name__ == "__main__":

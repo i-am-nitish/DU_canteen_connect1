@@ -7,10 +7,10 @@
     <section class="card profile-section">
       <h2>Profile</h2>
       <div class="profile-fields">
-        <div class="field">Name: {{ userInfo.name || 'Loading...' }}</div>
-        <div class="field">Email: {{ userInfo.email || 'Loading...' }}</div>
-        <div class="field">Phone number: {{ userInfo.phone_number || 'Loading...' }}</div>
-        <div class="field">Password: ••••••••</div>
+        <div class="field">Name</div>
+        <div class="field">Email</div>
+        <div class="field">Phone number</div>
+        <div class="field">Password</div>
       </div>
     </section>
 
@@ -52,39 +52,32 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import { getUserProfile, getUserReviews } from '@/services/auth.js'
 
 export default {
   name: 'DashboardPage',
   components: { Header, Footer },
   data() {
     return {
-      userInfo: {},
-      reviews: []
+      reviews: [
+        {
+          canteenName: 'North Campus Cafe',
+          rating: 4,
+          text: 'Great food and friendly staff. Loved the samosas!',
+          images: ['https://via.placeholder.com/100', 'https://via.placeholder.com/100']
+        },
+        {
+          canteenName: 'South Block Diner',
+          rating: 5,
+          text: 'Clean, spacious, and the thali was amazing!',
+          images: ['https://via.placeholder.com/100']
+        }
+      ]
     }
   },
   methods: {
     getStars(rating) {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
-    },
-    async loadUserProfile() {
-      try {
-        this.userInfo = await getUserProfile()
-      } catch (error) {
-        console.error('Failed to load profile:', error)
-      }
-    },
-    async loadUserReviews() {
-      try {
-        this.reviews = await getUserReviews()
-      } catch (error) {
-        console.error('Failed to load reviews:', error)
-      }
     }
-  },
-  mounted() {
-    this.loadUserProfile()
-    this.loadUserReviews()
   }
 }
 </script>

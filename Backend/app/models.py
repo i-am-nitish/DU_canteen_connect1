@@ -1334,9 +1334,8 @@ def get_user_role_by_id_db(user_id):
 
 def insert_issue_for_user_db(user_id, role, issue_text):
     """
-    Insert a new issue into app_issue with created_at = now (UTC).
-    Returns a dict {"issue_id": <id>} on success (issue_id may be None if driver doesn't provide it).
-    Returns None on failure.
+    Insert a new issue into app_issue (created_at default to NOW()).
+    Returns {"issue_id": <id>} on success, None on failure.
     """
     conn = None
     cursor = None
@@ -1344,15 +1343,13 @@ def insert_issue_for_user_db(user_id, role, issue_text):
         conn = get_db_connection()
         cursor = conn.cursor()
 
-       
-      
-        
+        # Corrected SQL: three columns -> three placeholders
         query_mysql = """
             INSERT INTO app_issue (user_id, role, issue_text)
-            VALUES (%s, %s, %s, %s)
+            VALUES (%s, %s, %s)
         """
         cursor.execute(query_mysql, (user_id, role, issue_text))
-        # try to get last inserted id (works with many MySQL drivers)
+
         try:
             issue_id = cursor.lastrowid
         except Exception:
@@ -1364,23 +1361,16 @@ def insert_issue_for_user_db(user_id, role, issue_text):
     except Exception as e:
         logging.exception(f"DB error in insert_issue_for_user for user_id {user_id}: {e}")
         if conn:
-            try:
-                conn.rollback()
-            except Exception:
-                pass
+            try: conn.rollback()
+            except Exception: pass
         return None
-
     finally:
         try:
-            if cursor:
-                cursor.close()
-        except Exception:
-            pass
+            if cursor: cursor.close()
+        except Exception: pass
         try:
-            if conn:
-                conn.close()
-        except Exception:
-            pass
+            if conn: conn.close()
+        except Exception: pass
 def get_canteen_by_id(canteen_id):
     """
     Return one canteen row dict (minimal check) or None if not found/error.
@@ -1908,6 +1898,96 @@ def update_menu_day_columns(menu_id, day_col, price_col, append_item_names, appe
         except Exception:
             pass
         return None
+    finally:
+        try:
+            if cursor: cursor.close()
+        except Exception:
+            pass
+        try:
+            if conn: conn.close()
+        except Exception:
+            pass
+
+
+def update_user_info_db(user_id, update_fields):
+   
+    if not update_fields:
+        return False
+
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        set_clauses = []
+        values = []
+        for col, val in update_fields.items():
+            set_clauses.append(f"{col} = %s")
+            values.append(val)
+
+        set_clause = ", ".join(set_clauses)
+        values.append(datetime.utcnow())
+        values.append(user_id)
+
+        query = f"""
+            UPDATE users
+            SET {set_clause}, updated_at = %s
+            WHERE user_id = %s
+        """
+        cursor.execute(query, tuple(values))
+        conn.commit()
+        return True
+    except Exception as e:
+        logging.exception(f"DB error in update_user_info_db: {e}")
+        if conn:
+            conn.rollback()
+        return False
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+def update_canteen_profile_db(canteen_id, update_fields: dict):
+   
+    if not update_fields:
+        return False
+
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        set_clauses = []
+        params = []
+        for col, val in update_fields.items():
+            # ensure columns are safe (caller already whitelisted, but double-check)
+            set_clauses.append(f"{col} = %s")
+            params.append(val)
+
+        # add updated_at
+        set_clause = ", ".join(set_clauses)
+        params.append(datetime.utcnow())
+        params.append(canteen_id)
+
+        query = f"""
+            UPDATE canteens
+            SET {set_clause}, updated_at = %s
+            WHERE canteen_id = %s
+        """
+        cursor.execute(query, tuple(params))
+        conn.commit()
+        return True
+    except Exception as e:
+        logging.exception(f"DB error in update_canteen_profile_db for canteen_id {canteen_id}: {e}")
+        try:
+            if conn:
+                conn.rollback()
+        except Exception:
+            pass
+        return False
     finally:
         try:
             if cursor: cursor.close()

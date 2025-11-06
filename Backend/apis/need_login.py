@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify, redirect, url_for
 from app.models import get_user_by_id_db, get_reviews_by_id_db, submit_user_feedback_db, insert_issue_for_user_db, get_user_role_by_id_db, get_canteen_by_owner_db, get_canteen_id_by_owner, get_menu_id_by_canteen, insert_food_item_for_menu, insert_issue_for_canteen_owner
-from app.models import get_reviews_for_canteen, recalc_canteen_aggregates, get_canteen_by_id, insert_review_for_canteen, get_open_app_issues, fetch_all_app_feedback_rows
+from app.models import get_reviews_for_canteen, recalc_canteen_aggregates, get_canteen_by_id, insert_review_for_canteen, get_open_app_issues, fetch_all_app_feedback_rows, update_user_info_db, update_canteen_profile_db
 import logging
 import jwt
 from flask_jwt_extended import create_access_token
@@ -39,50 +39,59 @@ def display_user_reviews_api(user_id):
     
 def give_app_feedback_api(user_id):
     try:
-        feedback_text = request.form.get("feedback/suggestions")
+        # Accept JSON or form-data. Prefer JSON key 'feedback' or form key 'feedback' or 'feedback_text'
+        feedback_text = None
+        if request.content_type and 'application/json' in request.content_type:
+            payload = request.get_json(silent=True) or {}
+            feedback_text = payload.get('feedback') or payload.get('feedback_text')
+        else:
+            feedback_text = (request.form.get('feedback') or
+                             request.form.get('feedback_text') or
+                             request.form.get('feedback/suggestions'))
+
         if not feedback_text:
             return jsonify({"message": "Feedback is required"}), 400
-        # Here you would typically save the feedback to the database
+
         logging.info(f"Feedback from user {user_id}: {feedback_text}")
         return submit_user_feedback_db(user_id, feedback_text)
 
     except Exception as e:
-        logging.exception("Unexpected error in submit_feedback_route")
+        logging.exception("Unexpected error in give_app_feedback_api")
         return jsonify({"message": "Internal Server Error"}), 500
     
 def report_app_issue_api(user_id):
     try:
-        issue_text = request.form.get("issue_text")
+        # accept form or JSON
+        issue_text = None
+        if request.content_type and 'application/json' in request.content_type:
+            payload = request.get_json(silent=True) or {}
+            issue_text = payload.get('issue_text') or payload.get('issue')
+        else:
+            issue_text = request.form.get('issue_text') or request.form.get('issue')
+
         if not issue_text:
             return jsonify({"message": "Issue description is required"}), 400
+
         user_row = get_user_role_by_id_db(user_id)
         if user_row is None:
-            # either user not found or DB error; differentiate if desired
             return jsonify({"message": "User not found"}), 404
 
         role = user_row.get("role")
         if role is None:
-            # defensive: if role missing, refuse
             logging.error(f"Role missing for user_id {user_id}")
             return jsonify({"message": "User role not available"}), 500
 
-        # insert issue
+        # insert issue (insert_issue_for_user_db returns dict or None)
         result = insert_issue_for_user_db(user_id, role, issue_text)
         if result is None:
-            # DB error
             logging.error(f"Failed to insert issue for user_id {user_id}")
             return jsonify({"message": "Internal Server Error"}), 500
 
-        # result may contain created issue id if DB driver supports it
         issue_id = result.get("issue_id")
         return jsonify({"message": "Issue submitted successfully", "issue_id": issue_id}), 201
 
     except Exception as e:
-        logging.exception(f"Error in submit_user_issue for user_id {user_id}: {e}")
-        return jsonify({"message": "Internal Server Error"}), 500
-
-    except Exception as e:
-        logging.exception("Unexpected error in report_app_issue_route")
+        logging.exception("Unexpected error in report_app_issue_api")
         return jsonify({"message": "Internal Server Error"}), 500
     
 def fetch_canteen_info_handler(owner_id):
@@ -420,4 +429,76 @@ def admin_get_app_feedbacks_handler(user_id, role_in_token=None):
 
     except Exception as e:
         logging.exception(f"Error in admin_get_app_feedbacks_handler for user {user_id}: {e}")
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+def update_user_info_handler(user_id, name, phone_number, email, password_hash):
+    try:
+       
+        user = get_user_by_id_db(user_id)
+        if not user:
+            return jsonify({"message": "User not found"}), 404
+
+        # Build dictionary of fields to update
+        update_fields = {}
+        if name:
+            update_fields["name"] = name
+        if phone_number:
+            update_fields["phone_number"] = phone_number
+        if email:
+            update_fields["email"] = email
+        if password_hash:
+            update_fields["password_hash"] = password_hash
+
+        if not update_fields:
+            return jsonify({"message": "No fields to update"}), 400
+
+        success = update_user_info_db(user_id, update_fields)
+        if not success:
+            return jsonify({"message": "Failed to update user info"}), 500
+
+        return jsonify({"message": "User info updated successfully"}), 200
+
+    except Exception as e:
+        logging.exception(f"Error in update_user_info_handler: {e}")
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+def update_canteen_profile_handler(user_id, update_payload: dict):
+    
+    try:
+        
+        user_row = get_user_role_by_id_db(user_id)
+        if user_row is None:
+            return jsonify({"message": "User not found"}), 404
+
+        if (user_row.get("role") or "").lower() != "canteen_owner":
+            return jsonify({"message": "Access denied. Only canteen owners can update profile."}), 403
+
+        # Fetch canteen owned by this user
+        canteen = get_canteen_by_owner_db(user_id)
+        if canteen is None:
+            return jsonify({"message": "Canteen not found for this owner"}), 404
+
+        canteen_id = canteen.get("canteen_id") if isinstance(canteen, dict) else (canteen[0] if isinstance(canteen, (list,tuple)) else None)
+        if not canteen_id:
+            logging.error(f"Unable to determine canteen_id for owner {user_id}")
+            return jsonify({"message": "Internal Server Error"}), 500
+
+        if not update_payload:
+            return jsonify({"message": "No fields to update"}), 400
+
+        # Only allow whitelisted columns (safety)
+        allowed = {"name","location","description","contact_no","days_open","opening_time","closing_time","peak_hr_start_time","peak_hr_end_time"}
+        fields_to_update = {k:v for k,v in update_payload.items() if k in allowed}
+
+        if not fields_to_update:
+            return jsonify({"message": "No updatable fields provided"}), 400
+
+        success = update_canteen_profile_db(canteen_id=canteen_id, update_fields=fields_to_update)
+        if not success:
+            return jsonify({"message": "Failed to update canteen profile"}), 500
+
+        return jsonify({"message": "Canteen profile updated successfully"}), 200
+
+    except Exception as e:
+        logging.exception(f"Error in update_canteen_profile_handler for user {user_id}: {e}")
         return jsonify({"message": "Internal Server Error"}), 500
