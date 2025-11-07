@@ -78,29 +78,3 @@ export const createCanteenProfile = async (ownerId, profileData) => {
     throw err; // Let component handle errorMsg
   }
 };
-// gpt told me to add these functions
-export const getUserProfile = async () => {
-  const res = await api.get('/display_user_info')
-  return res.data.user_info
-}
-
-export const getUserReviews = async () => {
-  const res = await api.get('/display_user_reviews')
-  return res.data.reviews || []
-}
-
-// Report an app issue (canteen owner or user reports a problem with the app)
-export const reportAppIssue = async (issueText) => {
-  const formData = new FormData()
-  formData.append('issue_text', issueText)
-  const res = await api.post('/report_app_issue', formData)
-  return res.data
-}
-
-// Send app feedback
-export const giveAppFeedback = async (feedbackText) => {
-  const formData = new FormData()
-  formData.append('feedback_text', feedbackText)
-  const res = await api.post('/give_app_feedback', formData)
-  return res.data
-}

@@ -1,5 +1,5 @@
 // src/services/user.js
-import api from '@/api/api'  // adjust path if needed
+import api from './api'
 
 // Protected: requires Authorization header with JWT (api.js adds it)
 export const fetchUserInfo = async () => {

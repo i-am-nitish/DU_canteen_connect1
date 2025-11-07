@@ -25,7 +25,7 @@
       <!-- Signup prompt -->
       <div class="signup-prompt">
         <p>Don’t have an account?</p>
-        <router-link to="/signup" class="signup-link">Sign up</router-link>
+        <router-link to="/Desktop345" class="signup-link">Sign up</router-link>
       </div>
     </div>
     <Footer />

@@ -210,12 +210,14 @@ def search_food_items_route():
 @jwt_required()
 def display_user_info_route():
     try:
-        user_id = get_jwt_identity()  
+        user_id = get_jwt_identity()
+        logging.info(f"Got user_id from JWT: {user_id}")
         if not user_id:
             return jsonify({"message": "Invalid token"}), 401
 
         return display_user_info_api(user_id)
     except Exception as e:
+        logging.error(f" Error in display_user_info_route: {str(e)}")
         return jsonify({"message": "Internal Server Error"}), 500
 
 

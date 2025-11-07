@@ -15,7 +15,7 @@ const routes = [
   { path: '/desktop6', component: Desktop6 },
   { path: '/login', component: Desktop6 },
   { path: '/account', component: Account },
-  { path: '/desktop345', component: Desktop345},
+  { path: '/Desktop345', component: Desktop345},
   { path: '/signup', component: Desktop345},
   { path:'/desktop27', component: Desktop27},
   {path: '/desktop8', component: desktop8},

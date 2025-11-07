@@ -56,7 +56,7 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import { getUserProfile, getUserReviews } from '@/services/auth'
+import { fetchUserInfo, fetchUserReviews, submitAppIssue, submitAppFeedback } from '@/services/user'
 
 export default {
   name: 'DashboardPage',
@@ -76,21 +76,26 @@ export default {
 
     async loadUserProfile() {
       try {
-        const data = await getUserProfile()
-        this.userInfo = data
+        const data = await fetchUserInfo()
+        // Backend returns { message, user_info }
+        this.userInfo = data.user_info || {}
       } catch (error) {
         console.error('Error loading user profile:', error)
+        
       }
     },
 
     async loadUserReviews() {
       try {
-        const data = await getUserReviews()
-        // `getUserReviews()` returns an array (res.data.reviews) in services/auth.js.
-        // Accept either an array or an object with a `reviews` property to be robust.
-        this.reviews = Array.isArray(data) ? data : (data.reviews || [])
+        const data = await fetchUserReviews()
+        // Backend returns { message, reviews }
+        this.reviews = data.reviews || []
       } catch (error) {
         console.error('Error loading user reviews:', error)
+        if (error.response?.status === 422) {
+          // Token invalid - already handled in loadUserProfile
+          return
+        }
       }
     },
 
@@ -101,13 +106,7 @@ export default {
       }
 
       try {
-        await this.$root.$options.config.globalProperties.$api // noop to satisfy linter
-      } catch (e) {}
-
-      try {
-        // lazy import service function to avoid changing imports at top
-        const { reportAppIssue } = await import('@/services/auth')
-        await reportAppIssue(this.issueText)
+        await submitAppIssue({ issue_text: this.issueText })
         this.issueText = ''
         alert('Issue reported — admin will review it.')
       } catch (error) {
@@ -123,8 +122,7 @@ export default {
       }
 
       try {
-        const { giveAppFeedback } = await import('@/services/auth')
-        await giveAppFeedback(this.feedbackText)
+        await submitAppFeedback({ feedback_text: this.feedbackText })
         this.feedbackText = ''
         alert('Thank you for your feedback!')
       } catch (error) {

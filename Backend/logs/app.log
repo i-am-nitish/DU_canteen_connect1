@@ -1630,3 +1630,621 @@
 2025-11-07 22:05:31,439 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:31] "GET /canteens HTTP/1.1" 200 -
 2025-11-07 22:17:04,002 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:17:04] "[31m[1mGET /display_user_info HTTP/1.1[0m" 401 -
 2025-11-07 22:17:04,003 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:17:04] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-07 22:54:29,844 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:54:29] "[31m[1mGET /display_user_info HTTP/1.1[0m" 401 -
+2025-11-07 22:54:30,098 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:54:30] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-07 23:04:21,782 - root - INFO - Database connection established.
+2025-11-07 23:04:22,014 - root - INFO - Database connection established.
+2025-11-07 23:04:22,025 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:04:22,026 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:04:22] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:04:38,444 - root - INFO - Database connection established.
+2025-11-07 23:04:38,446 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:04:38] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:12:18,337 - root - INFO - Database connection established.
+2025-11-07 23:12:18,556 - root - INFO - Database connection established.
+2025-11-07 23:12:18,558 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:12:18,558 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:12:18] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:30:19,692 - root - INFO - Database connection established.
+2025-11-07 23:30:19,694 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:30:19] "GET /canteens HTTP/1.1" 200 -
+2025-11-07 23:30:27,527 - root - INFO - Database connection established.
+2025-11-07 23:30:27,530 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:30:27] "GET /canteen_info?canteen_id=5 HTTP/1.1" 200 -
+2025-11-07 23:30:27,833 - root - INFO - Database connection established.
+2025-11-07 23:30:27,833 - root - INFO - Database connection established.
+2025-11-07 23:30:27,835 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:30:27] "GET /canteen_menu_details?canteen_id=5 HTTP/1.1" 200 -
+2025-11-07 23:30:27,835 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:30:27] "GET /canteen_review_ratings?canteen_id=5 HTTP/1.1" 200 -
+2025-11-07 23:30:36,662 - root - INFO - Database connection established.
+2025-11-07 23:30:36,665 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:30:36] "GET /canteens HTTP/1.1" 200 -
+2025-11-07 23:32:42,086 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:32:42] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:42:39,230 - root - INFO - Database connection established.
+2025-11-07 23:42:39,232 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:42:39] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:42:47,859 - root - INFO - Database connection established.
+2025-11-07 23:42:48,085 - root - INFO - Database connection established.
+2025-11-07 23:42:48,087 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:42:48,087 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:42:48] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:43:53,823 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:43:53,823 - app - INFO - Starting Flask application...
+2025-11-07 23:43:53,825 - app - INFO - Flask application created successfully
+2025-11-07 23:43:53,871 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-07 23:43:53,871 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-07 23:43:53,873 - werkzeug - INFO -  * Restarting with stat
+2025-11-07 23:43:54,272 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:43:54,272 - app - INFO - Starting Flask application...
+2025-11-07 23:43:54,273 - app - INFO - Flask application created successfully
+2025-11-07 23:43:54,295 - werkzeug - WARNING -  * Debugger is active!
+2025-11-07 23:43:54,302 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-07 23:44:11,309 - root - INFO - Database connection established.
+2025-11-07 23:44:11,312 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:44:11] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:44:51,420 - root - INFO - Database connection established.
+2025-11-07 23:44:51,649 - root - INFO - Database connection established.
+2025-11-07 23:44:51,656 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:44:51,657 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:44:51] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:47:26,034 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:47:26,034 - app - INFO - Starting Flask application...
+2025-11-07 23:47:26,035 - app - INFO - Flask application created successfully
+2025-11-07 23:47:26,077 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-07 23:47:26,077 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-07 23:47:26,079 - werkzeug - INFO -  * Restarting with stat
+2025-11-07 23:47:26,530 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:47:26,531 - app - INFO - Starting Flask application...
+2025-11-07 23:47:26,532 - app - INFO - Flask application created successfully
+2025-11-07 23:47:26,564 - werkzeug - WARNING -  * Debugger is active!
+2025-11-07 23:47:26,572 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-07 23:48:15,453 - root - INFO - Database connection established.
+2025-11-07 23:48:15,682 - root - INFO - Database connection established.
+2025-11-07 23:48:15,685 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:48:15,686 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:48:15] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:50:01,425 - root - INFO - Database connection established.
+2025-11-07 23:50:01,654 - root - INFO - Database connection established.
+2025-11-07 23:50:01,657 - root - ERROR - Error during signup: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:50:01,657 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:01] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-07 23:50:02,324 - root - INFO - Database connection established.
+2025-11-07 23:50:02,326 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:02] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:50:05,251 - root - INFO - Database connection established.
+2025-11-07 23:50:05,252 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:05] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:50:05,765 - root - INFO - Database connection established.
+2025-11-07 23:50:05,766 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:05] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:50:28,274 - root - INFO - Database connection established.
+2025-11-07 23:50:28,733 - root - ERROR - Error during login: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:50:28,733 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:28] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-07 23:50:29,023 - root - INFO - Database connection established.
+2025-11-07 23:50:29,470 - root - ERROR - Error during login: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"
+2025-11-07 23:50:29,470 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:50:29] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-07 23:51:35,610 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:51:35,610 - app - INFO - Starting Flask application...
+2025-11-07 23:51:35,611 - app - INFO - Flask application created successfully
+2025-11-07 23:51:35,651 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-07 23:51:35,651 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-07 23:51:35,653 - werkzeug - INFO -  * Restarting with stat
+2025-11-07 23:51:36,126 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-07 23:51:36,126 - app - INFO - Starting Flask application...
+2025-11-07 23:51:36,127 - app - INFO - Flask application created successfully
+2025-11-07 23:51:36,149 - werkzeug - WARNING -  * Debugger is active!
+2025-11-07 23:51:36,156 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-07 23:52:41,828 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:52:41] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-07 23:53:00,354 - root - INFO - Database connection established.
+2025-11-07 23:53:00,582 - root - INFO - Database connection established.
+2025-11-07 23:53:00,591 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:00] "[35m[1mPOST /signup HTTP/1.1[0m" 201 -
+2025-11-07 23:53:02,861 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:02] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-07 23:53:03,125 - root - INFO - Database connection established.
+2025-11-07 23:53:03,128 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:03] "GET /canteens HTTP/1.1" 200 -
+2025-11-07 23:53:08,697 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:08] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-07 23:53:09,005 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:09] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-07 23:53:09,269 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:09] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-07 23:53:09,315 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:09] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-07 23:53:18,415 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:18] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-07 23:53:18,732 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:18] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-07 23:53:18,995 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:18] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-07 23:53:19,041 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:53:19] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-07 23:58:44,909 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:44] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-07 23:58:45,108 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:45] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-07 23:58:45,215 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:45] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-07 23:58:45,432 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:45] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-07 23:58:56,978 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:56] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-07 23:58:57,291 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:57] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-07 23:58:57,555 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:57] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-07 23:58:57,602 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:58:57] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-07 23:59:49,421 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:59:49] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-07 23:59:49,727 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:59:49] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-07 23:59:53,032 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 23:59:53] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-08 00:00:42,995 - root - INFO - Database connection established.
+2025-11-08 00:00:43,451 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:43] "POST /login HTTP/1.1" 200 -
+2025-11-08 00:00:43,483 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:43] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:00:43,799 - root - INFO - Database connection established.
+2025-11-08 00:00:43,802 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:43] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:00:47,316 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:47] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:00:47,627 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:47] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:00:49,551 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:00:49] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-08 00:02:15,799 - root - INFO - Database connection established.
+2025-11-08 00:02:16,253 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:16] "POST /login HTTP/1.1" 200 -
+2025-11-08 00:02:16,286 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:16] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:02:16,592 - root - INFO - Database connection established.
+2025-11-08 00:02:16,594 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:16] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:02:19,065 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:19] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:02:19,375 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:19] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:02:19,627 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:19] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:02:19,689 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:02:19] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:07:49,989 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:07:49] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:07:50,242 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:07:50] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:08:28,843 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:28] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-08 00:08:37,016 - root - INFO - Database connection established.
+2025-11-08 00:08:37,451 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:37] "POST /login HTTP/1.1" 200 -
+2025-11-08 00:08:37,482 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:37] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:08:37,794 - root - INFO - Database connection established.
+2025-11-08 00:08:37,796 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:37] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:08:40,881 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:40] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:08:41,187 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:41] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:08:43,126 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:08:43] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -
+2025-11-08 00:09:19,617 - root - INFO - Database connection established.
+2025-11-08 00:09:20,066 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:20] "POST /login HTTP/1.1" 200 -
+2025-11-08 00:09:20,101 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:20] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:09:20,411 - root - INFO - Database connection established.
+2025-11-08 00:09:20,413 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:20] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:09:22,926 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:22] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:09:23,244 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:23] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:09:23,508 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:23] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:09:23,556 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:23] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:09:42,909 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:42] "OPTIONS /report_app_issue HTTP/1.1" 200 -
+2025-11-08 00:09:43,216 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:43] "[31m[1mPOST /report_app_issue HTTP/1.1[0m" 422 -
+2025-11-08 00:09:45,790 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:45] "[31m[1mPOST /report_app_issue HTTP/1.1[0m" 422 -
+2025-11-08 00:09:58,260 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:58] "OPTIONS /report_app_issue HTTP/1.1" 200 -
+2025-11-08 00:09:58,521 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:09:58] "[31m[1mPOST /report_app_issue HTTP/1.1[0m" 422 -
+2025-11-08 00:10:34,706 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:34] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:10:35,021 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:35] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:10:35,285 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:35] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:10:35,333 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:35] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:10:45,658 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:45] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:10:45,974 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:45] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:10:46,239 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:46] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:10:46,285 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:10:46] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:17:30,234 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:17:30,234 - app - INFO - Starting Flask application...
+2025-11-08 00:17:30,235 - app - INFO - Flask application created successfully
+2025-11-08 00:17:30,273 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 00:17:30,273 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 00:17:30,275 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:17:30,671 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:17:30,672 - app - INFO - Starting Flask application...
+2025-11-08 00:17:30,673 - app - INFO - Flask application created successfully
+2025-11-08 00:17:30,701 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:17:30,706 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 00:17:49,772 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:49] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:17:50,038 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:50] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:17:50,083 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:50] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:17:50,350 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:50] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:17:56,231 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:56] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:17:56,544 - root - INFO - Database connection established.
+2025-11-08 00:17:56,546 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:17:56] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:04,160 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:04] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:18:04,496 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:04] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:18:04,758 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:04] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:18:04,804 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:04] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:18:07,226 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:07] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:07,542 - root - INFO - Database connection established.
+2025-11-08 00:18:07,543 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:07] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:12,727 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:12] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:18:13,036 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:13] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:18:13,306 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:13] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:18:13,354 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:13] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:18:18,228 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:18] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:18,536 - root - INFO - Database connection established.
+2025-11-08 00:18:18,538 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:18] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:22,938 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:22] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:18:23,250 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:23] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:18:23,513 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:23] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:18:23,560 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:23] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:18:26,957 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:26] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:18:27,271 - root - INFO - Database connection established.
+2025-11-08 00:18:27,273 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:18:27] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:19:02,388 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:02] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:19:02,702 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:02] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:19:02,967 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:02] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:19:03,012 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:03] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:19:12,536 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:12] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:19:12,855 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:12] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:19:13,118 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:13] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:19:13,164 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:13] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:19:24,933 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:24] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:19:25,242 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:25] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:19:25,511 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:25] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:19:25,560 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:19:25] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:23:17,252 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:23:17] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:23:17,519 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:23:17] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:25:41,849 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 00:25:41,890 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:25:42,315 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:25:42,315 - app - INFO - Starting Flask application...
+2025-11-08 00:25:42,316 - app - INFO - Flask application created successfully
+2025-11-08 00:25:42,339 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:25:42,344 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 00:25:54,788 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 00:25:54,831 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:25:55,224 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:25:55,224 - app - INFO - Starting Flask application...
+2025-11-08 00:25:55,226 - app - INFO - Flask application created successfully
+2025-11-08 00:25:55,247 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:25:55,252 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 00:26:28,248 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:28] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:26:28,516 - root - INFO - Database connection established.
+2025-11-08 00:26:28,518 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:28] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:26:31,199 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:31,514 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "OPTIONS /menu/daywise?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:31,515 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:31,518 - root - INFO - Database connection established.
+2025-11-08 00:26:31,521 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:31,840 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "[31m[1mGET /menu/daywise?canteen_id=1 HTTP/1.1[0m" 405 -
+2025-11-08 00:26:31,844 - root - INFO - Database connection established.
+2025-11-08 00:26:31,845 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:31] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:37,852 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:37] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:26:38,118 - root - INFO - Database connection established.
+2025-11-08 00:26:38,123 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:38] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:26:39,515 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:39] "OPTIONS /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:26:39,817 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:39] "OPTIONS /menu/daywise?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:26:39,818 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:39] "OPTIONS /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:26:39,823 - root - INFO - Database connection established.
+2025-11-08 00:26:39,824 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:39] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:26:40,137 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:40] "[31m[1mGET /menu/daywise?canteen_id=2 HTTP/1.1[0m" 405 -
+2025-11-08 00:26:40,140 - root - INFO - Database connection established.
+2025-11-08 00:26:40,142 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:40] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:26:42,575 - root - INFO - Database connection established.
+2025-11-08 00:26:42,578 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:42] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:26:55,391 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:55] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:55,706 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:55] "OPTIONS /menu/daywise?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:55,707 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:55] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:55,711 - root - INFO - Database connection established.
+2025-11-08 00:26:55,713 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:55] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:26:56,017 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:56] "[31m[1mGET /menu/daywise?canteen_id=1 HTTP/1.1[0m" 405 -
+2025-11-08 00:26:56,020 - root - INFO - Database connection established.
+2025-11-08 00:26:56,022 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:26:56] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,118 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,118 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,119 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,147 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,148 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,149 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,427 - root - INFO - Database connection established.
+2025-11-08 00:27:41,427 - root - INFO - Database connection established.
+2025-11-08 00:27:41,427 - root - INFO - Database connection established.
+2025-11-08 00:27:41,430 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,430 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,431 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,645 - root - INFO - Database connection established.
+2025-11-08 00:27:41,647 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,738 - root - INFO - Database connection established.
+2025-11-08 00:27:41,738 - root - INFO - Database connection established.
+2025-11-08 00:27:41,739 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,740 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:27:41] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:27:41,886 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 00:27:41,929 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:27:42,290 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:27:42,291 - app - INFO - Starting Flask application...
+2025-11-08 00:27:42,292 - app - INFO - Flask application created successfully
+2025-11-08 00:27:42,312 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:27:42,318 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 00:28:13,688 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:13] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:28:13,942 - root - INFO - Database connection established.
+2025-11-08 00:28:13,944 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:13] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:28:15,429 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:15] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:15,734 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:15] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:15,735 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:15] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:15,739 - root - INFO - Database connection established.
+2025-11-08 00:28:15,741 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:15] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:16,057 - root - INFO - Database connection established.
+2025-11-08 00:28:16,057 - root - INFO - Database connection established.
+2025-11-08 00:28:16,060 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:16] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:16,060 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:16] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 00:28:17,920 - root - INFO - Database connection established.
+2025-11-08 00:28:17,922 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:17] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:28:18,963 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:18] "OPTIONS /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:28:19,281 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:19] "OPTIONS /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:28:19,281 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:19] "OPTIONS /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:28:19,284 - root - INFO - Database connection established.
+2025-11-08 00:28:19,285 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:19] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:28:19,601 - root - INFO - Database connection established.
+2025-11-08 00:28:19,601 - root - INFO - Database connection established.
+2025-11-08 00:28:19,602 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:19] "GET /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:28:19,603 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:28:19] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:33:29,108 - root - INFO - Database connection established.
+2025-11-08 00:33:29,108 - root - INFO - Database connection established.
+2025-11-08 00:33:29,110 - root - INFO - Database connection established.
+2025-11-08 00:33:29,112 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:29] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:33:29,113 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:29] "GET /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:33:29,114 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:29] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 00:33:31,387 - root - INFO - Database connection established.
+2025-11-08 00:33:31,389 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:31] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:33:48,297 - root - INFO - Database connection established.
+2025-11-08 00:33:48,739 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:48] "POST /login HTTP/1.1" 200 -
+2025-11-08 00:33:48,774 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:48] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 00:33:49,089 - root - INFO - Database connection established.
+2025-11-08 00:33:49,092 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:49] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 00:33:53,203 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:53] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:33:53,523 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:53] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:33:53,785 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:53] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:33:53,832 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:33:53] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:38:46,788 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:38:46,789 - app - INFO - Starting Flask application...
+2025-11-08 00:38:46,790 - app - INFO - Flask application created successfully
+2025-11-08 00:38:46,830 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 00:38:46,830 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 00:38:46,832 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:38:47,287 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:38:47,287 - app - INFO - Starting Flask application...
+2025-11-08 00:38:47,289 - app - INFO - Flask application created successfully
+2025-11-08 00:38:47,316 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:38:47,324 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 00:38:57,104 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:38:57] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 00:38:57,523 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:38:57] "[31m[1mGET /display_user_info HTTP/1.1[0m" 422 -
+2025-11-08 00:38:57,527 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:38:57] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 00:38:57,842 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 00:38:57] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 422 -
+2025-11-08 00:44:04,838 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:44:04,838 - app - INFO - Starting Flask application...
+2025-11-08 00:44:04,840 - app - INFO - Flask application created successfully
+2025-11-08 00:44:04,876 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 00:44:04,876 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 00:44:04,878 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 00:44:05,296 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 00:44:05,297 - app - INFO - Starting Flask application...
+2025-11-08 00:44:05,298 - app - INFO - Flask application created successfully
+2025-11-08 00:44:05,325 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 00:44:05,332 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:00:36,102 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:00:36,102 - app - INFO - Starting Flask application...
+2025-11-08 01:00:36,103 - app - INFO - Flask application created successfully
+2025-11-08 01:00:36,143 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 01:00:36,144 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 01:00:36,145 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:00:36,619 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:00:36,620 - app - INFO - Starting Flask application...
+2025-11-08 01:00:36,621 - app - INFO - Flask application created successfully
+2025-11-08 01:00:36,653 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:00:36,659 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:02:27,907 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:02:27,907 - app - INFO - Starting Flask application...
+2025-11-08 01:02:27,909 - app - INFO - Flask application created successfully
+2025-11-08 01:02:27,953 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 01:02:27,953 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 01:02:27,955 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:02:28,421 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:02:28,422 - app - INFO - Starting Flask application...
+2025-11-08 01:02:28,423 - app - INFO - Flask application created successfully
+2025-11-08 01:02:28,452 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:02:28,457 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:04:25,800 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:04:25,800 - app - INFO - Starting Flask application...
+2025-11-08 01:04:25,802 - app - INFO - Flask application created successfully
+2025-11-08 01:04:25,850 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 01:04:25,850 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 01:04:25,852 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:04:26,313 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:04:26,313 - app - INFO - Starting Flask application...
+2025-11-08 01:04:26,315 - app - INFO - Flask application created successfully
+2025-11-08 01:04:26,340 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:04:26,349 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:11:58,871 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:11:58,871 - app - INFO - Starting Flask application...
+2025-11-08 01:11:58,872 - app - INFO - Flask application created successfully
+2025-11-08 01:11:58,908 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.228.131.186:5000
+2025-11-08 01:11:58,908 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-08 01:11:58,910 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:11:59,261 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:11:59,261 - app - INFO - Starting Flask application...
+2025-11-08 01:11:59,263 - app - INFO - Flask application created successfully
+2025-11-08 01:11:59,285 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:11:59,290 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:13:03,876 - root - INFO - Database connection established.
+2025-11-08 01:13:03,878 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:13:03] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 01:21:21,044 - root - INFO - Database connection established.
+2025-11-08 01:21:21,309 - root - INFO - Database connection established.
+2025-11-08 01:21:21,484 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:21] "POST /login HTTP/1.1" 200 -
+2025-11-08 01:21:21,521 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:21] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 01:21:21,766 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:21] "POST /login HTTP/1.1" 200 -
+2025-11-08 01:21:21,833 - root - INFO - Database connection established.
+2025-11-08 01:21:21,836 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:21] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 01:21:26,359 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:26] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:21:26,622 - root - INFO - Database connection established.
+2025-11-08 01:21:26,624 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:26] "GET /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:21:26,668 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:26] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 01:21:26,934 - root - INFO - Database connection established.
+2025-11-08 01:21:26,937 - root - INFO - Database connection established.
+2025-11-08 01:21:26,937 - root - ERROR - DB error in get_top_reviews_by_user for user_id 32: name 'limit' is not defined
+Traceback (most recent call last):
+  File "D:\CIC\SEM V\sd\DU_canteen_connect1\Backend\app\models.py", line 1109, in get_reviews_by_id_db
+    cursor.execute(query, (user_id, limit))
+                                    ^^^^^
+NameError: name 'limit' is not defined. Did you mean: 'list'?
+2025-11-08 01:21:26,940 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:21:26] "[33mGET /display_user_reviews HTTP/1.1[0m" 404 -
+2025-11-08 01:28:07,672 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:28:07] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:28:07,933 - root - INFO - Database connection established.
+2025-11-08 01:28:07,935 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:28:07] "GET /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:28:07,980 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:28:07] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 01:28:08,250 - root - INFO - Database connection established.
+2025-11-08 01:28:08,253 - root - INFO - Database connection established.
+2025-11-08 01:28:08,254 - root - ERROR - DB error in get_top_reviews_by_user for user_id 32: name 'limit' is not defined
+Traceback (most recent call last):
+  File "D:\CIC\SEM V\sd\DU_canteen_connect1\Backend\app\models.py", line 1109, in get_reviews_by_id_db
+    cursor.execute(query, (user_id, limit))
+                                    ^^^^^
+NameError: name 'limit' is not defined. Did you mean: 'list'?
+2025-11-08 01:28:08,255 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:28:08] "[33mGET /display_user_reviews HTTP/1.1[0m" 404 -
+2025-11-08 01:36:08,305 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:36:08] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:36:08,571 - root - INFO - Database connection established.
+2025-11-08 01:36:08,573 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:36:08] "GET /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:36:08,612 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:36:08] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 01:36:08,894 - root - INFO - Database connection established.
+2025-11-08 01:36:08,897 - root - INFO - Database connection established.
+2025-11-08 01:36:08,898 - root - ERROR - DB error in get_top_reviews_by_user for user_id 32: name 'limit' is not defined
+Traceback (most recent call last):
+  File "D:\CIC\SEM V\sd\DU_canteen_connect1\Backend\app\models.py", line 1109, in get_reviews_by_id_db
+    cursor.execute(query, (user_id, limit))
+                                    ^^^^^
+NameError: name 'limit' is not defined. Did you mean: 'list'?
+2025-11-08 01:36:08,900 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:36:08] "[33mGET /display_user_reviews HTTP/1.1[0m" 404 -
+2025-11-08 01:37:26,432 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:37:26,470 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:37:26,960 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:37:26,961 - app - INFO - Starting Flask application...
+2025-11-08 01:37:26,962 - app - INFO - Flask application created successfully
+2025-11-08 01:37:26,991 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:37:26,996 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:39:37,839 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\app\\__init__.py', reloading
+2025-11-08 01:39:37,890 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:39:38,375 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:39:38,375 - app - INFO - Starting Flask application...
+2025-11-08 01:39:38,376 - app - INFO - Flask application created successfully
+2025-11-08 01:39:38,407 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:39:38,411 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:39:53,122 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 01:39:53,178 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:39:53,641 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:39:53,642 - app - INFO - Starting Flask application...
+2025-11-08 01:39:53,643 - app - INFO - Flask application created successfully
+2025-11-08 01:39:53,666 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:39:53,672 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:41:48,692 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:41:48,740 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:41:49,140 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:41:49,140 - app - INFO - Starting Flask application...
+2025-11-08 01:41:49,142 - app - INFO - Flask application created successfully
+2025-11-08 01:41:49,165 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:41:49,170 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:41:53,299 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:41:53,338 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:41:53,719 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:41:53,719 - app - INFO - Starting Flask application...
+2025-11-08 01:41:53,720 - app - INFO - Flask application created successfully
+2025-11-08 01:41:53,745 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:41:53,751 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:42:03,080 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:42:03,138 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:42:03,647 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:42:03,647 - app - INFO - Starting Flask application...
+2025-11-08 01:42:03,649 - app - INFO - Flask application created successfully
+2025-11-08 01:42:03,678 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:42:03,687 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:42:06,460 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:42:06,506 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:42:06,997 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:42:06,997 - app - INFO - Starting Flask application...
+2025-11-08 01:42:06,999 - app - INFO - Flask application created successfully
+2025-11-08 01:42:07,027 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:42:07,037 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:42:14,688 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:42:14,726 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:42:15,212 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:42:15,213 - app - INFO - Starting Flask application...
+2025-11-08 01:42:15,214 - app - INFO - Flask application created successfully
+2025-11-08 01:42:15,241 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:42:15,250 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:43:13,024 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:13] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:43:13,297 - root - INFO - Database connection established.
+2025-11-08 01:43:13,298 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:13] "GET /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:43:13,332 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:13] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 01:43:13,615 - root - INFO - Database connection established.
+2025-11-08 01:43:13,618 - root - INFO - Database connection established.
+2025-11-08 01:43:13,618 - root - ERROR - DB error in get_top_reviews_by_user for user_id 32: name 'limit' is not defined
+Traceback (most recent call last):
+  File "D:\CIC\SEM V\sd\DU_canteen_connect1\Backend\app\models.py", line 1109, in get_reviews_by_id_db
+    cursor.execute(query, (user_id, limit))
+                                    ^^^^^
+NameError: name 'limit' is not defined. Did you mean: 'list'?
+2025-11-08 01:43:13,621 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:13] "[33mGET /display_user_reviews HTTP/1.1[0m" 404 -
+2025-11-08 01:43:16,371 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:16] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 01:43:16,690 - root - INFO - Database connection established.
+2025-11-08 01:43:16,692 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:16] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 01:43:17,853 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:17] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:18,163 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:18] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:18,165 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:18] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:18,168 - root - INFO - Database connection established.
+2025-11-08 01:43:18,170 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:18] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:18,475 - root - INFO - Database connection established.
+2025-11-08 01:43:18,475 - root - INFO - Database connection established.
+2025-11-08 01:43:18,477 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:18] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:18,477 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:43:18] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-08 01:43:47,338 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 01:43:47,391 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:43:47,848 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:43:47,848 - app - INFO - Starting Flask application...
+2025-11-08 01:43:47,850 - app - INFO - Flask application created successfully
+2025-11-08 01:43:47,874 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:43:47,880 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:43:50,858 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\main.py', reloading
+2025-11-08 01:43:50,917 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:43:51,381 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:43:51,381 - app - INFO - Starting Flask application...
+2025-11-08 01:43:51,382 - app - INFO - Flask application created successfully
+2025-11-08 01:43:51,411 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:43:51,420 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:44:13,565 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:44:13,639 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:44:14,116 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:44:14,116 - app - INFO - Starting Flask application...
+2025-11-08 01:44:14,118 - app - INFO - Flask application created successfully
+2025-11-08 01:44:14,145 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:44:14,150 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:46:06,855 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:06] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-08 01:46:07,123 - root - INFO - Database connection established.
+2025-11-08 01:46:07,125 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:07] "GET /canteens HTTP/1.1" 200 -
+2025-11-08 01:46:08,528 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:08] "OPTIONS /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:08,839 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:08] "OPTIONS /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:08,839 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:08] "OPTIONS /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:08,843 - root - INFO - Database connection established.
+2025-11-08 01:46:08,845 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:08] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:09,151 - root - INFO - Database connection established.
+2025-11-08 01:46:09,151 - root - INFO - Database connection established.
+2025-11-08 01:46:09,153 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:09] "GET /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:09,154 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:09] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-08 01:46:12,145 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:12] "OPTIONS /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:46:12,407 - root - INFO - Got user_id from JWT: 32
+2025-11-08 01:46:12,409 - root - INFO - Database connection established.
+2025-11-08 01:46:12,413 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:12] "GET /display_user_info HTTP/1.1" 200 -
+2025-11-08 01:46:12,453 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:12] "OPTIONS /display_user_reviews HTTP/1.1" 200 -
+2025-11-08 01:46:12,734 - root - INFO - Database connection established.
+2025-11-08 01:46:12,737 - root - INFO - Database connection established.
+2025-11-08 01:46:12,737 - root - ERROR - DB error in get_top_reviews_by_user for user_id 32: name 'limit' is not defined
+Traceback (most recent call last):
+  File "D:\CIC\SEM V\sd\DU_canteen_connect1\Backend\app\models.py", line 1109, in get_reviews_by_id_db
+    cursor.execute(query, (user_id, limit))
+                                    ^^^^^
+NameError: name 'limit' is not defined. Did you mean: 'list'?
+2025-11-08 01:46:12,740 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:12] "[33mGET /display_user_reviews HTTP/1.1[0m" 404 -
+2025-11-08 01:46:23,198 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:23] "OPTIONS /report_app_issue HTTP/1.1" 200 -
+2025-11-08 01:46:23,509 - root - INFO - Database connection established.
+2025-11-08 01:46:23,511 - root - INFO - Database connection established.
+2025-11-08 01:46:23,514 - root - INFO - Database connection established.
+2025-11-08 01:46:23,516 - werkzeug - INFO - 127.0.0.1 - - [08/Nov/2025 01:46:23] "[35m[1mPOST /report_app_issue HTTP/1.1[0m" 201 -
+2025-11-08 01:49:54,207 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:49:54,270 - werkzeug - INFO -  * Restarting with stat
+2025-11-08 01:49:54,746 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-08 01:49:54,746 - app - INFO - Starting Flask application...
+2025-11-08 01:49:54,748 - app - INFO - Flask application created successfully
+2025-11-08 01:49:54,777 - werkzeug - WARNING -  * Debugger is active!
+2025-11-08 01:49:54,783 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-08 01:49:57,359 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
+2025-11-08 01:49:57,423 - werkzeug - INFO -  * Restarting with stat

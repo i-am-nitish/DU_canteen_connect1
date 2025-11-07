@@ -241,6 +241,7 @@ input::placeholder {
   text-align: center;
   border: 2px solid transparent;
   transition: background 0.3s ease, border 0.3s ease;
+  cursor: pointer;
 }
 
 .radio-option:hover {
@@ -254,6 +255,12 @@ input::placeholder {
 
 .radio-option input[type="radio"] {
   display: none;
+}
+
+.radio-option label {
+  cursor: pointer;
+  width: 100%;
+  display: block;
 }
 
 .custom-radio {

@@ -58,9 +58,11 @@ def signup_api():
         response_data = {"message": "Signup successful", "user": {"user_id": user_id}}
 
         # Generate token only for general users
+        #JWT tokens created during login had integer user_id as identity
+        #When Desktop 8 tried to access protected routes, Flask-JWT-Extended couldn't decode the token because it expected a string
         if role == "general":
             token = create_access_token(
-                identity={"user_id": user_id, "role": role},
+                identity=str(user_id),  # Convert to string for JWT
                 expires_delta=timedelta(hours=24)
             )
             response_data["token"] = token
@@ -116,7 +118,7 @@ def create_canteen_profile_api():
             return jsonify({"message": response.get("message", "Failed to create canteen profile")}), 500
 
         access_token = create_access_token(
-            identity={"user_id": owner_id, "role": "canteen_owner"},
+            identity=str(owner_id),  # Convert to string for JWT
             expires_delta=timedelta(hours=24)
         )
 
@@ -158,7 +160,7 @@ def login_api():
             return jsonify({"message": "Invalid phone number or password"}), 401
 
         access_token = create_access_token(
-            identity=user["user_id"],
+            identity=str(user["user_id"]),  # Convert to string for JWT
             
             expires_delta=timedelta(hours=24)
         )
