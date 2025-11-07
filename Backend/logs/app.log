@@ -1618,3 +1618,15 @@
 2025-11-07 21:58:59,718 - app - INFO - Flask application created successfully
 2025-11-07 21:58:59,740 - werkzeug - WARNING -  * Debugger is active!
 2025-11-07 21:58:59,745 - werkzeug - INFO -  * Debugger PIN: 127-183-975
+2025-11-07 22:05:21,522 - root - INFO - Database connection established.
+2025-11-07 22:05:21,562 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:21] "GET /canteens HTTP/1.1" 200 -
+2025-11-07 22:05:25,153 - root - INFO - Database connection established.
+2025-11-07 22:05:25,153 - root - INFO - Database connection established.
+2025-11-07 22:05:25,153 - root - INFO - Database connection established.
+2025-11-07 22:05:25,155 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:25] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-07 22:05:25,161 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:25] "GET /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-07 22:05:25,161 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:25] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-07 22:05:31,437 - root - INFO - Database connection established.
+2025-11-07 22:05:31,439 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:05:31] "GET /canteens HTTP/1.1" 200 -
+2025-11-07 22:17:04,002 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:17:04] "[31m[1mGET /display_user_info HTTP/1.1[0m" 401 -
+2025-11-07 22:17:04,003 - werkzeug - INFO - 127.0.0.1 - - [07/Nov/2025 22:17:04] "[31m[1mGET /display_user_reviews HTTP/1.1[0m" 401 -

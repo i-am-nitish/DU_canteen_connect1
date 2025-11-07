@@ -92,8 +92,7 @@ export default {
       } catch (error) {
         console.error('Error loading user reviews:', error)
       }
-    }
-
+    },
 
     async handleReportIssue() {
       if (!this.issueText.trim()) {
