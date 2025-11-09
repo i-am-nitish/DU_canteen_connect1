@@ -6,6 +6,7 @@ import logging
 import jwt
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
+import json
 
 def all_canteens_api():
     try:

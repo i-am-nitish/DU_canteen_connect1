@@ -52,7 +52,7 @@ export default {
     const handleLogin = async () => {
       try {
         const data = await loginUser(phone_number.value, password.value)
-
+        
         // Save JWT and user info if login successful
         if (data.token) {
           localStorage.setItem('token', data.token)

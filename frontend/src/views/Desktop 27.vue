@@ -55,10 +55,13 @@
       <div class="menu-content">
         <div class="menu-list-wrapper">
           <ul class="menu-list">
-            <li v-for="(item, index) in menu" :key="index">
-              <span>{{ item?.name || 'Unnamed item' }}</span>
-              <span class="price">₹{{ item?.price || '-' }}</span>
+           <div v-for="(item, index) in menu" :key="index">
+           <h1>{{item?.day || '-'}}</h1>
+            <li v-for="(dayMenu ,idx) in zip(item.items, item.price)" :key="idx">
+              <span>{{ dayMenu[0] || 'Unnamed item' }}</span>
+              <span class="price">₹{{ dayMenu[1]|| '-' }}</span>
             </li>
+           </div>
           </ul>
         </div>
         <div class="divider-line"></div>
@@ -77,10 +80,11 @@
       <div class="review-header-block">
         <h3>Reviews</h3>
         <div class="ratings-breakdown">
-          <span><strong>Food:</strong> {{ getStars(ratings?.foodRating) || 'N/A' }}</span>
-          <span><strong>Staff:</strong> {{ getStars(ratings?.staffRating) || 'N/A' }}</span>
-          <span><strong>Hygiene:</strong> {{ getStars(ratings?.hygieneRating) || 'N/A' }}</span>
-          <span><strong>Facility:</strong> {{ getStars(ratings?.facilityRating) || 'N/A' }}</span>
+          <span><strong>Food:</strong> {{ getStars(ratings.overall_food) || 'N/A' }}</span>
+          <span><strong>Staff:</strong> {{ getStars(ratings.overall_staff) || 'N/A' }}</span>
+          <span><strong>Hygiene:</strong> {{ getStars(ratings.overall_hygiene) || 'N/A' }}</span>
+          <span><strong>Facility:</strong> {{ getStars(ratings.overall_facilities) || 'N/A' }}</span>
+          <span><strong>Overall:</strong> {{ getStars(ratings.overall_rating) || 'N/A' }}</span>
         </div>
       </div>
 
@@ -89,7 +93,7 @@
           <li v-for="(review, index) in reviews || []" :key="index">
             <div class="review-item">
               <div class="review-text">
-                {{ review?.text || 'No review text' }} — <span class="stars">{{ review?.rating || 'N/A' }}</span>
+                {{ review?.review_text || 'No review text' }} — <span class="stars">({{ review?.overall_rating || 'N/A' }})</span>
               </div>
               <div class="review-square"></div>
             </div>
@@ -172,6 +176,11 @@ export default {
       return '★'.repeat(Math.round(rating))
     },
 
+    zip(a, b) {
+      if (!Array.isArray(a) || !Array.isArray(b)) return []
+      return a.map((item, i) => [item, b[i]])
+    },
+
     async submitReview() {
       if (
         !this.newReviewText ||
@@ -225,16 +234,17 @@ export default {
     }
 
     try {
-      const [info, menuData, reviewsData] = await Promise.all([
-        fetchCanteenInfo(canteenId),
-        fetchCanteenMenu(canteenId),
-        fetchCanteenReviews(canteenId)
-      ])
+      const info = await fetchCanteenInfo(canteenId);
+      const menuData = await fetchCanteenMenu(canteenId);
+      const reviewsData = await fetchCanteenReviews(canteenId)
+
+      console.log('info: ', info, 'menuData: ', menuData, 'reviewsData: ', reviewsData)
 
       this.canteenInfo = info
-      this.menu = menuData?.menu || []
+      console.log('menu data: ', menuData)
+      this.menu = menuData
       this.reviews = reviewsData?.top_reviews || []
-      this.ratings = info?.ratings || null
+      this.ratings = reviewsData || null
     } catch (err) {
       console.error(err)
       this.errorMsg = 'Error fetching canteen data'

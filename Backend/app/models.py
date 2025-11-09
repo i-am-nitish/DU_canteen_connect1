@@ -10,11 +10,11 @@ import re
 import logging
 import base64
 import random
+import json
 
 bcrypt = Bcrypt()
 
 def get_db_connection():
-
     try:
         db_host = os.getenv('DB_HOST', 'localhost')
         db_user = os.getenv('DB_USER', 'root')
@@ -379,44 +379,22 @@ def insert_review_for_canteen(canteen_id, user_id,
         cursor = conn.cursor()
 
         now = datetime.utcnow()
-
-        # Try PostgreSQL RETURNING first, fallback to insert+lastrowid for MySQL
-        try:
-            insert_pg = """
-                INSERT INTO canteen_reviews
-                    (canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
-                     staff_rating, facilities_rating, review_text, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                RETURNING review_id
-            """
-            cursor.execute(insert_pg, (
-                canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
-                staff_rating, facilities_rating, review_text, now
-            ))
-            row = cursor.fetchone()
-            review_id = row[0] if row else None
-        except Exception:
-            # fallback path (MySQL, sqlite)
-            try:
-                conn.rollback()
-            except Exception:
-                pass
-            insert_q = """
-                INSERT INTO canteen_reviews
-                    (canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
-                     staff_rating, facilities_rating, review_text, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """
-            cursor.execute(insert_q, (
-                canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
-                staff_rating, facilities_rating, review_text, now
-            ))
-            try:
-                review_id = cursor.lastrowid
-            except Exception:
-                review_id = None
+        
+        insert_q = """
+            INSERT INTO canteen_reviews
+                (canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
+                 staff_rating, facilities_rating, review_text, created_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
+        cursor.execute(insert_q, (
+            canteen_id, user_id, overall_rating, food_rating, hygiene_rating,
+            staff_rating, facilities_rating, review_text, now
+        ))
 
         conn.commit()
+        
+        review_id = cursor.lastrowid
+
         return {"review_id": review_id}
 
     except Exception as e:
@@ -942,7 +920,7 @@ def get_canteen_reviews_and_ratings_from_db(canteen_id):
         if not canteen:
             cursor.close()
             conn.close()
-            return None  
+            return None
 
         query_reviews = """
             SELECT 
@@ -967,8 +945,12 @@ def get_canteen_reviews_and_ratings_from_db(canteen_id):
         
         import base64
         for review in reviews:
-            if review["image"]:
-                review["image"] = base64.b64encode(review["image"]).decode("utf-8")
+            if review["image_1"]:
+                review["image_1"] = base64.b64encode(review["image_1"]).decode("utf-8")
+            if review["image_2"]:
+                review["image_2"] = base64.b64encode(review["image_2"]).decode("utf-8")
+            if review["image_3"]:
+                review["image_3"] = base64.b64encode(review["image_3"]).decode("utf-8")
 
         return {
             "canteen_id": canteen["canteen_id"],
@@ -1002,7 +984,7 @@ def get_canteen_menu_from_db(canteen_id):
         if not menu:
             cursor.close()
             conn.close()
-            return {"message": "Menu not found for this canteen"}
+            return None # it is changed from {"message": "Menu not found for this canteen"} as we are already handling menu not found in parent functions
 
         # Step 2: If menu_file exists, return it directly
         if menu["menu_file"]:
@@ -1028,7 +1010,7 @@ def get_canteen_menu_from_db(canteen_id):
                 ("Saturday", "saturday_price"),
                 ("Sunday", "sunday_price")
             ]
-            day_wise_menu = {}
+            day_wise_menu = [] # changed from {}
 
             for day, price_col in day_columns:
                 food_ids_text = menu.get(day)
@@ -1037,23 +1019,31 @@ def get_canteen_menu_from_db(canteen_id):
                 if not food_ids_text:
                     continue
 
-                # Convert comma-separated food_ids into list
-                food_ids = [fid.strip() for fid in food_ids_text.split(",") if fid.strip().isdigit()]
+                # # Convert comma-separated food_ids into list
+                # food_ids = [fid.strip() for fid in food_ids_text.split(",") if fid.strip().isdigit()]
 
-                if not food_ids:
-                    continue
+                # if not food_ids:
+                #     continue
 
-                # Fetch food item names
-                format_strings = ','.join(['%s'] * len(food_ids))
-                query_foods = f"SELECT name FROM food_items WHERE food_id IN ({format_strings}) AND menu_id = %s"
-                cursor.execute(query_foods, (*food_ids, menu_id))
-                food_names = [row["name"] for row in cursor.fetchall()]
+                # # Fetch food item names
+                # format_strings = ','.join(['%s'] * len(food_ids))
+                # query_foods = f"SELECT name FROM food_items WHERE food_id IN ({format_strings}) AND menu_id = %s"
+                # cursor.execute(query_foods, (*food_ids, menu_id))
+                # food_names = [row["name"] for row in cursor.fetchall()]
 
-                # Combine food names with price info
-                day_wise_menu[day] = {
-                    "items": ", ".join(food_names),
-                    "price": prices_text
+                # # Combine food names with price info
+                # day_wise_menu[day] = {
+                #     "items": ", ".join(food_names),
+                #     "price": prices_text
+                # }
+
+                newEntry = {
+                    "day": day,
+                    "items": food_ids_text,
+                    "price": prices_text,
                 }
+
+                day_wise_menu.append(newEntry)
 
             cursor.close()
             conn.close()

@@ -1,23 +1,55 @@
 import api from './api'
 
 export const fetchAllCanteens = async () => {
-  const res = await api.get('/canteens')
-  return res.data.canteens || []
+  try {
+    const res = await api.get('/canteens')
+    return res.data.canteens || []
+  } catch (error) {
+    console.log(error)
+    return [];
+  }
 }
 
 export const fetchCanteenInfo = async (canteenId) => {
-  const res = await api.get(`/canteen_info?canteen_id=${canteenId}`)
-  return res.data.canteen_info || {}
+  try {
+    const res = await api.get(`/canteen_info?canteen_id=${canteenId}`)
+    return res.data.canteen_info || {}
+  } catch (error) {
+    console.log(error);
+    return null ;
+  }
 }
 
 export const fetchCanteenMenu = async (canteenId) => {
-  const res = await api.get(`/canteen_menu_details?canteen_id=${canteenId}`)
-  return res.data || {}
+  try {
+    const res = await api.get(`/canteen_menu_details?canteen_id=${canteenId}`)
+    console.log('res from menu fetch: ', res)
+    const menu = (res.data.data.menu || []).map(day => {
+           return {
+             ...day,
+             items: JSON.parse(day.items.replace(/'/g, '"')),  // convert to real array --- this should be done only if backend saves these respective fields with single quotes like ['noodles','thali']
+             price: JSON.parse(day.price.replace(/'/g, '"')),  // convert to real array
+           }
+         })
+    console.log('menu: ', menu)
+    return menu || {}
+  } catch (error) {
+    console.log(error)
+    return null;
+  }
 }
 
 export const fetchCanteenReviews = async (canteenId) => {
-  const res = await api.get(`/canteen_review_ratings?canteen_id=${canteenId}`)
-  return res.data.data || []
+  try {
+    const res = await api.get(`/canteen_review_ratings?canteen_id=${canteenId}`)
+    console.log('response from retings and review fetch: ', res)
+    console.log('ratings: ', res.data.data)
+    return res.data.data || null ;
+  } catch (error) {
+    console.log(error)
+    return null ;
+  }
+  
 }
 // gpt added this too
 export const submitCanteenReview = async (canteenId, reviewData) => {

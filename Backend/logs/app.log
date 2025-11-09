@@ -2248,3 +2248,1409 @@ NameError: name 'limit' is not defined. Did you mean: 'list'?
 2025-11-08 01:49:54,783 - werkzeug - INFO -  * Debugger PIN: 127-183-975
 2025-11-08 01:49:57,359 - werkzeug - INFO -  * Detected change in 'D:\\CIC\\SEM V\\sd\\DU_canteen_connect1\\Backend\\apis\\signup.py', reloading
 2025-11-08 01:49:57,423 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:00:41,434 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:00:41,436 - app - INFO - Starting Flask application...
+2025-11-09 16:00:41,437 - app - INFO - Flask application created successfully
+2025-11-09 16:00:41,559 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 16:00:41,560 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 16:00:41,563 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:00:42,086 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:00:42,086 - app - INFO - Starting Flask application...
+2025-11-09 16:00:42,088 - app - INFO - Flask application created successfully
+2025-11-09 16:00:42,120 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:00:42,125 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:01:48,162 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:01:48,165 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:01:48,169 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:01:48] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:01:51,385 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:01:51,386 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:01:51,386 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:01:51] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:02:00,833 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:02:00,833 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:02:00,835 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:02:00] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:02:45,154 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:02:45,156 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:02:45,157 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:02:45] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:10:47,040 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 16:10:47,317 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:10:48,290 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:10:48,290 - app - INFO - Starting Flask application...
+2025-11-09 16:10:48,292 - app - INFO - Flask application created successfully
+2025-11-09 16:10:48,346 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:10:48,355 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:14:52,357 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:14:52,358 - app - INFO - Starting Flask application...
+2025-11-09 16:14:52,360 - app - INFO - Flask application created successfully
+2025-11-09 16:14:52,434 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 16:14:52,435 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 16:14:52,438 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:14:53,055 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:14:53,056 - app - INFO - Starting Flask application...
+2025-11-09 16:14:53,057 - app - INFO - Flask application created successfully
+2025-11-09 16:14:53,098 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:14:53,107 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:15:12,119 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:15:12,120 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:15:12,122 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:15:12] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:18:20,232 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:18:20,233 - app - INFO - Starting Flask application...
+2025-11-09 16:18:20,235 - app - INFO - Flask application created successfully
+2025-11-09 16:18:20,311 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 16:18:20,312 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 16:18:20,314 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:18:20,855 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:18:20,856 - app - INFO - Starting Flask application...
+2025-11-09 16:18:20,858 - app - INFO - Flask application created successfully
+2025-11-09 16:18:20,889 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:18:20,899 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:18:27,601 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:18:27,602 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:18:27,604 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:18:27] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:23:15,149 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:23:15,149 - app - INFO - Starting Flask application...
+2025-11-09 16:23:15,152 - app - INFO - Flask application created successfully
+2025-11-09 16:23:15,228 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 16:23:15,228 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 16:23:15,231 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:23:15,730 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:23:15,730 - app - INFO - Starting Flask application...
+2025-11-09 16:23:15,731 - app - INFO - Flask application created successfully
+2025-11-09 16:23:15,765 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:23:15,777 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:23:21,580 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:23:21,582 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:23:21,584 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:23:21] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:24:08,081 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 16:24:08,238 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:24:09,278 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:24:09,279 - app - INFO - Starting Flask application...
+2025-11-09 16:24:09,281 - app - INFO - Flask application created successfully
+2025-11-09 16:24:09,332 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:24:09,339 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:24:12,499 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 16:24:12,650 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:24:13,761 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:24:13,762 - app - INFO - Starting Flask application...
+2025-11-09 16:24:13,764 - app - INFO - Flask application created successfully
+2025-11-09 16:24:13,805 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:24:13,809 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:24:17,968 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 16:24:18,057 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:24:18,734 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:24:18,734 - app - INFO - Starting Flask application...
+2025-11-09 16:24:18,736 - app - INFO - Flask application created successfully
+2025-11-09 16:24:18,773 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:24:18,778 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:24:31,067 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:24:31,068 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:24:31,073 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:24:31] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:24:39,702 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:24:39,703 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:24:39,705 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:24:39] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:25:54,353 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 16:25:54,503 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:25:55,354 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:25:55,354 - app - INFO - Starting Flask application...
+2025-11-09 16:25:55,357 - app - INFO - Flask application created successfully
+2025-11-09 16:25:55,409 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:25:55,416 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:26:01,033 - root - ERROR - Error connecting to the database: Authentication plugin 'caching_sha2_password' is not supported
+2025-11-09 16:26:01,034 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 16:26:01,035 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:26:01] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-09 16:31:33,849 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:31:33,850 - app - INFO - Starting Flask application...
+2025-11-09 16:31:33,852 - app - INFO - Flask application created successfully
+2025-11-09 16:31:33,914 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 16:31:33,915 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 16:31:33,918 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 16:31:34,527 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 16:31:34,527 - app - INFO - Starting Flask application...
+2025-11-09 16:31:34,529 - app - INFO - Flask application created successfully
+2025-11-09 16:31:34,561 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 16:31:34,566 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 16:31:40,906 - root - INFO - Database connection established.
+2025-11-09 16:31:40,927 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:31:40] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:32:05,743 - root - INFO - Database connection established.
+2025-11-09 16:32:05,752 - root - INFO - Database connection established.
+2025-11-09 16:32:05,753 - root - INFO - Database connection established.
+2025-11-09 16:32:05,754 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:05] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:32:05,763 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:05] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:32:05,764 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:05] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:32:17,332 - root - INFO - Database connection established.
+2025-11-09 16:32:17,336 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:17] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:32:22,760 - root - INFO - Database connection established.
+2025-11-09 16:32:22,762 - root - INFO - Database connection established.
+2025-11-09 16:32:22,764 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:22] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:32:22,767 - root - INFO - Database connection established.
+2025-11-09 16:32:22,774 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:22] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:32:22,778 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:32:22] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:33:20,290 - root - INFO - Database connection established.
+2025-11-09 16:33:20,290 - root - INFO - Database connection established.
+2025-11-09 16:33:20,291 - root - INFO - Database connection established.
+2025-11-09 16:33:20,294 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:33:20] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:33:20,295 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:33:20] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:33:20,301 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:33:20] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:35:02,834 - root - INFO - Database connection established.
+2025-11-09 16:35:02,839 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:02] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:35:16,007 - root - INFO - Database connection established.
+2025-11-09 16:35:16,022 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:16] "GET /search/canteens?q=Eat%20Healthy HTTP/1.1" 200 -
+2025-11-09 16:35:24,370 - root - INFO - Database connection established.
+2025-11-09 16:35:24,374 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:24] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:35:33,104 - root - INFO - Database connection established.
+2025-11-09 16:35:33,108 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:33] "[33mGET /search/canteens?q=north%20campus HTTP/1.1[0m" 404 -
+2025-11-09 16:35:36,757 - root - INFO - Database connection established.
+2025-11-09 16:35:36,763 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:36] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:35:42,703 - root - INFO - Database connection established.
+2025-11-09 16:35:42,704 - root - INFO - Database connection established.
+2025-11-09 16:35:42,710 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:42] "GET /canteen_menu_details?canteen_id=3 HTTP/1.1" 200 -
+2025-11-09 16:35:42,710 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:42] "GET /canteen_info?canteen_id=3 HTTP/1.1" 200 -
+2025-11-09 16:35:42,713 - root - INFO - Database connection established.
+2025-11-09 16:35:42,721 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:42] "GET /canteen_review_ratings?canteen_id=3 HTTP/1.1" 200 -
+2025-11-09 16:35:45,431 - root - INFO - Database connection established.
+2025-11-09 16:35:45,444 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:45] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:35:46,978 - root - INFO - Database connection established.
+2025-11-09 16:35:46,979 - root - INFO - Database connection established.
+2025-11-09 16:35:46,983 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:46] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:35:46,984 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:46] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:35:46,997 - root - INFO - Database connection established.
+2025-11-09 16:35:47,005 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:35:47] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 16:40:11,865 - root - INFO - Database connection established.
+2025-11-09 16:40:11,877 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:40:11] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 16:40:21,051 - root - INFO - Database connection established.
+2025-11-09 16:40:21,054 - root - INFO - Database connection established.
+2025-11-09 16:40:21,055 - root - INFO - Database connection established.
+2025-11-09 16:40:21,058 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:40:21] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 16:40:21,065 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:40:21] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 16:40:21,070 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 16:40:21,074 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 16:40:21] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 17:14:37,064 - root - INFO - Database connection established.
+2025-11-09 17:14:37,067 - root - INFO - Database connection established.
+2025-11-09 17:14:37,068 - root - INFO - Database connection established.
+2025-11-09 17:14:37,109 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:14:37] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 17:14:37,110 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:14:37] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 17:14:37,118 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 17:14:37,120 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:14:37] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 17:20:31,024 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:20:31,473 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:20:33,115 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:20:33,115 - app - INFO - Starting Flask application...
+2025-11-09 17:20:33,119 - app - INFO - Flask application created successfully
+2025-11-09 17:20:33,173 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:20:33,186 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:20:35,390 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:20:35,558 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:20:36,618 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:20:36,618 - app - INFO - Starting Flask application...
+2025-11-09 17:20:36,622 - app - INFO - Flask application created successfully
+2025-11-09 17:20:36,676 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:20:36,682 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:52:40,884 - root - INFO - Database connection established.
+2025-11-09 17:52:40,933 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:52:40] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 17:52:43,255 - root - INFO - Database connection established.
+2025-11-09 17:52:43,295 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:52:43] "GET /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:52:43,561 - root - INFO - Database connection established.
+2025-11-09 17:52:43,561 - root - INFO - Database connection established.
+2025-11-09 17:52:43,568 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:52:43] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:52:43,582 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:52:43] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:54:26,433 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:26,679 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:27,951 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:27,952 - app - INFO - Starting Flask application...
+2025-11-09 17:54:27,954 - app - INFO - Flask application created successfully
+2025-11-09 17:54:28,055 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:28,076 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:35,518 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:35,729 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:37,168 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:37,169 - app - INFO - Starting Flask application...
+2025-11-09 17:54:37,173 - app - INFO - Flask application created successfully
+2025-11-09 17:54:37,253 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:37,262 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:39,450 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:39,583 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:40,437 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:40,437 - app - INFO - Starting Flask application...
+2025-11-09 17:54:40,439 - app - INFO - Flask application created successfully
+2025-11-09 17:54:40,484 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:40,489 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:41,623 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:41,813 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:43,313 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:43,314 - app - INFO - Starting Flask application...
+2025-11-09 17:54:43,318 - app - INFO - Flask application created successfully
+2025-11-09 17:54:43,401 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:43,408 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:45,595 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:45,726 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:46,832 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:46,833 - app - INFO - Starting Flask application...
+2025-11-09 17:54:46,835 - app - INFO - Flask application created successfully
+2025-11-09 17:54:46,887 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:46,892 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:49,062 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:49,288 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:50,857 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:50,857 - app - INFO - Starting Flask application...
+2025-11-09 17:54:50,862 - app - INFO - Flask application created successfully
+2025-11-09 17:54:50,919 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:50,926 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:54:55,197 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:54:55,331 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:54:56,671 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:54:56,672 - app - INFO - Starting Flask application...
+2025-11-09 17:54:56,674 - app - INFO - Flask application created successfully
+2025-11-09 17:54:56,731 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:54:56,739 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:55:00,966 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:55:01,102 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:55:02,165 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:55:02,166 - app - INFO - Starting Flask application...
+2025-11-09 17:55:02,168 - app - INFO - Flask application created successfully
+2025-11-09 17:55:02,221 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:55:02,228 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:55:09,576 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:55:09,795 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:55:11,049 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:55:11,050 - app - INFO - Starting Flask application...
+2025-11-09 17:55:11,053 - app - INFO - Flask application created successfully
+2025-11-09 17:55:11,106 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:55:11,113 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:55:20,653 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:55:20,811 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:55:22,050 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:55:22,051 - app - INFO - Starting Flask application...
+2025-11-09 17:55:22,053 - app - INFO - Flask application created successfully
+2025-11-09 17:55:22,114 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:55:22,122 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:55:25,359 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 17:55:25,466 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:55:26,426 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:55:26,427 - app - INFO - Starting Flask application...
+2025-11-09 17:55:26,430 - app - INFO - Flask application created successfully
+2025-11-09 17:55:26,476 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:55:26,482 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:56:07,242 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\apis\\no_login.py', reloading
+2025-11-09 17:56:07,369 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 17:56:08,618 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 17:56:08,619 - app - INFO - Starting Flask application...
+2025-11-09 17:56:08,622 - app - INFO - Flask application created successfully
+2025-11-09 17:56:08,680 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 17:56:08,690 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 17:58:02,435 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 17:58:02,439 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 17:58:02,470 - root - ERROR - Error fetching reviews and ratings for canteen_id 1: 'NoneType' object has no attribute 'cursor'
+2025-11-09 17:58:02,473 - root - ERROR - Error fetching canteen info from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 17:58:02,480 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "[33mGET /canteen_review_ratings?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:02,482 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "[33mGET /canteen_info?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:02,488 - root - INFO - Database connection established.
+2025-11-09 17:58:02,520 - root - INFO - Database connection established.
+2025-11-09 17:58:02,550 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:02,561 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:02,826 - root - INFO - Database connection established.
+2025-11-09 17:58:02,833 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:02,889 - root - INFO - Database connection established.
+2025-11-09 17:58:02,896 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:02,910 - root - INFO - Database connection established.
+2025-11-09 17:58:02,924 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:02] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:03,159 - root - INFO - Database connection established.
+2025-11-09 17:58:03,168 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:03] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:03,219 - root - INFO - Database connection established.
+2025-11-09 17:58:03,224 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:03] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:05,134 - root - INFO - Database connection established.
+2025-11-09 17:58:05,135 - root - INFO - Database connection established.
+2025-11-09 17:58:05,136 - root - INFO - Database connection established.
+2025-11-09 17:58:05,141 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:05] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:05,144 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:05] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:05,146 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:05] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:10,469 - root - INFO - Database connection established.
+2025-11-09 17:58:10,474 - root - INFO - Database connection established.
+2025-11-09 17:58:10,529 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:10] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 17:58:10,530 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:10] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 17:58:10,545 - root - INFO - Database connection established.
+2025-11-09 17:58:10,553 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 17:58:10] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:51,087 - root - INFO - Database connection established.
+2025-11-09 18:00:51,100 - root - INFO - Database connection established.
+2025-11-09 18:00:51,101 - root - INFO - Database connection established.
+2025-11-09 18:00:51,160 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:51,166 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:00:51,175 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:51,228 - root - INFO - Database connection established.
+2025-11-09 18:00:51,248 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:51,540 - root - INFO - Database connection established.
+2025-11-09 18:00:51,547 - root - INFO - Database connection established.
+2025-11-09 18:00:51,551 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:00:51,564 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:51] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:54,122 - root - INFO - Database connection established.
+2025-11-09 18:00:54,124 - root - INFO - Database connection established.
+2025-11-09 18:00:54,125 - root - INFO - Database connection established.
+2025-11-09 18:00:54,135 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:54] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:54,140 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:54] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:54,141 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:54] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:00:55,546 - root - INFO - Database connection established.
+2025-11-09 18:00:55,551 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:55] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:00:55,856 - root - INFO - Database connection established.
+2025-11-09 18:00:55,858 - root - INFO - Database connection established.
+2025-11-09 18:00:55,861 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:55] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:00:55,866 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:00:55] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:02,309 - root - INFO - Database connection established.
+2025-11-09 18:01:02,310 - root - INFO - Database connection established.
+2025-11-09 18:01:02,312 - root - INFO - Database connection established.
+2025-11-09 18:01:02,313 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:02] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:02,314 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:02] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:02,325 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:02] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:11,525 - root - INFO - Database connection established.
+2025-11-09 18:01:11,526 - root - INFO - Database connection established.
+2025-11-09 18:01:11,526 - root - INFO - Database connection established.
+2025-11-09 18:01:11,530 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:11] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:11,532 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:11] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:11,534 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:11] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:13,345 - root - INFO - Database connection established.
+2025-11-09 18:01:13,351 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:13] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:13,656 - root - INFO - Database connection established.
+2025-11-09 18:01:13,657 - root - INFO - Database connection established.
+2025-11-09 18:01:13,661 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:13] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:13,663 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:13] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:22,350 - root - INFO - Database connection established.
+2025-11-09 18:01:22,352 - root - INFO - Database connection established.
+2025-11-09 18:01:22,355 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:22] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:22,356 - root - INFO - Database connection established.
+2025-11-09 18:01:22,358 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:22] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:22,370 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:22] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:23,473 - root - INFO - Database connection established.
+2025-11-09 18:01:23,476 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:23] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:23,783 - root - INFO - Database connection established.
+2025-11-09 18:01:23,786 - root - INFO - Database connection established.
+2025-11-09 18:01:23,790 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:23] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:23,798 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:23] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:25,193 - root - INFO - Database connection established.
+2025-11-09 18:01:25,193 - root - INFO - Database connection established.
+2025-11-09 18:01:25,198 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:25] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:25,198 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:25] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:25,198 - root - INFO - Database connection established.
+2025-11-09 18:01:25,205 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:25] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:47,698 - root - INFO - Database connection established.
+2025-11-09 18:01:47,708 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:47] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 18:01:57,211 - root - INFO - Database connection established.
+2025-11-09 18:01:57,212 - root - INFO - Database connection established.
+2025-11-09 18:01:57,214 - root - INFO - Database connection established.
+2025-11-09 18:01:57,280 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:57] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:01:57,281 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:57] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 18:01:57,284 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:01:57] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 18:04:31,768 - root - INFO - Database connection established.
+2025-11-09 18:04:31,788 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:04:31] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 18:04:37,784 - root - INFO - Database connection established.
+2025-11-09 18:04:37,794 - root - INFO - Database connection established.
+2025-11-09 18:04:37,796 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:04:37] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:04:37,796 - root - INFO - Database connection established.
+2025-11-09 18:04:37,815 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:04:37] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:04:37,820 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:04:37,832 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:04:37] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:11:24,285 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:11:24,781 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:11:26,493 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:11:26,493 - app - INFO - Starting Flask application...
+2025-11-09 18:11:26,497 - app - INFO - Flask application created successfully
+2025-11-09 18:11:26,563 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:11:26,578 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:12:23,116 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:12:23,274 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:12:24,462 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:12:24,463 - app - INFO - Starting Flask application...
+2025-11-09 18:12:24,465 - app - INFO - Flask application created successfully
+2025-11-09 18:12:24,524 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:12:24,532 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:12:27,774 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:12:27,915 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:12:29,009 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:12:29,009 - app - INFO - Starting Flask application...
+2025-11-09 18:12:29,012 - app - INFO - Flask application created successfully
+2025-11-09 18:12:29,066 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:12:29,073 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:12:30,168 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:12:30,276 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:12:31,111 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:12:31,112 - app - INFO - Starting Flask application...
+2025-11-09 18:12:31,113 - app - INFO - Flask application created successfully
+2025-11-09 18:12:31,148 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:12:31,156 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:12:34,335 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:12:34,421 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:38:24,940 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:38:24,941 - app - INFO - Starting Flask application...
+2025-11-09 18:38:24,943 - app - INFO - Flask application created successfully
+2025-11-09 18:38:25,033 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 18:38:25,033 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 18:38:25,037 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:38:25,903 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:38:25,904 - app - INFO - Starting Flask application...
+2025-11-09 18:38:25,906 - app - INFO - Flask application created successfully
+2025-11-09 18:38:25,945 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:38:25,961 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:38:34,252 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 18:38:34,253 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 18:38:34,253 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'NoneType' object has no attribute 'cursor'
+2025-11-09 18:38:34,254 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'NoneType' object has no attribute 'cursor'
+2025-11-09 18:38:34,258 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:38:34] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:38:34,260 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:38:34] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:38:34,282 - root - INFO - Database connection established.
+2025-11-09 18:38:34,314 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:38:34] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:39:43,050 - root - INFO - Database connection established.
+2025-11-09 18:39:43,060 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:39:43] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:39:43,066 - root - INFO - Database connection established.
+2025-11-09 18:39:43,066 - root - INFO - Database connection established.
+2025-11-09 18:39:43,074 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'list' object has no attribute 'push'
+2025-11-09 18:39:43,077 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:39:43] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:39:43,089 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:39:43,091 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:39:43] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:40:30,312 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:40:30,514 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:40:31,676 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:40:31,677 - app - INFO - Starting Flask application...
+2025-11-09 18:40:31,680 - app - INFO - Flask application created successfully
+2025-11-09 18:40:31,735 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:40:31,742 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:40:38,261 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 18:40:38,263 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 18:40:38,263 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'NoneType' object has no attribute 'cursor'
+2025-11-09 18:40:38,263 - root - ERROR - Error fetching canteen info from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-09 18:40:38,266 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:40:38] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:40:38,268 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:40:38] "[33mGET /canteen_info?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:40:38,268 - root - INFO - Database connection established.
+2025-11-09 18:40:38,282 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:40:38,284 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:40:38] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:43:53,615 - root - INFO - Database connection established.
+2025-11-09 18:43:53,621 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:43:53] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 18:43:56,004 - root - INFO - Database connection established.
+2025-11-09 18:43:56,019 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:43:56] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 18:44:23,567 - root - INFO - Database connection established.
+2025-11-09 18:44:23,568 - root - INFO - Database connection established.
+2025-11-09 18:44:23,582 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:44:23,584 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:44:23] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:44:23,604 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:44:23] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:44:23,609 - root - INFO - Database connection established.
+2025-11-09 18:44:23,621 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:44:23] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:02,912 - root - INFO - Database connection established.
+2025-11-09 18:45:02,918 - root - INFO - Database connection established.
+2025-11-09 18:45:02,923 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:02] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:02,931 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:02] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:02,964 - root - INFO - Database connection established.
+2025-11-09 18:45:02,983 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:45:02,986 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:02] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:45:03,168 - root - INFO - Database connection established.
+2025-11-09 18:45:03,173 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:03] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:03,281 - root - INFO - Database connection established.
+2025-11-09 18:45:03,281 - root - INFO - Database connection established.
+2025-11-09 18:45:03,288 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:03] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:03,289 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:45:03,291 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:03] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:45:06,574 - root - INFO - Database connection established.
+2025-11-09 18:45:06,575 - root - INFO - Database connection established.
+2025-11-09 18:45:06,579 - root - INFO - Database connection established.
+2025-11-09 18:45:06,581 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:06] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:06,584 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:06] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:06,594 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:45:06,598 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:06] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:45:11,913 - root - INFO - Database connection established.
+2025-11-09 18:45:11,918 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:11] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:12,226 - root - INFO - Database connection established.
+2025-11-09 18:45:12,229 - root - INFO - Database connection established.
+2025-11-09 18:45:12,231 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:12] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:12,301 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:45:12,303 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:12] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:45:19,653 - root - INFO - Database connection established.
+2025-11-09 18:45:19,663 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:19] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 18:45:26,629 - root - INFO - Database connection established.
+2025-11-09 18:45:26,634 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:26] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:26,634 - root - INFO - Database connection established.
+2025-11-09 18:45:26,638 - root - INFO - Database connection established.
+2025-11-09 18:45:26,641 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:26] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:45:26,693 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:45:26,696 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:45:26] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:46:00,926 - root - INFO - Database connection established.
+2025-11-09 18:46:00,927 - root - INFO - Database connection established.
+2025-11-09 18:46:00,928 - root - INFO - Database connection established.
+2025-11-09 18:46:00,932 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:46:00] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:46:00,934 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:46:00] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 18:46:00,936 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:46:00,938 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:46:00] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:54:30,990 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 18:54:31,800 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 18:54:33,289 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 18:54:33,290 - app - INFO - Starting Flask application...
+2025-11-09 18:54:33,292 - app - INFO - Flask application created successfully
+2025-11-09 18:54:33,344 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 18:54:33,361 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 18:58:09,796 - root - ERROR - Error connecting to the database: 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded: it is already loaded
+2025-11-09 18:58:09,801 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'NoneType' object has no attribute 'cursor'
+2025-11-09 18:58:09,824 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:58:09] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:58:09,844 - root - INFO - Database connection established.
+2025-11-09 18:58:09,861 - root - INFO - Database connection established.
+2025-11-09 18:58:09,872 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'list' object has no attribute 'push'
+2025-11-09 18:58:09,874 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:58:09] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:58:09,881 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:58:09,883 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:58:09] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 18:58:10,215 - root - INFO - Database connection established.
+2025-11-09 18:58:10,223 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 18:58:10,225 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 18:58:10] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:04:17,022 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 19:04:17,023 - app - INFO - Starting Flask application...
+2025-11-09 19:04:17,026 - app - INFO - Flask application created successfully
+2025-11-09 19:04:17,121 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 19:04:17,121 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 19:04:17,125 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 19:04:18,256 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 19:04:18,258 - app - INFO - Starting Flask application...
+2025-11-09 19:04:18,261 - app - INFO - Flask application created successfully
+2025-11-09 19:04:18,325 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 19:04:18,343 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 19:04:23,483 - root - INFO - Database connection established.
+2025-11-09 19:04:23,503 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:04:23] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:04:28,204 - root - INFO - Database connection established.
+2025-11-09 19:04:28,206 - root - INFO - Database connection established.
+2025-11-09 19:04:28,265 - root - ERROR - Error fetching canteen menu for canteen_id 34: 'list' object has no attribute 'push'
+2025-11-09 19:04:28,268 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:04:28] "[33mGET /canteen_menu_details?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:04:28,279 - root - INFO - Database connection established.
+2025-11-09 19:04:28,282 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:04:28,286 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:04:28] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:04:28,290 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:04:28] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:04:58,232 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 19:04:58,429 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 19:04:59,839 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 19:04:59,840 - app - INFO - Starting Flask application...
+2025-11-09 19:04:59,842 - app - INFO - Flask application created successfully
+2025-11-09 19:04:59,891 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 19:04:59,897 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 19:05:04,163 - root - INFO - Database connection established.
+2025-11-09 19:05:04,168 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:04] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:05:09,371 - root - INFO - Database connection established.
+2025-11-09 19:05:09,375 - root - INFO - Database connection established.
+2025-11-09 19:05:09,381 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:09] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:05:09,384 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:09] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:05:09,395 - root - INFO - Database connection established.
+2025-11-09 19:05:09,423 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:05:09,432 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:09] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:05:43,977 - root - INFO - Database connection established.
+2025-11-09 19:05:43,980 - root - INFO - Database connection established.
+2025-11-09 19:05:43,980 - root - INFO - Database connection established.
+2025-11-09 19:05:43,985 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:43] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:05:43,989 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:43] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:05:43,995 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:05:44,001 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:44] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:05:55,013 - root - INFO - Database connection established.
+2025-11-09 19:05:55,020 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:05:55] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:06:00,303 - root - INFO - Database connection established.
+2025-11-09 19:06:00,380 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:00] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:00,644 - root - INFO - Database connection established.
+2025-11-09 19:06:00,644 - root - INFO - Database connection established.
+2025-11-09 19:06:00,648 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:00] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:00,650 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:06:00,657 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:00] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:06:45,820 - root - INFO - Database connection established.
+2025-11-09 19:06:45,822 - root - INFO - Database connection established.
+2025-11-09 19:06:45,826 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:45] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:45,829 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:45] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:45,829 - root - INFO - Database connection established.
+2025-11-09 19:06:45,839 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:06:45,844 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:45] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:06:51,571 - root - INFO - Database connection established.
+2025-11-09 19:06:51,571 - root - INFO - Database connection established.
+2025-11-09 19:06:51,572 - root - INFO - Database connection established.
+2025-11-09 19:06:51,577 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:51] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:51,578 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:51] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:06:51,579 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:06:51,580 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:06:51] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:02,328 - root - INFO - Database connection established.
+2025-11-09 19:08:02,330 - root - INFO - Database connection established.
+2025-11-09 19:08:02,334 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:02] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:02,342 - root - INFO - Database connection established.
+2025-11-09 19:08:02,345 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:02] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:02,356 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:02,361 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:02] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:05,222 - root - INFO - Database connection established.
+2025-11-09 19:08:05,232 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:05] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:05,522 - root - INFO - Database connection established.
+2025-11-09 19:08:05,525 - root - INFO - Database connection established.
+2025-11-09 19:08:05,531 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:05] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:05,535 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:05,537 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:05] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:08,503 - root - INFO - Database connection established.
+2025-11-09 19:08:08,506 - root - INFO - Database connection established.
+2025-11-09 19:08:08,509 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:08] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:08,537 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:08] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:08,552 - root - INFO - Database connection established.
+2025-11-09 19:08:08,559 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:08,560 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:08] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:10,714 - root - INFO - Database connection established.
+2025-11-09 19:08:10,725 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:10] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:11,034 - root - INFO - Database connection established.
+2025-11-09 19:08:11,046 - root - INFO - Database connection established.
+2025-11-09 19:08:11,118 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:11,123 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:11] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:11,125 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:11] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:19,029 - root - INFO - Database connection established.
+2025-11-09 19:08:19,031 - root - INFO - Database connection established.
+2025-11-09 19:08:19,032 - root - INFO - Database connection established.
+2025-11-09 19:08:19,038 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:19] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:19,040 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:19,043 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:19] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:19,046 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:19] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:25,924 - root - INFO - Database connection established.
+2025-11-09 19:08:25,924 - root - INFO - Database connection established.
+2025-11-09 19:08:25,925 - root - INFO - Database connection established.
+2025-11-09 19:08:25,931 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:25] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:25,931 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:25] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:25,933 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:25,935 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:25] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:30,268 - root - INFO - Database connection established.
+2025-11-09 19:08:30,274 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:30] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:30,476 - root - INFO - Database connection established.
+2025-11-09 19:08:30,478 - root - INFO - Database connection established.
+2025-11-09 19:08:30,482 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:30] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:30,484 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:30,485 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:30] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:36,140 - root - INFO - Database connection established.
+2025-11-09 19:08:36,141 - root - INFO - Database connection established.
+2025-11-09 19:08:36,142 - root - INFO - Database connection established.
+2025-11-09 19:08:36,149 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:36] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:36,152 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:36] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:36,156 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:36,158 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:36] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:38,535 - root - INFO - Database connection established.
+2025-11-09 19:08:38,547 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:38] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:38,826 - root - INFO - Database connection established.
+2025-11-09 19:08:38,827 - root - INFO - Database connection established.
+2025-11-09 19:08:38,832 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:38] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:38,833 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:38,834 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:38] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:08:46,699 - root - INFO - Database connection established.
+2025-11-09 19:08:46,705 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:46] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:08:50,055 - root - INFO - Database connection established.
+2025-11-09 19:08:50,060 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:50] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:50,358 - root - INFO - Database connection established.
+2025-11-09 19:08:50,361 - root - INFO - Database connection established.
+2025-11-09 19:08:50,363 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:50] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:08:50,367 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:08:50,370 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:08:50] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:30,963 - root - INFO - Database connection established.
+2025-11-09 19:09:30,967 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:30] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:30,979 - root - INFO - Database connection established.
+2025-11-09 19:09:30,979 - root - INFO - Database connection established.
+2025-11-09 19:09:30,983 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:30] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:30,984 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:30,985 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:30] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:35,675 - root - INFO - Database connection established.
+2025-11-09 19:09:35,684 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:35] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:35,968 - root - INFO - Database connection established.
+2025-11-09 19:09:35,975 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:35,976 - root - INFO - Database connection established.
+2025-11-09 19:09:35,977 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:35] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:35,984 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:35] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:37,622 - root - INFO - Database connection established.
+2025-11-09 19:09:37,622 - root - INFO - Database connection established.
+2025-11-09 19:09:37,628 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:37] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:37,631 - root - INFO - Database connection established.
+2025-11-09 19:09:37,634 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:37] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:37,650 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:37,655 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:37] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:39,594 - root - INFO - Database connection established.
+2025-11-09 19:09:39,599 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:39] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:39,891 - root - INFO - Database connection established.
+2025-11-09 19:09:39,893 - root - INFO - Database connection established.
+2025-11-09 19:09:39,894 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:39] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:39,903 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:39,905 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:39] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:44,136 - root - INFO - Database connection established.
+2025-11-09 19:09:44,136 - root - INFO - Database connection established.
+2025-11-09 19:09:44,142 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:44] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:44,146 - root - INFO - Database connection established.
+2025-11-09 19:09:44,147 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:44] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:44,165 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:44,169 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:44] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:57,921 - root - INFO - Database connection established.
+2025-11-09 19:09:57,923 - root - INFO - Database connection established.
+2025-11-09 19:09:57,927 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:57] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:09:57,937 - root - INFO - Database connection established.
+2025-11-09 19:09:57,947 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:09:57,948 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:57] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:09:57,952 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:09:57] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:00,197 - root - INFO - Database connection established.
+2025-11-09 19:10:00,201 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:00] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:00,482 - root - INFO - Database connection established.
+2025-11-09 19:10:00,483 - root - INFO - Database connection established.
+2025-11-09 19:10:00,488 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:00] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:00,489 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:10:00,492 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:00] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:10:02,564 - root - INFO - Database connection established.
+2025-11-09 19:10:02,565 - root - INFO - Database connection established.
+2025-11-09 19:10:02,569 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:02] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:02,570 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:02] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:02,570 - root - INFO - Database connection established.
+2025-11-09 19:10:02,583 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:10:02,587 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:02] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:10:08,792 - root - INFO - Database connection established.
+2025-11-09 19:10:08,799 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:08] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:09,093 - root - INFO - Database connection established.
+2025-11-09 19:10:09,094 - root - INFO - Database connection established.
+2025-11-09 19:10:09,098 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:09] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:09,101 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:10:09,103 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:09] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:10:17,271 - root - INFO - Database connection established.
+2025-11-09 19:10:17,276 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:17] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:10:20,276 - root - INFO - Database connection established.
+2025-11-09 19:10:20,281 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:20] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:20,579 - root - INFO - Database connection established.
+2025-11-09 19:10:20,580 - root - INFO - Database connection established.
+2025-11-09 19:10:20,584 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:20] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:10:20,586 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:10:20,599 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:10:20] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:14:01,343 - root - INFO - Database connection established.
+2025-11-09 19:14:01,367 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:01] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:14:01,472 - root - INFO - Database connection established.
+2025-11-09 19:14:01,479 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:01] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:14:01,706 - root - INFO - Database connection established.
+2025-11-09 19:14:01,719 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:14:01,721 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:01] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:14:16,836 - root - INFO - Database connection established.
+2025-11-09 19:14:16,846 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:16] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:14:18,658 - root - INFO - Database connection established.
+2025-11-09 19:14:18,665 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:18] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:14:19,036 - root - INFO - Database connection established.
+2025-11-09 19:14:19,040 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:19] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:14:19,280 - root - INFO - Database connection established.
+2025-11-09 19:14:19,287 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:14:19,289 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:14:19] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:11,175 - root - INFO - Database connection established.
+2025-11-09 19:15:11,186 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:11] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:11,434 - root - INFO - Database connection established.
+2025-11-09 19:15:11,440 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:11] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:11,545 - root - INFO - Database connection established.
+2025-11-09 19:15:11,553 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:11,555 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:11] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:13,768 - root - INFO - Database connection established.
+2025-11-09 19:15:13,779 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:13] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:14,117 - root - INFO - Database connection established.
+2025-11-09 19:15:14,121 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:14] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:14,392 - root - INFO - Database connection established.
+2025-11-09 19:15:14,399 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:14,400 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:14] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:17,281 - root - INFO - Database connection established.
+2025-11-09 19:15:17,284 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:17] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:17,477 - root - INFO - Database connection established.
+2025-11-09 19:15:17,480 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:17] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:17,620 - root - INFO - Database connection established.
+2025-11-09 19:15:17,625 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:17,627 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:17] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:19,419 - root - INFO - Database connection established.
+2025-11-09 19:15:19,426 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:19] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:19,759 - root - INFO - Database connection established.
+2025-11-09 19:15:19,762 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:19] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:20,041 - root - INFO - Database connection established.
+2025-11-09 19:15:20,044 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:20,046 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:20] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:25,455 - root - INFO - Database connection established.
+2025-11-09 19:15:25,460 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:25] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:25,685 - root - INFO - Database connection established.
+2025-11-09 19:15:25,688 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:25] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:25,787 - root - INFO - Database connection established.
+2025-11-09 19:15:25,791 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:25,792 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:25] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:30,806 - root - INFO - Database connection established.
+2025-11-09 19:15:30,809 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:30] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:31,121 - root - INFO - Database connection established.
+2025-11-09 19:15:31,124 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:31] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:31,143 - root - INFO - Database connection established.
+2025-11-09 19:15:31,148 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:31,149 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:31] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:38,854 - root - INFO - Database connection established.
+2025-11-09 19:15:38,857 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:38] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:39,159 - root - INFO - Database connection established.
+2025-11-09 19:15:39,163 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:39] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:39,188 - root - INFO - Database connection established.
+2025-11-09 19:15:39,194 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:39,196 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:39] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:43,901 - root - INFO - Database connection established.
+2025-11-09 19:15:43,905 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:43] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:44,170 - root - INFO - Database connection established.
+2025-11-09 19:15:44,176 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:44] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:44,248 - root - INFO - Database connection established.
+2025-11-09 19:15:44,251 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:44,253 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:44] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:15:48,244 - root - INFO - Database connection established.
+2025-11-09 19:15:48,247 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:48] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:48,494 - root - INFO - Database connection established.
+2025-11-09 19:15:48,499 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:48] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:15:48,589 - root - INFO - Database connection established.
+2025-11-09 19:15:48,598 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:15:48,599 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:15:48] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:16:17,337 - root - INFO - Database connection established.
+2025-11-09 19:16:17,345 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:17] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:17,578 - root - INFO - Database connection established.
+2025-11-09 19:16:17,584 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:17] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:17,682 - root - INFO - Database connection established.
+2025-11-09 19:16:17,758 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:16:17,760 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:17] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:16:33,054 - root - INFO - Database connection established.
+2025-11-09 19:16:33,061 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:33] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:33,303 - root - INFO - Database connection established.
+2025-11-09 19:16:33,308 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:33] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:33,424 - root - INFO - Database connection established.
+2025-11-09 19:16:33,432 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:16:33,434 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:33] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:16:39,436 - root - INFO - Database connection established.
+2025-11-09 19:16:39,439 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:39] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:39,745 - root - INFO - Database connection established.
+2025-11-09 19:16:39,752 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:39] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:39,778 - root - INFO - Database connection established.
+2025-11-09 19:16:39,786 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:16:39,788 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:39] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:16:42,398 - root - INFO - Database connection established.
+2025-11-09 19:16:42,402 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:42] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:42,640 - root - INFO - Database connection established.
+2025-11-09 19:16:42,645 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:42] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:42,746 - root - INFO - Database connection established.
+2025-11-09 19:16:42,751 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:16:42,752 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:42] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:16:44,180 - root - INFO - Database connection established.
+2025-11-09 19:16:44,184 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:44] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:44,520 - root - INFO - Database connection established.
+2025-11-09 19:16:44,524 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:44] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:16:44,848 - root - INFO - Database connection established.
+2025-11-09 19:16:44,862 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:16:44,865 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:16:44] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:17:02,488 - root - INFO - Database connection established.
+2025-11-09 19:17:02,499 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:17:02] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 19:17:05,317 - root - INFO - Database connection established.
+2025-11-09 19:17:05,332 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:17:05] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:17:05,698 - root - INFO - Database connection established.
+2025-11-09 19:17:05,703 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:17:05] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:17:05,938 - root - INFO - Database connection established.
+2025-11-09 19:17:05,944 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:17:05,948 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:17:05] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:19:09,105 - root - INFO - Database connection established.
+2025-11-09 19:19:09,177 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:19:09] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:19:09,259 - root - INFO - Database connection established.
+2025-11-09 19:19:09,276 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:19:09] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:19:09,718 - root - INFO - Database connection established.
+2025-11-09 19:19:09,736 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:19:09,740 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:19:09] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 19:26:27,274 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 19:26:28,560 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 19:26:31,796 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 19:26:31,799 - app - INFO - Starting Flask application...
+2025-11-09 19:26:31,804 - app - INFO - Flask application created successfully
+2025-11-09 19:26:31,965 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 19:26:31,980 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 19:57:02,194 - root - INFO - Database connection established.
+2025-11-09 19:57:02,292 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:57:02] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:57:02,369 - root - INFO - Database connection established.
+2025-11-09 19:57:02,382 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:57:02] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 19:57:02,756 - root - INFO - Database connection established.
+2025-11-09 19:57:02,770 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 19:57:02,771 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 19:57:02] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 20:04:56,851 - root - INFO - Database connection established.
+2025-11-09 20:04:56,897 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:04:56] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:05:01,046 - root - INFO - Database connection established.
+2025-11-09 20:05:01,103 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:05:01] "GET /canteen_info?canteen_id=4 HTTP/1.1" 200 -
+2025-11-09 20:05:01,455 - root - INFO - Database connection established.
+2025-11-09 20:05:01,466 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:05:01] "[33mGET /canteen_menu_details?canteen_id=4 HTTP/1.1[0m" 404 -
+2025-11-09 20:05:01,745 - root - INFO - Database connection established.
+2025-11-09 20:05:01,775 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:05:01] "GET /canteen_review_ratings?canteen_id=4 HTTP/1.1" 200 -
+2025-11-09 20:05:04,930 - root - INFO - Database connection established.
+2025-11-09 20:05:04,941 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:05:04] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:05:22,057 - root - INFO - Database connection established.
+2025-11-09 20:05:22,062 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:05:22] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:07:55,499 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:07:57,456 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:08:00,632 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:08:00,633 - app - INFO - Starting Flask application...
+2025-11-09 20:08:00,635 - app - INFO - Flask application created successfully
+2025-11-09 20:08:00,704 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:08:00,718 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:31:26,816 - root - INFO - Database connection established.
+2025-11-09 20:31:26,921 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:31:26] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:31:30,622 - root - INFO - Database connection established.
+2025-11-09 20:31:30,630 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:31:30] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:31:34,011 - root - INFO - Database connection established.
+2025-11-09 20:31:34,090 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:31:34] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:31:35,668 - root - INFO - Database connection established.
+2025-11-09 20:31:35,674 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:31:35] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:31:40,847 - root - INFO - Database connection established.
+2025-11-09 20:31:40,856 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:31:40] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:11,758 - root - INFO - Database connection established.
+2025-11-09 20:33:11,767 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:11] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:13,126 - root - INFO - Database connection established.
+2025-11-09 20:33:13,132 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:13] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:19,389 - root - INFO - Database connection established.
+2025-11-09 20:33:19,397 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:19] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:23,066 - root - INFO - Database connection established.
+2025-11-09 20:33:23,076 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:23] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:33,798 - root - INFO - Database connection established.
+2025-11-09 20:33:33,805 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:33] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:33:51,800 - root - INFO - Database connection established.
+2025-11-09 20:33:51,889 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:51] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:33:52,159 - root - INFO - Database connection established.
+2025-11-09 20:33:52,180 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:52] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:33:52,273 - root - INFO - Database connection established.
+2025-11-09 20:33:52,303 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:33:52] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:11,936 - root - INFO - Database connection established.
+2025-11-09 20:36:11,944 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:11] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:12,189 - root - INFO - Database connection established.
+2025-11-09 20:36:12,195 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:12] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:36:12,281 - root - INFO - Database connection established.
+2025-11-09 20:36:12,306 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:12] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:14,056 - root - INFO - Database connection established.
+2025-11-09 20:36:14,065 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:14] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:14,402 - root - INFO - Database connection established.
+2025-11-09 20:36:14,408 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:14] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:36:14,747 - root - INFO - Database connection established.
+2025-11-09 20:36:14,760 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:14] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:16,230 - root - INFO - Database connection established.
+2025-11-09 20:36:16,269 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:16] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:16,627 - root - INFO - Database connection established.
+2025-11-09 20:36:16,633 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:16] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:36:16,945 - root - INFO - Database connection established.
+2025-11-09 20:36:16,951 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:16] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:18,998 - root - INFO - Database connection established.
+2025-11-09 20:36:19,005 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:19] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:19,362 - root - INFO - Database connection established.
+2025-11-09 20:36:19,379 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:19] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:36:19,598 - root - INFO - Database connection established.
+2025-11-09 20:36:19,603 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:19] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:25,218 - root - INFO - Database connection established.
+2025-11-09 20:36:25,223 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:25] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:36:29,323 - root - INFO - Database connection established.
+2025-11-09 20:36:29,332 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:29] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:36:29,678 - root - INFO - Database connection established.
+2025-11-09 20:36:29,681 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:29] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 20:36:29,979 - root - INFO - Database connection established.
+2025-11-09 20:36:29,983 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:36:29] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 20:44:42,914 - root - INFO - Database connection established.
+2025-11-09 20:44:42,937 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:44:42] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:44:46,385 - root - INFO - Database connection established.
+2025-11-09 20:44:46,391 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:44:46] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 20:44:46,703 - root - INFO - Database connection established.
+2025-11-09 20:44:46,720 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:44:46] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 20:44:46,785 - root - INFO - Database connection established.
+2025-11-09 20:44:46,802 - root - ERROR - Error fetching reviews and ratings for canteen_id 34: 'image'
+2025-11-09 20:44:46,806 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:44:46] "[33mGET /canteen_review_ratings?canteen_id=34 HTTP/1.1[0m" 404 -
+2025-11-09 20:46:37,094 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:46:37,872 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:46:40,306 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:46:40,307 - app - INFO - Starting Flask application...
+2025-11-09 20:46:40,309 - app - INFO - Flask application created successfully
+2025-11-09 20:46:40,370 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:46:40,387 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:47:52,488 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:47:52,815 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:47:54,096 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:47:54,096 - app - INFO - Starting Flask application...
+2025-11-09 20:47:54,099 - app - INFO - Flask application created successfully
+2025-11-09 20:47:54,175 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:47:54,184 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:00,567 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:00,850 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:02,151 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:02,152 - app - INFO - Starting Flask application...
+2025-11-09 20:48:02,153 - app - INFO - Flask application created successfully
+2025-11-09 20:48:02,200 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:02,205 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:05,448 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:05,659 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:06,913 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:06,913 - app - INFO - Starting Flask application...
+2025-11-09 20:48:06,916 - app - INFO - Flask application created successfully
+2025-11-09 20:48:06,986 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:06,993 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:08,121 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:08,426 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:09,402 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:09,403 - app - INFO - Starting Flask application...
+2025-11-09 20:48:09,404 - app - INFO - Flask application created successfully
+2025-11-09 20:48:09,462 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:09,467 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:15,829 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:15,983 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:17,013 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:17,014 - app - INFO - Starting Flask application...
+2025-11-09 20:48:17,016 - app - INFO - Flask application created successfully
+2025-11-09 20:48:17,067 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:17,072 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:19,248 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:19,433 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:20,525 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:20,526 - app - INFO - Starting Flask application...
+2025-11-09 20:48:20,529 - app - INFO - Flask application created successfully
+2025-11-09 20:48:20,596 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:20,606 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:21,746 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:21,853 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:22,951 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:22,952 - app - INFO - Starting Flask application...
+2025-11-09 20:48:22,953 - app - INFO - Flask application created successfully
+2025-11-09 20:48:23,001 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:23,006 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:26,238 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:26,421 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:27,763 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:27,764 - app - INFO - Starting Flask application...
+2025-11-09 20:48:27,767 - app - INFO - Flask application created successfully
+2025-11-09 20:48:27,812 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:27,817 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:29,987 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:30,160 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:31,197 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:31,197 - app - INFO - Starting Flask application...
+2025-11-09 20:48:31,199 - app - INFO - Flask application created successfully
+2025-11-09 20:48:31,251 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:31,260 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:32,400 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 20:48:32,557 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 20:48:33,474 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 20:48:33,475 - app - INFO - Starting Flask application...
+2025-11-09 20:48:33,477 - app - INFO - Flask application created successfully
+2025-11-09 20:48:33,529 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 20:48:33,537 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 20:48:51,313 - root - INFO - Database connection established.
+2025-11-09 20:48:51,357 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:48:51] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 20:48:58,032 - root - INFO - Database connection established.
+2025-11-09 20:48:58,051 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:48:58] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 20:48:58,281 - root - INFO - Database connection established.
+2025-11-09 20:48:58,294 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:48:58] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 20:48:58,401 - root - INFO - Database connection established.
+2025-11-09 20:48:58,415 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 20:48:58] "GET /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 21:04:19,388 - root - INFO - Database connection established.
+2025-11-09 21:04:19,455 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:19] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 21:04:21,495 - root - INFO - Database connection established.
+2025-11-09 21:04:21,526 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:21] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:04:21,874 - root - INFO - Database connection established.
+2025-11-09 21:04:21,886 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:21] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 21:04:22,139 - root - INFO - Database connection established.
+2025-11-09 21:04:22,156 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:22] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:04:56,104 - root - INFO - Database connection established.
+2025-11-09 21:04:56,112 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:56] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 21:04:59,187 - root - INFO - Database connection established.
+2025-11-09 21:04:59,196 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:59] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 21:04:59,414 - root - INFO - Database connection established.
+2025-11-09 21:04:59,425 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:59] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 21:04:59,541 - root - INFO - Database connection established.
+2025-11-09 21:04:59,564 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:04:59] "GET /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 21:21:01,158 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\apis\\signup.py', reloading
+2025-11-09 21:21:02,041 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 21:21:03,769 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 21:21:03,769 - app - INFO - Starting Flask application...
+2025-11-09 21:21:03,773 - app - INFO - Flask application created successfully
+2025-11-09 21:21:03,837 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 21:21:03,854 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 21:30:06,139 - root - INFO - Database connection established.
+2025-11-09 21:30:06,212 - root - ERROR - Error fetching user: 1146 (42S02): Table 'canteen_db.users' doesn't exist
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'canteen_db.users' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 200, in get_user_by_phone
+    cursor.execute(query, (phone_number,))
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'canteen_db.users' doesn't exist
+2025-11-09 21:30:06,477 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:30:06] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-09 21:30:45,622 - root - INFO - Database connection established.
+2025-11-09 21:30:45,639 - root - ERROR - Error fetching user: 1146 (42S02): Table 'canteen_db.users' doesn't exist
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Table 'canteen_db.users' doesn't exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 200, in get_user_by_phone
+    cursor.execute(query, (phone_number,))
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1146 (42S02): Table 'canteen_db.users' doesn't exist
+2025-11-09 21:30:45,643 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:30:45] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-09 21:33:03,056 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:33:03] "[31m[1mPOST /signup HTTP/1.1[0m" 400 -
+2025-11-09 21:33:11,183 - root - INFO - Database connection established.
+2025-11-09 21:33:11,199 - root - ERROR - Error during signup: 1146 (42S02): Table 'canteen_db.users' doesn't exist
+2025-11-09 21:33:11,204 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:33:11] "[35m[1mPOST /signup HTTP/1.1[0m" 500 -
+2025-11-09 21:52:42,073 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 21:52:42,075 - app - INFO - Starting Flask application...
+2025-11-09 21:52:42,080 - app - INFO - Flask application created successfully
+2025-11-09 21:52:42,235 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 21:52:42,236 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 21:52:42,241 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 21:52:43,768 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 21:52:43,769 - app - INFO - Starting Flask application...
+2025-11-09 21:52:43,774 - app - INFO - Flask application created successfully
+2025-11-09 21:52:43,863 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 21:52:43,899 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 21:53:24,929 - root - INFO - Database connection established.
+2025-11-09 21:53:26,020 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:26] "POST /login HTTP/1.1" 200 -
+2025-11-09 21:53:26,156 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:26] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-09 21:53:26,614 - root - INFO - Database connection established.
+2025-11-09 21:53:26,625 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:26] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 21:53:52,560 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:52] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:53:52,833 - root - INFO - Database connection established.
+2025-11-09 21:53:52,838 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:52] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:53:52,876 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:52] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:53:53,190 - root - INFO - Database connection established.
+2025-11-09 21:53:53,196 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:53] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 21:53:53,219 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:53] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:53:53,561 - root - INFO - Database connection established.
+2025-11-09 21:53:53,574 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:53:53] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 21:54:25,389 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:54:25] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 21:54:25,687 - root - INFO - Database connection established.
+2025-11-09 21:54:25,712 - root - INFO - Database connection established.
+2025-11-09 21:54:25,715 - root - ERROR - DB error in insert_review_for_canteen for canteen 1: Not enough parameters for the SQL statement
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 410, in insert_review_for_canteen
+    cursor.execute(insert_q, (
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 333, in execute
+    stmt = RE_PY_PARAM.sub(psub, stmt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 113, in __call__
+    raise ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not enough parameters for the SQL statement
+2025-11-09 21:54:25,728 - root - ERROR - Database error while inserting review for canteen 1
+2025-11-09 21:54:25,730 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:54:25] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 500 -
+2025-11-09 21:54:37,939 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:54:37] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 21:54:38,226 - root - INFO - Database connection established.
+2025-11-09 21:54:38,306 - root - INFO - Database connection established.
+2025-11-09 21:54:38,308 - root - ERROR - DB error in insert_review_for_canteen for canteen 1: Not enough parameters for the SQL statement
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 410, in insert_review_for_canteen
+    cursor.execute(insert_q, (
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 333, in execute
+    stmt = RE_PY_PARAM.sub(psub, stmt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 113, in __call__
+    raise ProgrammingError(
+mysql.connector.errors.ProgrammingError: Not enough parameters for the SQL statement
+2025-11-09 21:54:38,311 - root - ERROR - Database error while inserting review for canteen 1
+2025-11-09 21:54:38,313 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 21:54:38] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 500 -
+2025-11-09 22:02:41,123 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 22:02:41,595 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 22:02:42,862 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:02:42,862 - app - INFO - Starting Flask application...
+2025-11-09 22:02:42,865 - app - INFO - Flask application created successfully
+2025-11-09 22:02:42,949 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 22:02:42,967 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 22:03:21,980 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 22:03:22,086 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 22:03:22,768 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:03:22,768 - app - INFO - Starting Flask application...
+2025-11-09 22:03:22,770 - app - INFO - Flask application created successfully
+2025-11-09 22:03:22,799 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 22:03:22,803 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 22:04:59,121 - werkzeug - INFO -  * Detected change in 'C:\\Users\\aakrit\\Desktop\\collaborations\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-09 22:04:59,351 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 22:08:16,521 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:08:16,522 - app - INFO - Starting Flask application...
+2025-11-09 22:08:16,524 - app - INFO - Flask application created successfully
+2025-11-09 22:08:16,594 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 22:08:16,594 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 22:08:16,596 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 22:08:17,094 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:08:17,094 - app - INFO - Starting Flask application...
+2025-11-09 22:08:17,096 - app - INFO - Flask application created successfully
+2025-11-09 22:08:17,120 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 22:08:17,136 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 22:08:36,587 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:08:36] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 22:08:37,251 - root - INFO - Database connection established.
+2025-11-09 22:08:37,293 - root - INFO - Database connection established.
+2025-11-09 22:08:37,299 - root - ERROR - DB error in insert_review_for_canteen for canteen 1: 1364 (HY000): Field 'review_id' doesn't have a default value
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Field 'review_id' doesn't have a default value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 389, in insert_review_for_canteen
+    cursor.execute(insert_q, (
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1364 (HY000): Field 'review_id' doesn't have a default value
+2025-11-09 22:08:37,307 - root - ERROR - Database error while inserting review for canteen 1
+2025-11-09 22:08:37,308 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:08:37] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 500 -
+2025-11-09 22:16:03,303 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:16:03,303 - app - INFO - Starting Flask application...
+2025-11-09 22:16:03,306 - app - INFO - Flask application created successfully
+2025-11-09 22:16:03,364 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.66.56.103:5000
+2025-11-09 22:16:03,365 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-09 22:16:03,368 - werkzeug - INFO -  * Restarting with stat
+2025-11-09 22:16:03,955 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-09 22:16:03,955 - app - INFO - Starting Flask application...
+2025-11-09 22:16:03,957 - app - INFO - Flask application created successfully
+2025-11-09 22:16:03,982 - werkzeug - WARNING -  * Debugger is active!
+2025-11-09 22:16:03,994 - werkzeug - INFO -  * Debugger PIN: 598-626-996
+2025-11-09 22:16:08,381 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:08] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-09 22:16:08,816 - root - INFO - Database connection established.
+2025-11-09 22:16:08,825 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:08] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 22:16:10,802 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:10] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:16:11,148 - root - INFO - Database connection established.
+2025-11-09 22:16:11,160 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:11] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:16:11,385 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:11] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:16:11,507 - root - INFO - Database connection established.
+2025-11-09 22:16:11,512 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:11] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 22:16:11,696 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:11] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:16:11,847 - root - INFO - Database connection established.
+2025-11-09 22:16:11,859 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:11] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:16:50,462 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:50] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 22:16:50,735 - root - INFO - Database connection established.
+2025-11-09 22:16:50,746 - root - INFO - Database connection established.
+2025-11-09 22:16:50,752 - root - ERROR - DB error in insert_review_for_canteen for canteen 1: 1364 (HY000): Field 'image_1' doesn't have a default value
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Field 'image_1' doesn't have a default value
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\app\models.py", line 389, in insert_review_for_canteen
+    cursor.execute(insert_q, (
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aakrit\Desktop\collaborations\DU_canteen_connect\Backend\venv\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.DatabaseError: 1364 (HY000): Field 'image_1' doesn't have a default value
+2025-11-09 22:16:50,762 - root - ERROR - Database error while inserting review for canteen 1
+2025-11-09 22:16:50,763 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:16:50] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 500 -
+2025-11-09 22:20:28,482 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:28] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:28,748 - root - INFO - Database connection established.
+2025-11-09 22:20:28,751 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:28] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:28,795 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:28] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:29,085 - root - INFO - Database connection established.
+2025-11-09 22:20:29,088 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:29] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 22:20:29,109 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:29] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:29,416 - root - INFO - Database connection established.
+2025-11-09 22:20:29,420 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:29] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:47,810 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:47] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 22:20:48,089 - root - INFO - Database connection established.
+2025-11-09 22:20:48,099 - root - INFO - Database connection established.
+2025-11-09 22:20:48,118 - root - INFO - Database connection established.
+2025-11-09 22:20:48,143 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:48] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 201 -
+2025-11-09 22:20:51,769 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:51] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:20:52,031 - root - INFO - Database connection established.
+2025-11-09 22:20:52,035 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:20:52] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:21:37,700 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:37] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:21:37,975 - root - INFO - Database connection established.
+2025-11-09 22:21:37,978 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:37] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:21:38,013 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:38] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:21:38,305 - root - INFO - Database connection established.
+2025-11-09 22:21:38,309 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:38] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 22:21:38,322 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:38] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:21:38,649 - root - INFO - Database connection established.
+2025-11-09 22:21:38,655 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:21:38] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:10,241 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:10] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 22:22:10,517 - root - INFO - Database connection established.
+2025-11-09 22:22:10,529 - root - INFO - Database connection established.
+2025-11-09 22:22:10,546 - root - INFO - Database connection established.
+2025-11-09 22:22:10,558 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:10] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 201 -
+2025-11-09 22:22:12,538 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:12] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:12,867 - root - INFO - Database connection established.
+2025-11-09 22:22:12,872 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:12] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:25,187 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:25] "OPTIONS /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:25,447 - root - INFO - Database connection established.
+2025-11-09 22:22:25,450 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:25] "GET /canteen_info?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:25,498 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:25] "OPTIONS /canteen_menu_details?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:25,772 - root - INFO - Database connection established.
+2025-11-09 22:22:25,775 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:25] "[33mGET /canteen_menu_details?canteen_id=1 HTTP/1.1[0m" 404 -
+2025-11-09 22:22:25,811 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:25] "OPTIONS /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:26,097 - root - INFO - Database connection established.
+2025-11-09 22:22:26,101 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:26] "GET /canteen_review_ratings?canteen_id=1 HTTP/1.1" 200 -
+2025-11-09 22:22:42,251 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:42] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-09 22:22:42,511 - root - INFO - Database connection established.
+2025-11-09 22:22:42,514 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:42] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 22:22:44,720 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:44] "OPTIONS /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-09 22:22:45,002 - root - INFO - Database connection established.
+2025-11-09 22:22:45,005 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:45] "GET /canteen_info?canteen_id=2 HTTP/1.1" 200 -
+2025-11-09 22:22:45,040 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:45] "OPTIONS /canteen_menu_details?canteen_id=2 HTTP/1.1" 200 -
+2025-11-09 22:22:45,330 - root - INFO - Database connection established.
+2025-11-09 22:22:45,333 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:45] "[33mGET /canteen_menu_details?canteen_id=2 HTTP/1.1[0m" 404 -
+2025-11-09 22:22:45,353 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:45] "OPTIONS /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-09 22:22:45,657 - root - INFO - Database connection established.
+2025-11-09 22:22:45,660 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:45] "GET /canteen_review_ratings?canteen_id=2 HTTP/1.1" 200 -
+2025-11-09 22:22:51,699 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:51] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-09 22:22:51,973 - root - INFO - Database connection established.
+2025-11-09 22:22:51,976 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:51] "GET /canteens HTTP/1.1" 200 -
+2025-11-09 22:22:54,990 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:54] "OPTIONS /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:22:55,264 - root - INFO - Database connection established.
+2025-11-09 22:22:55,267 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:55] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:22:55,302 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:55] "OPTIONS /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:22:55,591 - root - INFO - Database connection established.
+2025-11-09 22:22:55,594 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:55] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:22:55,614 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:55] "OPTIONS /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:22:55,917 - root - INFO - Database connection established.
+2025-11-09 22:22:55,921 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:22:55] "GET /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:01,763 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:01] "OPTIONS /add_review_rating HTTP/1.1" 200 -
+2025-11-09 22:24:02,039 - root - INFO - Database connection established.
+2025-11-09 22:24:02,048 - root - INFO - Database connection established.
+2025-11-09 22:24:02,068 - root - INFO - Database connection established.
+2025-11-09 22:24:02,093 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:02] "[35m[1mPOST /add_review_rating HTTP/1.1[0m" 201 -
+2025-11-09 22:24:04,095 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:04] "OPTIONS /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:04,433 - root - INFO - Database connection established.
+2025-11-09 22:24:04,436 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:04] "GET /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:09,781 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:09] "OPTIONS /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:10,049 - root - INFO - Database connection established.
+2025-11-09 22:24:10,051 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:10] "GET /canteen_info?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:10,105 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:10] "OPTIONS /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:10,381 - root - INFO - Database connection established.
+2025-11-09 22:24:10,389 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:10] "GET /canteen_menu_details?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:10,419 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:10] "OPTIONS /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -
+2025-11-09 22:24:10,756 - root - INFO - Database connection established.
+2025-11-09 22:24:10,769 - werkzeug - INFO - 127.0.0.1 - - [09/Nov/2025 22:24:10] "GET /canteen_review_ratings?canteen_id=34 HTTP/1.1" 200 -

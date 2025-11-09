@@ -1,3 +1,5 @@
+import Header from './components/Header.vue'
+
 <template>
   <div class="app-wrapper">
     <Header />
@@ -6,7 +8,7 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
+
 
 export default {
   name: 'App'

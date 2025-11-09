@@ -9,6 +9,8 @@ export const loginUser = async (phone_number, password) => {
   const res = await api.post('/login', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   })
+
+  console.log('res from login: ', res, 'res.data: ', res.data)
   return res.data
 }
 
