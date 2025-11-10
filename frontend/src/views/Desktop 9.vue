@@ -3,18 +3,23 @@
     <!-- Header -->
     <Header />
 
-    <!-- Profile Section -->
+    <!-- canteen Profile Section -->
     <section class="card profile-section">
       <h2>Profile</h2>
-      <div class="profile-content">
+      <div v-if="loading && !canteenInfo" class="loading">Loading canteen info...</div>
+      <div v-else-if="error" class="error">{{ error }}</div>
+      <div v-else-if="canteenInfo" class="profile-content">
         <div class="profile-image"></div>
         <div class="profile-info">
-          <div>Name</div>
-          <div>Location</div>
-          <div>Canteen Info</div>
+          <div><strong>Name:</strong> {{ canteenInfo.name || 'N/A' }}</div>
+          <div><strong>Location:</strong> {{ canteenInfo.location || 'N/A' }}</div>
+          <div><strong>Contact:</strong> {{ canteenInfo.contact_no || 'N/A' }}</div>
+          <div><strong>Days Open:</strong> {{ canteenInfo.days_open || 'N/A' }}</div>
+          <div><strong>Opening Time:</strong> {{ canteenInfo.opening_time || 'N/A' }}</div>
+          <div><strong>Closing Time:</strong> {{ canteenInfo.closing_time || 'N/A' }}</div>
           <div class="profile-actions">
             <button>Edit Profile</button>
-            <button>View Routes</button>
+            <button @click="loadReviews">View Reviews</button>
           </div>
         </div>
       </div>
@@ -24,8 +29,15 @@
     <section class="card report-section">
       <h2>Report Issues</h2>
       <div class="report-group">
-        <input type="text" placeholder="Report Issues" />
-        <button>Submit</button>
+        <input 
+          v-model="issueText" 
+          type="text" 
+          placeholder="Report Issues" 
+          :disabled="loading"
+        />
+        <button @click="submitIssue" :disabled="loading || !issueText.trim()">
+          {{ loading ? 'Submitting...' : 'Submit' }}
+        </button>
       </div>
     </section>
 
@@ -42,9 +54,19 @@
             </li>
         </ul>
         <div class="add-item">
-            <input v-model="newItem.name" placeholder="Item name" />
-            <input v-model="newItem.price" placeholder="Price" />
-            <button @click="addItem">＋</button>
+            <input 
+              v-model="newItem.name" 
+              placeholder="Item name" 
+              :disabled="loading"
+            />
+            <input 
+              v-model="newItem.price" 
+              placeholder="Price" 
+              :disabled="loading"
+            />
+            <button @click="addItem" :disabled="loading || !newItem.name || !newItem.price">
+              {{ loading ? '...' : '＋' }}
+            </button>
         </div>
         </div>
 
@@ -71,23 +93,33 @@
           :key="index"
           :class="{ active: selectedDay === day }"
           @click="selectedDay = day"
+          :disabled="loading"
         >
           {{ day }}
         </button>
       </div>
       <div class="day-menu">
         <label>Select items for {{ selectedDay }}:</label>
-        <div class="checkbox-list">
+        <div v-if="menuItems.length === 0" class="info-message">
+          Please add menu items first before setting weekly menu.
+        </div>
+        <div v-else class="checkbox-list">
           <label v-for="item in menuItems" :key="item.name">
             <input
               type="checkbox"
               :value="item.name"
               v-model="weeklyMenu[selectedDay]"
+              :disabled="loading"
             />
             {{ item.name }}
           </label>
         </div>
-        <button @click="submitDayMenu">Submit Menu for {{ selectedDay }}</button>
+        <button 
+          @click="submitDayMenu" 
+          :disabled="loading || weeklyMenu[selectedDay].length === 0"
+        >
+          {{ loading ? 'Submitting...' : `Submit Menu for ${selectedDay}` }}
+        </button>
       </div>
     </section>
 
@@ -99,21 +131,32 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import { 
+  getCanteenInfoOwner, 
+  addFoodItem, 
+  reportIssueByOwner, 
+  getCanteenReviewsOwner,
+  getFoodItemsOwner,
+  updateDayWiseMenu 
+} from '@/services/canteenOwner'
 
 export default {
   name: 'CanteenDashboard',
   components: { Header, Footer },
+  
   data() {
     return {
-      menuItems: [
-        { name: 'item1', price: '₹50' },
-        { name: 'item2', price: '₹30' },
-        { name: 'item3', price: '₹40' }
-      ],
+      // Canteen profile data
+      canteenInfo: null,
+      
+      // Menu items list
+      menuItems: [],
+      foodItemsMap: {}, // Maps item name -> food_id
       newItem: { name: '', price: '' },
+      
+      // Weekly menu
       days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       selectedDay: 'Monday',
-      uploadedImage: null,
       weeklyMenu: {
         Monday: [],
         Tuesday: [],
@@ -122,29 +165,227 @@ export default {
         Friday: [],
         Saturday: [],
         Sunday: []
-      }
+      },
+      
+      // Issue reporting
+      issueText: '',
+      
+      // Image upload (UI only, not saved to backend)
+      uploadedImage: null,
+      
+      // Loading and error states
+      loading: false,
+      error: null
     }
   },
+  
+  async mounted() {
+    // Load canteen info and existing food items when page loads
+    await this.loadCanteenInfo()
+    await this.loadFoodItems()
+  },
+  
   methods: {
-    addItem() {
-      if (this.newItem.name && this.newItem.price) {
-        this.menuItems.push({ ...this.newItem })
-        this.newItem.name = ''
-        this.newItem.price = ''
+    
+    //  LOAD CANTEEN PROFILE
+    
+    async loadCanteenInfo() {
+      try {
+        this.loading = true
+        this.error = null
+        
+        const response = await getCanteenInfoOwner()
+        this.canteenInfo = response.canteen_info
+        
+        console.log('✅ Canteen loaded:', this.canteenInfo)
+      } catch (error) {
+        console.error('❌ Error loading canteen:', error)
+        this.error = error.response?.data?.message || 'Failed to load canteen'
+        
+        // Redirect to login if token expired
+        if (error.response?.status === 401 || error.response?.status === 403) {
+          localStorage.removeItem('token')
+          this.$router.push('/desktop6')
+        }
+      } finally {
+        this.loading = false
       }
     },
+
+    //  LOAD EXISTING FOOD ITEMS FROM DATABASE
+    
+    async loadFoodItems() {
+      try {
+        const response = await getFoodItemsOwner()
+        const items = response.food_items || []
+        
+        // Populate menuItems with food_id included
+        this.menuItems = items.map(item => ({
+          name: item.name,
+          price: item.price,
+          food_id: item.food_id  // Keep the real food_id
+        }))
+        
+        // Create mapping: name -> food_id
+        items.forEach(item => {
+          this.foodItemsMap[item.name] = item.food_id
+        })
+        
+        console.log('✅ Food items loaded:', this.menuItems.length, 'items')
+      } catch (error) {
+        console.error('❌ Error loading food items:', error)
+        // Don't show error to user - just start with empty list
+      }
+    },
+
+    
+    //  ADD MENU ITEM
+    
+    async addItem() {
+      // Validate inputs
+      if (!this.newItem.name || !this.newItem.price) {
+        alert('⚠️ Please enter item name and price')
+        return
+      }
+
+      try {
+        this.loading = true
+        
+        // Remove ₹ symbol if user typed it
+        const price = this.newItem.price.toString().replace(/[₹$]/g, '').trim()
+        
+        // Call backend
+        const response = await addFoodItem(this.newItem.name, price)
+        
+        // Add to local list
+        this.menuItems.push({ 
+          name: this.newItem.name, 
+          price: `₹${price}`,
+          food_id: response.food_id
+        })
+        
+        // Save food_id for weekly menu (needed later)
+        this.foodItemsMap[this.newItem.name] = response.food_id
+        
+        // Clear inputs
+        this.newItem.name = ''
+        this.newItem.price = ''
+        
+        alert('✅ Item added successfully!')
+      } catch (error) {
+        console.error('❌ Error adding item:', error)
+        alert('❌ ' + (error.response?.data?.message || 'Failed to add item'))
+      } finally {
+        this.loading = false
+      }
+    },
+
+    
+    //  REMOVE ITEM (local only)
+    
     removeItem(index) {
       this.menuItems.splice(index, 1)
     },
-    submitDayMenu() {
-      alert(`Menu for ${this.selectedDay} submitted: ${this.weeklyMenu[this.selectedDay].join(', ')}`)
+
+    
+    // SUBMIT WEEKLY MENU FOR A DAY
+    
+    async submitDayMenu() {
+      // Check if canteen loaded
+      if (!this.canteenInfo?.canteen_id) {
+        alert('⚠️ Canteen info not loaded. Please refresh page.')
+        return
+      }
+
+      // Check if items selected
+      const selected = this.weeklyMenu[this.selectedDay]
+      if (selected.length === 0) {
+        alert('⚠️ Please select at least one item')
+        return
+      }
+
+      try {
+        this.loading = true
+        
+        // Convert item names to food_ids
+        const foodIds = selected
+          .map(itemName => this.foodItemsMap[itemName])
+          .filter(id => id !== undefined)
+        
+        if (foodIds.length === 0) {
+          alert('⚠️ Please add items using "Upload Menu" section first')
+          return
+        }
+
+        // Call backend
+        await updateDayWiseMenu(
+          this.canteenInfo.canteen_id,
+          this.selectedDay,
+          foodIds
+        )
+        
+        alert(`✅ Menu for ${this.selectedDay} submitted!`)
+      } catch (error) {
+        console.error('❌ Error updating menu:', error)
+        alert('❌ ' + (error.response?.data?.message || 'Failed to update menu'))
+      } finally {
+        this.loading = false
+      }
     },
+
+    
+    //  REPORT ISSUE
+    
+    async submitIssue() {
+      if (!this.issueText.trim()) {
+        alert('⚠️ Please enter issue description')
+        return
+      }
+
+      try {
+        this.loading = true
+        
+        await reportIssueByOwner(this.issueText)
+        
+        alert('✅ Issue reported successfully!')
+        this.issueText = ''
+      } catch (error) {
+        console.error('❌ Error reporting issue:', error)
+        alert('❌ ' + (error.response?.data?.message || 'Failed to report issue'))
+      } finally {
+        this.loading = false
+      }
+    },
+
+    
+    //  VIEW REVIEWS
+    
+    async loadReviews() {
+      try {
+        this.loading = true
+        
+        const response = await getCanteenReviewsOwner()
+        const reviews = response.reviews || []
+        
+        alert(`📊 You have ${reviews.length} review(s)`)
+        console.log('Reviews:', reviews)
+      } catch (error) {
+        console.error('❌ Error loading reviews:', error)
+        alert('❌ ' + (error.response?.data?.message || 'Failed to load reviews'))
+      } finally {
+        this.loading = false
+      }
+    },
+
+    
+    //  IMAGE UPLOAD (UI only)
+    
     handleImageUpload(event) {
-    const file = event.target.files[0]
-    if (file) {
-      this.uploadedImage = URL.createObjectURL(file)
+      const file = event.target.files[0]
+      if (file) {
+        this.uploadedImage = URL.createObjectURL(file)
+      }
     }
-  }
   }
 }
 </script>
@@ -423,5 +664,37 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Loading and Error States */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
 
+.error {
+  padding: 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  color: #d32f2f;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.info-message {
+  padding: 1rem;
+  background: rgba(33, 150, 243, 0.1);
+  color: #1976d2;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 </style>

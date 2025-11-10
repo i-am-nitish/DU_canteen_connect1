@@ -11,7 +11,7 @@ def display_user_info_api(user_id):
         user_info = get_user_by_id_db(user_id)
         if not user_info:
             return jsonify({"message": "User not found"}), 404
-        
+        # to be reviewed - restrict to general users only
         role = user_info.get("role")
         if role.lower() != "general":
             return jsonify({"message": "Access denied. Only general users can access this page."}), 403
@@ -270,6 +270,53 @@ def fetch_canteen_reviews_owner_handler(user_id):
     except Exception as e:
         logging.exception(f"Error in fetch_canteen_reviews_handler for user_id {user_id}: {e}")
         return jsonify({"message": "Internal Server Error"}), 500
+
+
+def fetch_food_items_owner_handler(user_id):
+    """
+    Fetch all food items for the canteen owned by this user.
+    """
+    try:
+        # 1) Get canteen owned by this user
+        canteen = get_canteen_by_owner_db(user_id)
+        if not canteen:
+            return jsonify({"message": "Canteen not found for this owner", "food_items": []}), 404
+
+        canteen_id = canteen.get("canteen_id") if isinstance(canteen, dict) else None
+        if not canteen_id:
+            return jsonify({"message": "Invalid canteen data", "food_items": []}), 500
+
+        # 2) Get menu_id for this canteen
+        menu_id = get_menu_id_by_canteen(canteen_id)
+        if not menu_id:
+            return jsonify({"message": "Menu not found", "food_items": []}), 404
+
+        # 3) Query food_items directly with food_id, name, price
+        from app.models import get_db_connection
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        
+        query = """
+            SELECT food_id, name, price
+            FROM food_items
+            WHERE menu_id = %s
+            ORDER BY food_id
+        """
+        cursor.execute(query, (menu_id,))
+        food_items = cursor.fetchall() or []
+        
+        cursor.close()
+        conn.close()
+        
+        return jsonify({
+            "message": "Food items fetched successfully",
+            "food_items": food_items
+        }), 200
+
+    except Exception as e:
+        logging.exception(f"Error in fetch_food_items_owner_handler for user_id {user_id}: {e}")
+        return jsonify({"message": "Internal Server Error", "food_items": []}), 500
+
     
 def _validate_rating(value, name, required=False):
     """Convert and validate rating field (0–5)."""

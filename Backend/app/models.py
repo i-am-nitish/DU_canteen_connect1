@@ -130,7 +130,7 @@ def add_canteen_profile(profile_data):
 
         menu_values = (
             canteen_id,   # canteen_id
-            "No",         # day_wise
+            "Yes",         # day_wise
             None, None,   # Monday, monday_price
             None, None,   # Tuesday, tuesday_price
             None, None,   # Wednesday, wednesday_price
@@ -754,8 +754,12 @@ def get_canteen_reviews_and_ratings_from_db(canteen_id):
         
         import base64
         for review in reviews:
-            if review["image"]:
-                review["image"] = base64.b64encode(review["image"]).decode("utf-8")
+            if review["image_1"]:
+                review["image_1"] = base64.b64encode(review["image_1"]).decode("utf-8")
+            if review["image_2"]:
+                review["image_2"] = base64.b64encode(review["image_2"]).decode("utf-8")
+            if review["image_3"]:
+                review["image_3"] = base64.b64encode(review["image_3"]).decode("utf-8")
 
         return {
             "canteen_id": canteen["canteen_id"],
@@ -902,78 +906,6 @@ def get_canteen_info_from_db(canteen_id):
     except Exception as e:
         logging.error(f"Error fetching canteen info from DB: {str(e)}")
         return None
-
-def get_canteen_reviews_and_ratings_from_db(canteen_id):
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
-
-    
-        query_canteen = """
-            SELECT 
-                canteen_id,
-                name,
-                overall_rating,
-                overall_food,
-                overall_hygiene,
-                overall_staff,
-                overall_facilities
-            FROM canteens
-            WHERE canteen_id = %s
-        """
-        cursor.execute(query_canteen, (canteen_id,))
-        canteen = cursor.fetchone()
-
-        if not canteen:
-            cursor.close()
-            conn.close()
-            return None
-
-        query_reviews = """
-            SELECT 
-                review_id,
-                overall_rating,
-                review_text,
-                image_1,
-                image_2,
-                image_3,
-                created_at
-            FROM canteen_reviews
-            WHERE canteen_id = %s
-            ORDER BY created_at DESC
-            LIMIT 5
-        """
-        cursor.execute(query_reviews, (canteen_id,))
-        reviews = cursor.fetchall()
-
-        cursor.close()
-        conn.close()
-
-        
-        import base64
-        for review in reviews:
-            if review["image_1"]:
-                review["image_1"] = base64.b64encode(review["image_1"]).decode("utf-8")
-            if review["image_2"]:
-                review["image_2"] = base64.b64encode(review["image_2"]).decode("utf-8")
-            if review["image_3"]:
-                review["image_3"] = base64.b64encode(review["image_3"]).decode("utf-8")
-
-        return {
-            "canteen_id": canteen["canteen_id"],
-            "canteen_name": canteen["name"],
-            "overall_rating": canteen["overall_rating"],
-            "overall_food": canteen["overall_food"],
-            "overall_hygiene": canteen["overall_hygiene"],
-            "overall_staff": canteen["overall_staff"],
-            "overall_facilities": canteen["overall_facilities"],
-            "top_reviews": reviews
-        }
-
-    except Exception as e:
-        logging.error(f"Error fetching reviews and ratings for canteen_id {canteen_id}: {str(e)}")
-        return None
-    
 def get_canteen_menu_from_db(canteen_id):
     try:
         conn = get_db_connection()
@@ -1455,7 +1387,7 @@ def get_canteen_id_by_owner(user_id):
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
-        query = "SELECT canteen_id FROM canteens WHERE owner_user_id = %s LIMIT 1"
+        query = "SELECT canteen_id FROM canteens WHERE owner_id = %s LIMIT 1"
         cursor.execute(query, (user_id,))
         row = cursor.fetchone()
         if not row:
@@ -1520,11 +1452,11 @@ def insert_food_item_for_menu(menu_id, name, description, price, status=None):
         # Try PostgreSQL-style RETURNING first (some drivers support it), else fallback to lastrowid
         try:
             insert_query_pg = """
-                INSERT INTO food_items (menu_id, name, description, price, status, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO food_items (menu_id, name, price, status, created_at, updated_at)
+                VALUES (%s, %s, %s, %s, %s, %s)
                 RETURNING food_id
             """
-            cursor.execute(insert_query_pg, (menu_id, name, description, price, status, now, now))
+            cursor.execute(insert_query_pg, (menu_id, name, price, status, now, now))
             row = cursor.fetchone()
             if row:
                 food_id = row[0]
@@ -1537,10 +1469,10 @@ def insert_food_item_for_menu(menu_id, name, description, price, status=None):
             except Exception:
                 pass
             insert_query = """
-                INSERT INTO food_items (menu_id, name, description, price, status, created_at, updated_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO food_items (menu_id, name, price, status, created_at, updated_at)
+                VALUES (%s, %s, %s, %s, %s, %s)
             """
-            cursor.execute(insert_query, (menu_id, name, description, price, status, now, now))
+            cursor.execute(insert_query, (menu_id, name, price, status, now, now))
             try:
                 food_id = cursor.lastrowid
             except Exception:
@@ -1583,11 +1515,11 @@ def insert_issue_for_canteen_owner(raised_by, role, canteen_id, description, sta
         # Try PostgreSQL RETURNING first, fallback to lastrowid
         try:
             insert_query_pg = """
-                INSERT INTO issues (raised_by, role, canteen_id, description, status, created_at, resolved_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO issues (raised_by, role, canteen_id, description, status, created_at)
+                VALUES (%s, %s, %s, %s, %s, %s)
                 RETURNING issue_id
             """
-            cursor.execute(insert_query_pg, (raised_by, role, canteen_id, description, status, now, None))
+            cursor.execute(insert_query_pg, (raised_by, role, canteen_id, description, status, now))
             row = cursor.fetchone()
             if row:
                 issue_id = row[0]
@@ -1741,6 +1673,40 @@ def get_menu_by_canteen_id(canteen_id):
         return row if row else None
     except Exception as e:
         logging.exception(f"DB error in get_menu_by_canteen_id for canteen {canteen_id}: {e}")
+        return None
+    finally:
+        try:
+            if cursor: cursor.close()
+        except Exception:
+            pass
+        try:
+            if conn: conn.close()
+        except Exception:
+            pass
+
+
+def get_all_food_items_by_menu_id(menu_id):
+    """
+    Fetch ALL food items for a given menu_id.
+    Returns list of dicts: {food_id, name, price}
+    """
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        query = """
+            SELECT food_id, name, price
+            FROM food_items
+            WHERE menu_id = %s
+            ORDER BY food_id
+        """
+        cursor.execute(query, (menu_id,))
+        rows = cursor.fetchall() or []
+        return rows
+    except Exception as e:
+        logging.exception(f"DB error in get_all_food_items_by_menu_id for menu {menu_id}: {e}")
         return None
     finally:
         try:

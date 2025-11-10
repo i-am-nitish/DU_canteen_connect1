@@ -11,7 +11,7 @@ from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_revi
 from apis.need_login import submit_canteen_review_handler, admin_get_open_issues_handler, admin_get_app_feedbacks_handler
 import logging
 from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api, fetch_daywise_menu_handler, update_daywise_menu_handler
-from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler, update_user_info_handler, update_canteen_profile_handler
+from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler, fetch_food_items_owner_handler, update_user_info_handler, update_canteen_profile_handler
 from flask_cors import CORS
 from app.models import get_user_by_id_db
 import bcrypt
@@ -242,6 +242,7 @@ def give_app_feedback_route():
 
 @app.route('/report_app_issue', methods=['POST'])
 @jwt_required()
+#to be reveiwed - Allow all authenticated users to report issues
 def report_app_issue_route():
     try:
         user_id = get_jwt_identity()
@@ -331,6 +332,25 @@ def canteen_reviews_Owner_route():
         logging.exception("Unexpected error in canteen_reviews_route")
         return jsonify({"message": "Internal Server Error"}), 500
     
+ 
+@app.route('/food_items_owner', methods=['GET'])
+@jwt_required()
+def food_items_owner_route():
+    """
+    GET /food_items_owner
+    Returns all food items for the canteen owned by the logged-in canteen_owner.
+    """
+    try:
+        user_id = get_jwt_identity()
+        if not user_id:
+            return jsonify({"message": "Invalid token / user identity"}), 401
+
+        return fetch_food_items_owner_handler(user_id)
+
+    except Exception as e:
+        logging.exception("Unexpected error in food_items_owner_route")
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 @app.route('/menu/daywise', methods=['POST'])
 @jwt_required()
