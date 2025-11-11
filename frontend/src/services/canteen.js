@@ -65,8 +65,3 @@ export const submitCanteenReview = async (canteenId, reviewData) => {
   const res = await api.post('/add_review_rating', formData)
   return res.data
 }
-// gpt added this function
-export const searchCanteens = async (query) => {
-  const res = await api.get(`/search/canteens?q=${encodeURIComponent(query)}`)
-  return res.data.results || []
-}

@@ -19,19 +19,15 @@
       </section>
 
       <!-- Items Panel -->
-      <section class="card items-panel">
-        <h2>Items</h2>
-        <div class="item-list">
-          <div class="item-entry" v-for="canteen in filteredCanteens" :key="canteen.name">
-            <p><strong>{{ canteen.name }}</strong></p>
-            <ul>
-              <li v-for="(item, index) in canteen.items" :key="index">
-                {{ item.name }} — {{ item.price }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<section class="card items-panel">
+  <h2>Items</h2>
+  <div class="item-list">
+    <div class="item-entry" v-for="(item, index) in allFoodItems" :key="index">
+      <p><strong>{{ item.foodName }}</strong> — {{ item.price }}</p>
+      <p style="font-size: 0.9rem; color: #666;">📍 {{ item.canteenName }}</p>
+    </div>
+  </div>
+</section>
     </main>
 
     <!-- Footer -->
@@ -42,7 +38,7 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
-import { searchCanteens } from '@/services/canteen.js'
+import { searchCanteens, searchFoodItems } from '@/services/search.js'
 
 export default {
   name: 'SearchResults',
@@ -62,27 +58,103 @@ export default {
         c.location.toLowerCase().includes(query) ||
         c.items.some(item => item.name.toLowerCase().includes(query))
       )
+    },
+    allFoodItems() {
+    const items = []
+    this.canteens.forEach(canteen => {
+      canteen.items.forEach(item => {
+        items.push({
+          foodName: item.name,
+          price: item.price,
+          canteenName: canteen.name
+        })
+      })
+    })
+    return items
+  }
+  },
+  watch: {
+    // Watch for changes in the URL query parameter
+    '$route.query.q': {
+      handler(newQuery, oldQuery) {
+        console.log('Query changed from', oldQuery, 'to', newQuery)
+        // Re-run search when query changes
+        if (newQuery) {
+          this.performSearch()
+        }
+      },
+      immediate: true // Run immediately on component load
     }
   },
   methods: {
     getStars(rating) {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
-    },// added by gpt
+    },
+    
     async performSearch() {
       const query = this.$route.query.q
       if (!query) return
 
       this.searchQuery = query
       try {
-        this.canteens = await searchCanteens(query)
+        // Call both APIs in parallel
+        const [canteensResponse, foodResponse] = await Promise.all([
+          searchCanteens(query),
+          searchFoodItems(query)
+        ])
+        console.log('Canteens Response:', canteensResponse)
+        console.log('Food Response:', foodResponse)
+        console.log('Canteens List:', canteensResponse.results)
+        console.log('Food List:', foodResponse.results)
+
+        // Extract results arrays
+        const canteensList = canteensResponse.results || []
+        const foodList = foodResponse.results || []
+
+        // Create a map to merge canteens with their food items
+        const canteenMap = {}
+
+        // Add all canteens to map
+        canteensList.forEach(canteen => {
+          canteenMap[canteen.canteen_name] = {
+            name: canteen.canteen_name,
+            location: canteen.location,
+            timings: canteen.timings,
+            rating: Math.round(canteen.overall_rating || 0),
+            items: []
+          }
+        })
+
+        // Add food items to their canteens
+        foodList.forEach(food => {
+          const canteenName = food.canteen_name
+          
+          if (!canteenMap[canteenName]) {
+            canteenMap[canteenName] = {
+              name: canteenName,
+              location: 'N/A',
+              timings: 'N/A',
+              rating: 0,
+              items: []
+            }
+          }
+          
+          canteenMap[canteenName].items.push({
+            name: food.food_name,
+            price: `₹${food.price}`
+          })
+        })
+
+        // Convert map to array
+        this.canteens = Object.values(canteenMap)
+
       } catch (error) {
         console.error('Search failed:', error)
+        alert('Search failed. Please try again.')
       }
     }
   },
-  mounted() {
-    this.performSearch()
-  }
+  
 }
 </script>
 

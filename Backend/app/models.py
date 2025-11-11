@@ -360,8 +360,9 @@ def get_food_items_by_name(q: str, available_only: bool = False, limit: int = 50
             JOIN menu m ON fi.menu_id = m.menu_id
             JOIN canteens c ON m.canteen_id = c.canteen_id
             WHERE LOWER(fi.name) LIKE LOWER(%s)
+             OR LOWER(c.name) LIKE LOWER(%s)  -- Also search canteen name
         """
-        params = [_like_pattern(q)]
+        params = [_like_pattern(q), _like_pattern(q)]  # for fi.name and c.name
 
         if available_only:
             query += " AND (fi.status IS NULL OR LOWER(fi.status) IN ('available', '1', 'true', 'yes'))"
