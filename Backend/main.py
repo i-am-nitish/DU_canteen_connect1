@@ -13,15 +13,24 @@ import logging
 from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api, fetch_daywise_menu_handler, update_daywise_menu_handler
 from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler, fetch_food_items_owner_handler, update_user_info_handler, update_canteen_profile_handler
 from flask_cors import CORS
-from app.models import get_user_by_id_db
+from app.models import get_user_by_id_db, update_menu_images, update_canteen_images
 import bcrypt
 import logging
 from app.cloudinary_setup import cloudinary
 import cloudinary.uploader
+from app.models import _upload_to_cloudinary
 
 app = create_app()
 CORS(app)
 
+def upload_files_to_cloudinary(files_in_order):
+    
+    urls = []
+    for f in files_in_order:
+        if f:
+            url = _upload_to_cloudinary(f)
+            urls.append(url)
+    return urls
 
 
 
@@ -469,6 +478,55 @@ def update_canteen_profile_route():
     except Exception as e:
         logging.exception("Unexpected error in /canteen/update")
         return jsonify({"message": "Internal Server Error"}), 500
+    
+
+@app.route("/upload_menu_image", methods=["POST"])
+def upload_menu_image_route():
+    try:
+        canteen_id = request.form.get("canteen_id")
+        if not canteen_id:
+            return jsonify({"message": "canteen_id is required"}), 400
+
+        # Accept either menu_file_1/menu_file_2 or arbitrary files in order
+        menu_file_1 = request.files.get("menu_file_1")
+        menu_file_2 = request.files.get("menu_file_2")
+
+        if not menu_file_1 and not menu_file_2:
+            return jsonify({"message": "No files provided"}), 400
+
+        
+        uploaded_urls = upload_files_to_cloudinary([menu_file_1, menu_file_2])
+
+        
+        updated = update_menu_images(canteen_id, uploaded_urls)
+
+        return jsonify({"message": "Menu images updated", "data": updated}), 200
+
+    except Exception as e:
+        logging.exception("Error in upload_menu_image_route: %s", e)
+        return jsonify({"message": "Internal Server Error"}), 500
+    
+@app.route("/upload_canteen_images", methods=["POST"])
+def upload_canteen_images_route():
+    try:
+        canteen_id = request.form.get("canteen_id")
+        if not canteen_id:
+            return jsonify({"message": "canteen_id is required"}), 400
+
+        canteen_image_1 = request.files.get("canteen_image_1")
+        canteen_image_2 = request.files.get("canteen_image_2")
+        if not canteen_image_1 and not canteen_image_2:
+            return jsonify({"message": "No files provided"}), 400
+
+        uploaded_urls = upload_files_to_cloudinary([canteen_image_1, canteen_image_2])
+        updated = update_canteen_images(canteen_id, uploaded_urls)
+
+        return jsonify({"message": "Canteen images updated", "data": updated}), 200
+
+    except Exception as e:
+        logging.exception("Error in upload_canteen_images_route: %s", e)
+        return jsonify({"message": "Internal Server Error"}), 500
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

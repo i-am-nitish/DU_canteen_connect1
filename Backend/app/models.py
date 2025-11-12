@@ -1863,3 +1863,195 @@ def update_canteen_profile_db(canteen_id, update_fields: dict):
             if conn: conn.close()
         except Exception:
             pass
+
+def get_menu_row(canteen_id):
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM menu WHERE canteen_id = %s LIMIT 1", (canteen_id,))
+        return cursor.fetchone()
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+
+def update_menu_images(canteen_id, urls):
+    """
+    urls: list of urls (strings) in the order received from client (can be length 1 or 2).
+    Behavior:
+      - If a menu row for canteen_id doesn't exist, create one and set menu_file_1/menu_file_2 accordingly.
+      - If exists, fill null slot(s) first (menu_file_1 then menu_file_2),
+        for remaining urls, overwrite starting from menu_file_1 (or in same order).
+    Returns dict of updated columns: {"menu_file_1": url_or_none, "menu_file_2": url_or_none}
+    """
+    if not urls:
+        return {"menu_file_1": None, "menu_file_2": None}
+
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT menu_id, menu_file_1, menu_file_2 FROM menu WHERE canteen_id = %s LIMIT 1", (canteen_id,))
+        row = cursor.fetchone()
+
+        now = datetime.utcnow()
+
+        if not row:
+            # Insert new menu row with provided urls put into slots in order
+            menu_file_1 = urls[0] if len(urls) >= 1 else None
+            menu_file_2 = urls[1] if len(urls) >= 2 else None
+
+            insert_query = """
+                INSERT INTO menu (
+                    canteen_id, day_wise, Monday, monday_price, Tuesday, tuesday_price,
+                    Wednesday, wednesday_price, Thursday, thursday_price,
+                    Friday, friday_price, Saturday, saturday_price, Sunday, sunday_price,
+                    menu_file_1, menu_file_2, created_at, updated_at
+                ) VALUES (
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
+                )
+            """
+            # minimal default values (NULLs for day entries); day_wise default to "No"
+            values = (
+                canteen_id, "No",
+                None, None, None, None,
+                None, None, None, None,
+                None, None, None, None,
+                None, None,
+                menu_file_1, menu_file_2,
+                now, now
+            )
+            cursor.execute(insert_query, values)
+            conn.commit()
+            return {"menu_file_1": menu_file_1, "menu_file_2": menu_file_2}
+
+        # Row exists: apply fill-null-then-overwrite logic
+        current_1 = row.get("menu_file_1")
+        current_2 = row.get("menu_file_2")
+
+        # Build list representing slots in order: first fill nulls (left-to-right)
+        slots = [current_1, current_2]
+        updated_slots = list(slots)  # copy
+
+        urls_iter = iter(urls)
+        # First pass: fill null or empty slots
+        for i in range(len(slots)):
+            if (updated_slots[i] is None or updated_slots[i] == ""):
+                try:
+                    val = next(urls_iter)
+                    updated_slots[i] = val
+                except StopIteration:
+                    break
+
+        # Second pass: if still urls left, overwrite from slot 0 onwards
+        for i in range(len(slots)):
+            try:
+                val = next(urls_iter)
+                updated_slots[i] = val
+            except StopIteration:
+                break
+
+        # If nothing changed, still we may want to overwrite? but logic above handles it.
+        # Build update query for whichever slots changed/unconditionally update both for simplicity.
+        update_query = "UPDATE menu SET menu_file_1 = %s, menu_file_2 = %s, updated_at = %s WHERE canteen_id = %s"
+        params = (updated_slots[0], updated_slots[1], now, canteen_id)
+        cursor.execute(update_query, params)
+        conn.commit()
+
+        return {"menu_file_1": updated_slots[0], "menu_file_2": updated_slots[1]}
+
+    except Exception as e:
+        logging.exception("Error updating menu images: %s", e)
+        if conn:
+            conn.rollback()
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+
+# ---------- CANTEEN IMAGE UPDATES ----------
+def get_canteen_row(canteen_id):
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+        cursor.execute("SELECT canteen_id, canteen_image_1, canteen_image_2 FROM canteens WHERE canteen_id = %s LIMIT 1", (canteen_id,))
+        return cursor.fetchone()
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+
+
+def update_canteen_images(canteen_id, urls):
+    """
+    urls: list of urls (strings).
+    Fill null slot(s) first, else overwrite.
+    Returns dict {"canteen_image_1": val1, "canteen_image_2": val2}
+    """
+    if not urls:
+        return {"canteen_image_1": None, "canteen_image_2": None}
+
+    conn = None
+    cursor = None
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        cursor.execute("SELECT canteen_image_1, canteen_image_2 FROM canteens WHERE canteen_id = %s LIMIT 1", (canteen_id,))
+        row = cursor.fetchone()
+
+        if not row:
+            raise ValueError(f"Canteen with id {canteen_id} not found")
+
+        current_1 = row.get("canteen_image_1")
+        current_2 = row.get("canteen_image_2")
+
+        slots = [current_1, current_2]
+        updated_slots = list(slots)
+
+        urls_iter = iter(urls)
+        # Fill nulls first
+        for i in range(len(slots)):
+            if (updated_slots[i] is None or updated_slots[i] == ""):
+                try:
+                    val = next(urls_iter)
+                    updated_slots[i] = val
+                except StopIteration:
+                    break
+
+        # Overwrite remaining slots if urls left
+        for i in range(len(slots)):
+            try:
+                val = next(urls_iter)
+                updated_slots[i] = val
+            except StopIteration:
+                break
+
+        update_query = "UPDATE canteens SET canteen_image_1 = %s, canteen_image_2 = %s WHERE canteen_id = %s"
+        cursor.execute(update_query, (updated_slots[0], updated_slots[1], canteen_id))
+        conn.commit()
+
+        return {"canteen_image_1": updated_slots[0], "canteen_image_2": updated_slots[1]}
+
+    except Exception as e:
+        logging.exception("Error updating canteen images: %s", e)
+        if conn:
+            conn.rollback()
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
