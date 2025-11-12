@@ -7,11 +7,50 @@
     <section class="card profile-section">
       <h2>Profile</h2>
       <div class="profile-fields">
-        <div class="field"><strong>Name:</strong> {{ userInfo.name || 'Loading...' }}</div>
-        <div class="field"><strong>Email:</strong> {{ userInfo.email || 'Loading...' }}</div>
-        <div class="field"><strong>Phone number:</strong> {{ userInfo.phone_number || 'Loading...' }}</div>
-        <div class="field"><strong>Password:</strong> ********</div>
+        <div class="field">
+          <strong>Name:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableUserInfo.name" type="text" />
+          </template>
+          <template v-else>
+            {{ userInfo.name || 'Loading...' }}
+          </template>
+        </div>
+
+        <div class="field">
+          <strong>Email:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableUserInfo.email" type="email" />
+          </template>
+          <template v-else>
+            {{ userInfo.email || 'Loading...' }}
+          </template>
+        </div>
+
+        <div class="field">
+          <strong>Phone number:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableUserInfo.phone_number" type="text" />
+          </template>
+          <template v-else>
+            {{ userInfo.phone_number || 'Loading...' }}
+          </template>
+        </div>
+
+        <div class="field">
+          <strong>Password:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableUserInfo.password" type="password" />
+          </template>
+          <template v-else>
+            ********
+          </template>
+        </div>
       </div>
+
+      <button @click="toggleEditProfile" class="edit-btn">
+        {{ isEditingProfile ? 'Save' : 'Edit Profile' }}
+      </button>
     </section>
 
     <!-- Report Issues Section -->
@@ -64,6 +103,8 @@ export default {
   data() {
     return {
       userInfo: {},
+      editableUserInfo: {},
+      isEditingProfile: false,
       reviews: [],
       issueText: '',
       feedbackText: ''
@@ -129,7 +170,26 @@ export default {
         console.error('Send feedback failed:', error)
         alert('Failed to send feedback')
       }
+    },
+    async toggleEditProfile() {
+      if (this.isEditingProfile) {
+        // Save changes
+        try {
+          // Replace with your actual update API
+          await updateUserProfile(this.editableUserInfo)
+          this.userInfo = { ...this.editableUserInfo }
+          alert('Profile updated successfully!')
+        } catch (error) {
+          console.error('Failed to update profile:', error)
+          alert('Failed to save changes')
+        }
+      } else {
+        // Enter edit mode
+        this.editableUserInfo = { ...this.userInfo }
+      }
+      this.isEditingProfile = !this.isEditingProfile
     }
+
   },
   async mounted() {
     // Require authentication for this page (minimal change)
@@ -338,6 +398,25 @@ export default {
   align-items: center;
   justify-content: center;
 }
+
+.profile-fields input {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.edit-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #474747;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 768px) {

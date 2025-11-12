@@ -158,6 +158,14 @@ export default {
 </script>
 
 <style scoped>
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .error-text {
   color: #ff4d4d;
   font-size: 0.9rem;

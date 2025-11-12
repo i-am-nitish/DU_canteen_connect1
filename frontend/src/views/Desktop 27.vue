@@ -273,6 +273,13 @@ export default {
 </script>
 
 <style> 
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .canteen-page { 
 display: flex; 
 flex-direction: column; 
@@ -434,6 +441,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   
 .image-square { 
   width: 100%; 
+  object-fit: contain;
   aspect-ratio: 1 / 1; 
   background: #d9d9d9; 
   border-radius: 10px; 

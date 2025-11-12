@@ -11,16 +11,73 @@
       <div v-else-if="canteenInfo" class="profile-content">
         <div class="profile-image"></div>
         <div class="profile-info">
-          <div><strong>Name:</strong> {{ canteenInfo.name || 'N/A' }}</div>
-          <div><strong>Location:</strong> {{ canteenInfo.location || 'N/A' }}</div>
-          <div><strong>Contact:</strong> {{ canteenInfo.contact_no || 'N/A' }}</div>
-          <div><strong>Days Open:</strong> {{ canteenInfo.days_open || 'N/A' }}</div>
-          <div><strong>Opening Time:</strong> {{ canteenInfo.opening_time || 'N/A' }}</div>
-          <div><strong>Closing Time:</strong> {{ canteenInfo.closing_time || 'N/A' }}</div>
-          <div class="profile-actions">
-            <button>Edit Profile</button>
-            <button @click="loadReviews">View Reviews</button>
-          </div>
+        <div>
+          <strong>Name:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.name" type="text" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.name || 'N/A' }}
+          </template>
+        </div>
+
+        <div>
+          <strong>Location:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.location" type="text" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.location || 'N/A' }}
+          </template>
+        </div>
+
+        <div>
+          <strong>Contact:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.contact_no" type="text" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.contact_no || 'N/A' }}
+          </template>
+        </div>
+
+        <div>
+          <strong>Days Open:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.days_open" type="text" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.days_open || 'N/A' }}
+          </template>
+        </div>
+
+        <div>
+          <strong>Opening Time:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.opening_time" type="time" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.opening_time || 'N/A' }}
+          </template>
+        </div>
+
+        <div>
+          <strong>Closing Time:</strong>
+          <template v-if="isEditingProfile">
+            <input v-model="editableCanteenInfo.closing_time" type="time" />
+          </template>
+          <template v-else>
+            {{ canteenInfo.closing_time || 'N/A' }}
+          </template>
+        </div>
+
+        <div class="profile-actions">
+          <button @click="toggleEditProfile">
+            {{ isEditingProfile ? 'Save Profile' : 'Edit Profile' }}
+          </button>
+          <button @click="loadReviews">View Reviews</button>
+        </div>
+
         </div>
       </div>
     </section>
@@ -143,8 +200,9 @@
     </section>
 
     <!-- Footer -->
-    <Footer />
+    
   </div>
+  <Footer />
 </template>
 
 <script>
@@ -157,7 +215,7 @@ import {
   getCanteenReviewsOwner,
   getFoodItemsOwner,
   updateDayWiseMenu,
-  uploadMenuImages,          // <--- NEW
+  uploadMenuImages,        
   uploadCanteenImages
 } from '@/services/canteenOwner'
 
@@ -169,7 +227,10 @@ export default {
     return {
       // Canteen profile data
       canteenInfo: null,
-      
+
+      isEditingProfile: false,
+      editableCanteenInfo: {},
+
       // Menu items list
       menuItems: [],
       foodItemsMap: {}, // Maps item name -> food_id
@@ -400,9 +461,25 @@ export default {
         this.loading = false
       }
     },
-
-    
-    
+    async toggleEditProfile() {
+      if (this.isEditingProfile) {
+        try {
+          this.loading = true
+          // Replace with your actual update API
+          await updateCanteenProfile(this.canteenInfo.canteen_id, this.editableCanteenInfo)
+          this.canteenInfo = { ...this.editableCanteenInfo }
+          alert('✅ Profile updated successfully!')
+        } catch (error) {
+          console.error('❌ Failed to update profile:', error)
+          alert('❌ ' + (error.response?.data?.message || 'Failed to update profile'))
+        } finally {
+          this.loading = false
+        }
+      } else {
+        this.editableCanteenInfo = { ...this.canteenInfo }
+      }
+      this.isEditingProfile = !this.isEditingProfile
+    },  
 
     handleMenuImageSelect(event) {
     const files = Array.from(event.target.files || []).slice(0, 2)
@@ -578,6 +655,15 @@ export default {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.profile-info input {
+  margin-left: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
 
 /* Report */
 .report-group {
@@ -755,6 +841,8 @@ export default {
 
 .image-preview img {
   max-width: 100%;
+  max-height: 300px; /* or any height you prefer */
+  object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }

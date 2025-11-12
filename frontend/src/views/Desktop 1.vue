@@ -19,7 +19,7 @@
         </div>
       </section>
 
-      <!-- Today's Menus -->
+      <!-- Today's Menus
       <section class="card menu-section">
         <h2>Today's Menus</h2>
         <div class="menu-grid">
@@ -27,11 +27,10 @@
             <div class="image-placeholder"></div>
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
-
-    <Footer />
   </div>
+  <Footer />
 </template>
 
 <script>
@@ -84,6 +83,13 @@ export default {
 </script>
 
 <style scoped>
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 .home-dashboard {
   padding-top: 100px;
   max-width: 1200px;
