@@ -201,8 +201,24 @@
 
     <!-- Footer -->
     
-  </div>
   <Footer />
+  </div>
+  <transition name="fade">
+    <div v-if="showReviewDialog" class="dialog-overlay" @click.self="showReviewDialog = false">
+      <div class="dialog-box">
+        <h3>Reviews</h3>
+        <ul class="review-list">
+          <li v-for="(review, index) in reviewList" :key="index">
+            <p><strong>{{ review.reviewer_name || 'Anonymous' }}</strong></p>
+            <p>{{ review.review_text }}</p>
+            <p>Rating: {{ review.overall_rating }} ★</p>
+          </li>
+        </ul>
+        <button @click="showReviewDialog = false">Close</button>
+      </div>
+    </div>
+  </transition>
+
 </template>
 
 <script>
@@ -252,17 +268,26 @@ export default {
       // Issue reporting
       issueText: '',
       
-      uploadedImage: null,         // legacy single-menu preview (you can ignore)
-      menuSelectedFiles: [],      // File objects selected for menu upload
-      menuSelectedPreviews: [],   // preview URLs
-      canteenSelectedFiles: [],   // File objects selected for canteen images
+      uploadedImage: null,       
+      menuSelectedFiles: [],     
+      menuSelectedPreviews: [],  
+      canteenSelectedFiles: [],   
       canteenSelectedPreviews: [],
       
-      // Loading and error states
       loading: false,
-      error: null
+      error: null,
+
+      showReviewDialog: false,
+      reviewList: []
+
     }
   },
+
+  watch: {
+  showReviewDialog(val) {
+    document.body.classList.toggle('dialog-open', val)
+  }
+},
   
   async mounted() {
     // Load canteen info and existing food items when page loads
@@ -292,6 +317,20 @@ export default {
           localStorage.removeItem('token')
           this.$router.push('/desktop6')
         }
+      } finally {
+        this.loading = false
+      }
+    },
+
+    async loadReviews() {
+      try {
+        this.loading = true
+        const response = await getCanteenReviewsOwner()
+        this.reviewList = response.reviews || []
+        this.showReviewDialog = true
+      } catch (error) {
+        console.error('❌ Error loading reviews:', error)
+        alert('❌ ' + (error.response?.data?.message || 'Failed to load reviews'))
       } finally {
         this.loading = false
       }
@@ -563,6 +602,68 @@ export default {
 </script>
 
 <style scoped>
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.dialog-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dialog-box h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #474747;
+}
+
+.dialog-box button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #474747;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+}
+
+.review-list li {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+body.dialog-open {
+  overflow: hidden;
+}
+
 .dashboard-wrapper {
   padding-top: 100px;
   max-width: 1200px;

@@ -28,8 +28,9 @@
         <router-link to="/Desktop345" class="signup-link">Sign up</router-link>
       </div>
     </div>
-    <Footer />
+    
   </div>
+  <Footer />
 </template>
 
 
@@ -73,6 +74,15 @@ export default {
   
 
 <style scoped>
+.footer {
+  width: 100%;
+  padding: 2rem;
+  background-color: #474747;
+  color: white;
+  text-align: center;
+}
+
+
 .wrapper{
     padding-top: 60px;
 }
