@@ -393,6 +393,7 @@ def get_canteens_by_name(query: str, limit: int = 50):
 
         query_sql = """
             SELECT
+                canteen_id,
                 name AS canteen_name,
                 location,
                 CONCAT(opening_time, ' - ', closing_time) AS timings,

@@ -21,7 +21,7 @@
       <ul class="nav-links">
         <li><router-link to="/">Home</router-link></li>
         <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
-        <li v-else><router-link to="/Desktop8">Account</router-link></li>
+        <li v-else><router-link :to="accountRoute">Account</router-link></li>
         <li v-if="isLoggedIn">
           <button @click="logout" class="logout-btn">Logout</button>
         </li>
@@ -65,7 +65,37 @@ export default {
     const isAuthPage = computed(() =>
       ["/login", "/signup", "/signup/profile", "/signup/canteenprofile"].includes(route.path)
     );
-
+    // Computed property for account route based on role
+   const accountRoute = computed(() => {
+    const userString = localStorage.getItem('user')
+    
+    if (!userString) {
+      return '/login'
+    }
+    
+    try {
+      const user = JSON.parse(userString)
+      const role = user.role
+      
+      if (!role) {
+        return '/login'
+      }
+      
+      // Route based on role
+      if (role === 'general') {
+        return '/desktop8'
+      } else if (role === 'canteen_owner') {
+        return '/desktop9'
+      } else if (role === 'admin') {
+        return '/desktop10'
+      } else {
+        return '/login'
+      }
+    } catch (error) {
+      console.error('Error parsing user data:', error)
+      return '/login'
+    }
+  });
     // ✅ Logout function clears storage + redirects
     function logout() {
       localStorage.removeItem("token");
@@ -89,6 +119,7 @@ export default {
       logout,
       handleSearch,
       menuOpen,
+      accountRoute,
     };
   },
 };

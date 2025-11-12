@@ -9,11 +9,15 @@
       <section class="card canteen-panel">
         <h2>Canteens</h2>
         <div class="canteen-list">
-          <div class="canteen-entry" v-for="canteen in filteredCanteens" :key="canteen.name">
-            <p><strong>Name:</strong> {{ canteen.name }}</p>
-            <p><strong>Location:</strong> {{ canteen.location }}</p>
-            <p><strong>Timings:</strong> {{ canteen.timings }}</p>
-            <p><strong>Rating:</strong> {{ getStars(canteen.rating) }}</p>
+          <div 
+            class="canteen-entry" v-for="canteen in filteredCanteens" 
+            :key="canteen.name"
+            @click="goToCanteen(canteen.canteen_id)"
+            style="cursor: pointer;">
+              <p><strong>Name:</strong> {{ canteen.name }}</p>
+              <p><strong>Location:</strong> {{ canteen.location }}</p>
+              <p><strong>Timings:</strong> {{ canteen.timings }}</p>
+              <p><strong>Rating:</strong> {{ getStars(canteen.rating) }}</p>
           </div>
         </div>
       </section>
@@ -90,6 +94,13 @@ export default {
     getStars(rating) {
       return '★'.repeat(rating) + '☆'.repeat(5 - rating)
     },
+    goToCanteen(canteenId) {
+      if (!canteenId) {
+         alert('Canteen ID not available')
+         return
+      }
+      this.$router.push(`/desktop27?canteen_id=${canteenId}`)
+    },
     
     async performSearch() {
       const query = this.$route.query.q
@@ -117,6 +128,7 @@ export default {
         // Add all canteens to map
         canteensList.forEach(canteen => {
           canteenMap[canteen.canteen_name] = {
+             canteen_id: canteen.canteen_id,  //canteen was required 
             name: canteen.canteen_name,
             location: canteen.location,
             timings: canteen.timings,
@@ -132,6 +144,7 @@ export default {
           if (!canteenMap[canteenName]) {
             canteenMap[canteenName] = {
               name: canteenName,
+              canteen_id: null,
               location: 'N/A',
               timings: 'N/A',
               rating: 0,
@@ -243,6 +256,14 @@ export default {
   background: rgba(255, 255, 255, 0.3);
   padding: 1rem;
   border-radius: 12px;
+  cursor: pointer;  /* added some css */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+/* added hover effect */
+.canteen-entry:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .scroll-arrows {
