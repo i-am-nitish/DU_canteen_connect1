@@ -75,7 +75,7 @@
           <button @click="toggleEditProfile">
             {{ isEditingProfile ? 'Save Profile' : 'Edit Profile' }}
           </button>
-          <button @click="loadReviews">View Reviews</button>
+          <button @click="loadReviewsDialog">View Reviews</button>
         </div>
 
         </div>
@@ -322,7 +322,7 @@ export default {
       }
     },
 
-    async loadReviews() {
+    async loadReviewsDialog() {
       try {
         this.loading = true
         const response = await getCanteenReviewsOwner()
