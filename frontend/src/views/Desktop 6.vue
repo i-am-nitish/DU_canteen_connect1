@@ -78,6 +78,7 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 60px;
 }
 
 .login-container {
