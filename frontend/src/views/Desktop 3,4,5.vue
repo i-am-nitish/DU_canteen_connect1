@@ -183,6 +183,7 @@ export default {
 }
 
 .signup-container {
+  flex: 1;
   width: 100%;
   max-width: 480px;
   margin: auto;
