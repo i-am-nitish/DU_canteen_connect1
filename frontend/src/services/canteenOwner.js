@@ -83,3 +83,19 @@ export const uploadCanteenImages = async (canteenId, files /* Array or FileList 
   const res = await api.post('/upload_canteen_images', formData)
   return res.data
 }
+
+// edit canteen profile
+export const updateCanteenProfile = async (payload) => {
+  // Convert JSON object to FormData
+  const formData = new FormData()
+  
+  // Add each field to FormData 
+  for (const key in payload) {
+    if (payload[key] !== null && payload[key] !== undefined) {
+      formData.append(key, payload[key])
+    }
+  }
+
+  const response = await api.post('/canteen_profile_update', formData)
+  return response.data
+}

@@ -232,7 +232,8 @@ import {
   getFoodItemsOwner,
   updateDayWiseMenu,
   uploadMenuImages,        
-  uploadCanteenImages
+  uploadCanteenImages,
+  updateCanteenProfile
 } from '@/services/canteenOwner'
 
 export default {
@@ -501,24 +502,60 @@ export default {
       }
     },
     async toggleEditProfile() {
-      if (this.isEditingProfile) {
-        try {
-          this.loading = true
-          // Replace with your actual update API
-          await updateCanteenProfile(this.canteenInfo.canteen_id, this.editableCanteenInfo)
-          this.canteenInfo = { ...this.editableCanteenInfo }
-          alert('✅ Profile updated successfully!')
-        } catch (error) {
-          console.error('❌ Failed to update profile:', error)
-          alert('❌ ' + (error.response?.data?.message || 'Failed to update profile'))
-        } finally {
-          this.loading = false
-        }
-      } else {
-        this.editableCanteenInfo = { ...this.canteenInfo }
+  if (this.isEditingProfile) {
+    try {
+      this.loading = true
+      
+      //  updates object (only changed fields)
+      const updates = {}
+      
+      if (this.editableCanteenInfo.name !== this.canteenInfo.name) {
+        updates.name = this.editableCanteenInfo.name
       }
-      this.isEditingProfile = !this.isEditingProfile
-    },  
+      if (this.editableCanteenInfo.location !== this.canteenInfo.location) {
+        updates.location = this.editableCanteenInfo.location
+      }
+      if (this.editableCanteenInfo.contact_no !== this.canteenInfo.contact_no) {
+        updates.contact_no = this.editableCanteenInfo.contact_no
+      }
+      if (this.editableCanteenInfo.days_open !== this.canteenInfo.days_open) {
+        updates.days_open = this.editableCanteenInfo.days_open
+      }
+      if (this.editableCanteenInfo.opening_time !== this.canteenInfo.opening_time) {
+        updates.opening_time = this.editableCanteenInfo.opening_time
+      }
+      if (this.editableCanteenInfo.closing_time !== this.canteenInfo.closing_time) {
+        updates.closing_time = this.editableCanteenInfo.closing_time
+      }
+      
+      // Check if anything changed
+      if (Object.keys(updates).length === 0) {
+        alert('ℹ️ No changes to save')
+        this.isEditingProfile = false
+        return
+      }
+      
+      // Call API 
+      await updateCanteenProfile(updates)  
+      
+      // Reload canteen info 
+      await this.loadCanteenInfo()
+      
+      alert('✅ Profile updated successfully!')
+      this.isEditingProfile = false
+      
+    } catch (error) {
+      console.error('❌ Failed to update profile:', error)
+      alert('❌ ' + (error.response?.data?.message || 'Failed to update profile'))
+    } finally {
+      this.loading = false
+    }
+  } else {
+    //  copy current values
+    this.editableCanteenInfo = { ...this.canteenInfo }
+    this.isEditingProfile = true
+  }
+},
 
     handleMenuImageSelect(event) {
     const files = Array.from(event.target.files || []).slice(0, 2)

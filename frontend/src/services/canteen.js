@@ -51,7 +51,6 @@ export const fetchCanteenReviews = async (canteenId) => {
   }
   
 }
-// gpt added this too
 export const submitCanteenReview = async (canteenId, reviewData) => {
   const formData = new FormData()
   formData.append('canteen_id', canteenId)

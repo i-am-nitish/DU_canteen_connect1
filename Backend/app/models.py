@@ -1835,14 +1835,20 @@ def update_canteen_profile_db(canteen_id, update_fields: dict):
 
         # add updated_at
         set_clause = ", ".join(set_clauses)
-        params.append(datetime.utcnow())
+        #params.append(datetime.utcnow())
         params.append(canteen_id)
 
         query = f"""
             UPDATE canteens
-            SET {set_clause}, updated_at = %s
+            SET {set_clause}
             WHERE canteen_id = %s
         """
+        # removed  updated_at = %s from queryy
+
+
+        # Log what we're updating 
+        logging.info(f"Updating canteen {canteen_id} with fields: {list(update_fields.keys())}")
+
         cursor.execute(query, tuple(params))
         conn.commit()
         return True
