@@ -134,11 +134,9 @@
         <div class="menu-images">
         <label for="menuImageUpload">Upload Menu Image(s) (max 2)</label>
         <input type="file" id="menuImageUpload" @change="handleMenuImageSelect" accept="image/*" multiple />
-        <div class="image-preview" v-if="menuSelectedPreviews.length">
-          <div v-for="(src, i) in menuSelectedPreviews" :key="'m'+i" style="margin-bottom:8px;">
-            <img :src="src" :alt="'Menu Preview ' + (i+1)" />
-          </div>
-        </div>
+        <div v-for="(src, i) in menuSelectedPreviews" :key="'m'+i" style="margin-bottom:8px;">
+  <img :src="src" :alt="'Menu Preview ' + (i+1)" @click="openFullscreen(src)" />
+</div>
         <button @click="uploadSelectedMenuImages" :disabled="loading || menuSelectedFiles.length === 0">
           {{ loading ? 'Uploading...' : 'Upload Menu Image(s)' }}
         </button>
@@ -148,11 +146,9 @@
         <!-- NEW: Canteen Images Upload -->
         <label for="canteenImageUpload">Upload Canteen Image(s) (max 2)</label>
         <input type="file" id="canteenImageUpload" @change="handleCanteenImageSelect" accept="image/*" multiple />
-        <div class="image-preview" v-if="canteenSelectedPreviews.length">
-          <div v-for="(src, i) in canteenSelectedPreviews" :key="'c'+i" style="margin-bottom:8px;">
-            <img :src="src" :alt="'Canteen Preview ' + (i+1)" />
-          </div>
-        </div>
+        <div v-for="(src, i) in canteenSelectedPreviews" :key="'c'+i" style="margin-bottom:8px;">
+  <img :src="src" :alt="'Canteen Preview ' + (i+1)" @click="openFullscreen(src)" />
+</div>
         <button @click="uploadSelectedCanteenImages" :disabled="loading || canteenSelectedFiles.length === 0">
           {{ loading ? 'Uploading...' : 'Upload Canteen Image(s)' }}
         </button>
@@ -215,6 +211,11 @@
       </div>
     </div>
   </transition>
+  <transition name="fade">
+  <div v-if="fullscreenImage" class="fullscreen-overlay" @click="closeFullscreen">
+    <img :src="fullscreenImage" class="fullscreen-img" />
+  </div>
+</transition>
   
   <Footer />
   </div>
@@ -244,6 +245,7 @@ export default {
     return {
       // Canteen profile data
       canteenInfo: null,
+      fullscreenImage: null,
 
       isEditingProfile: false,
       editableCanteenInfo: {},
@@ -299,6 +301,13 @@ export default {
   methods: {
     
     //  LOAD CANTEEN PROFILE
+
+    openFullscreen(src) {
+      this.fullscreenImage = src
+    },
+    closeFullscreen() {
+      this.fullscreenImage = null
+    },
     
     async loadCanteenInfo() {
       try {
@@ -639,6 +648,27 @@ export default {
 </script>
 
 <style scoped>
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: zoom-out;
+}
+
+.fullscreen-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
