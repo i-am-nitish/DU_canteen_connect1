@@ -8,29 +8,57 @@
 
     <div class="footer-right">
       <div class="map-wrapper">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14009.123456789!2d77.216721!3d28.644800!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2b123456789%3A0xabcdef123456789!2sNorth%20Campus%2C%20Delhi%20University!5e0!3m2!1sen!2sin!4v1696521234567"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div id="map" style="width: 100%; height: 100%;"></div>
       </div>
     </div>
   </footer>
 </template>
 
-
-
 <script>
+// Import Leaflet
+import L from 'leaflet';
+
 export default {
   name: "Footer",
+  mounted() {
+    // Initialize the map inside the 'map' div
+    const map = L.map('map', {
+      zoomControl: false, // Hides the +/- buttons to keep it clean
+      attributionControl: false // Hides the "Leaflet" text to save space
+    }).setView([28.6139, 77.2090], 13);
+
+    // Add the OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+    }).addTo(map);
+
+    // Add a marker for Delhi University (North Campus area)
+    L.marker([28.6902, 77.2072]).addTo(map)
+      .bindPopup('DU North Campus')
+      .openPopup();
+
+    // --- OPTIONAL: Keep the "Live Location" feature if you want ---
+    // If you want the footer map to track the user, uncomment this block:
+    /*
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition((position) => {
+        const lat = position.coords.latitude;
+        const long = position.coords.longitude;
+        
+        // Move the view to user
+        map.setView([lat, long], 15);
+
+        // Add a user marker
+        L.marker([lat, long]).addTo(map)
+          .bindPopup("You are here");
+      });
+    }
+    */
+  }
 };
 </script>
 
-<style>
+<style scoped>
 .footer {
   width: 100%;
   min-height: 200px;
@@ -45,7 +73,6 @@ export default {
   gap: 1.5rem;
   margin-top: auto;        /* pushes footer to bottom */
   position: relative; 
-  
 }
 
 .footer-left {
@@ -73,12 +100,15 @@ export default {
 }
 
 .map-wrapper {
-  width: 180px;
-  height: 180px;
+  /* I increased the size slightly so the map is more useful */
+  width: 250px; 
+  height: 200px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   margin: 1rem 0;
+  /* This ensures the map stays inside the rounded corners */
+  z-index: 0; 
 }
 
 @media (max-width: 768px) {

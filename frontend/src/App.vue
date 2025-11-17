@@ -1,5 +1,3 @@
-import Header from './components/Header.vue'
-
 <template>
   <div class="app-wrapper">
     <Header />
@@ -8,10 +6,13 @@ import Header from './components/Header.vue'
 </template>
 
 <script>
-
+import Header from './components/Header.vue'
 
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Header
+  }
 }
 </script>
 
@@ -22,6 +23,5 @@ export default {
   background: url('@/assets/back.jpeg') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
 }
 </style>
