@@ -7,10 +7,10 @@ from flask_jwt_extended import JWTManager, create_access_token, get_jwt, jwt_req
 import os 
 from apis.signup import signup_api, create_canteen_profile_api, login_api
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api,  search_canteens_handler, search_food_items_handler
+from apis.no_login import get_all_canteens_api, get_canteen_review_ratings_api, get_canteen_menu_details_api,  search_canteens_handler, search_food_items_handler
 from apis.need_login import submit_canteen_review_handler, admin_get_open_issues_handler, admin_get_app_feedbacks_handler
 import logging
-from apis.no_login import all_canteens_api, fetch_canteen_info, get_canteen_review_ratings_api, get_canteen_menu_details_api, fetch_daywise_menu_handler, update_daywise_menu_handler
+from apis.no_login import get_all_canteens_api, get_canteen_review_ratings_api, get_canteen_menu_details_api, fetch_daywise_menu_handler, update_daywise_menu_handler
 from apis.need_login import display_user_info_api, display_user_reviews_api, give_app_feedback_api, report_app_issue_api, fetch_canteen_info_handler, add_food_item_handler, report_issue_by_canteen_owner_api, fetch_canteen_reviews_owner_handler, fetch_food_items_owner_handler, update_user_info_handler, update_canteen_profile_handler
 from flask_cors import CORS
 from app.models import get_user_by_id_db, update_menu_images, update_canteen_images
@@ -58,7 +58,7 @@ def login_route():
     return login_api()
 @app.route('/canteens', methods=['GET'])
 def canteens_route():
-    return all_canteens_api()
+    return get_all_canteens_api()
 
 @app.route('/canteen_info', methods=['GET'])
 def canteen_info_route():

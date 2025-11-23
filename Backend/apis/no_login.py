@@ -326,3 +326,35 @@ def update_daywise_menu_handler(user_id, canteen_id, day, food_ids):
     except Exception as e:
         logging.exception(f"Error in update_daywise_menu_handler: {e}")
         return jsonify({"message": "Internal Server Error"}), 500
+    
+    # --- Add this to the bottom of Backend/apis/no_login.py ---
+
+def get_all_canteens_api():
+    try:
+        from app.models import get_db_connection
+        conn = get_db_connection()
+        cursor = conn.cursor(dictionary=True)
+
+        # 1. Let's try a VERY simple query first to see if it works.
+        # If this works, we know the connection is good.
+        query = "SELECT * FROM canteens" 
+        
+        cursor.execute(query)
+        canteens = cursor.fetchall()
+        
+        cursor.close()
+        conn.close()
+
+        if not canteens:
+            return jsonify({"message": "No canteens found", "canteens": []}), 200
+
+        return jsonify({
+            "message": "Canteens fetched successfully", 
+            "canteens": canteens
+        }), 200
+
+    except Exception as e:
+        # This will print the exact error to your terminal so you can see it
+        print(f"------------ SQL ERROR: {e} ------------") 
+        logging.exception(f"Error fetching all canteens: {e}")
+        return jsonify({"message": "Internal Server Error"}), 500
