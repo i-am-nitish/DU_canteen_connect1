@@ -15,45 +15,41 @@
 </template>
 
 <script>
-// Import Leaflet
 import L from 'leaflet';
 
 export default {
   name: "Footer",
   mounted() {
-    // Initialize the map inside the 'map' div
+    // 1. Initialize the map
     const map = L.map('map', {
-      zoomControl: false, // Hides the +/- buttons to keep it clean
-      attributionControl: false // Hides the "Leaflet" text to save space
-    }).setView([28.6139, 77.2090], 13);
+      zoomControl: false,
+      attributionControl: false
+    }).setView([28.6902, 77.2072], 14); // Centered on DU North Campus
 
-    // Add the OpenStreetMap tiles
+    // 2. Add the OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19
     }).addTo(map);
 
-    // Add a marker for Delhi University (North Campus area)
-    L.marker([28.6902, 77.2072]).addTo(map)
-      .bindPopup('DU North Campus')
-      .openPopup();
+    // 3. LIST OF CANTEENS TO TARGET
+    // You can add more here. Format: { name: "Name", coords: [lat, long] }
+    const canteens = [
+      { name: "Jubilee Hall Mess", coords: [28.691932306052973, 77.21864410793967] },
+      { name: "SOL Canteen", coords: [28.693296619827898, 77.21302418024278] },
+      { name: "Pandit ji Canteen", coords: [28.691272006641036, 77.21729857816447] },
+      { name: "Gwyer Hall Mess", coords: [28.690749198518496, 77.2168453693132] },
+      { name: "PG Men's Hostel", coords: [28.69042294104146, 77.2167504278964] },
+      { name: "Arts Faculty Canteen", coords: [28.6890, 77.2060] },
+      { name: "Departmental Canteen Gate No. 4", coords: [28.68814746482982, 77.20980843458463] }
+    ];
 
-    // --- OPTIONAL: Keep the "Live Location" feature if you want ---
-    // If you want the footer map to track the user, uncomment this block:
-    /*
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition((position) => {
-        const lat = position.coords.latitude;
-        const long = position.coords.longitude;
-        
-        // Move the view to user
-        map.setView([lat, long], 15);
+    // 4. Loop through the list and add markers
+    canteens.forEach(canteen => {
+      L.marker(canteen.coords)
+        .addTo(map)
+        .bindPopup(`<b>${canteen.name}</b>`); // Bold text for popup
+    });
 
-        // Add a user marker
-        L.marker([lat, long]).addTo(map)
-          .bindPopup("You are here");
-      });
-    }
-    */
   }
 };
 </script>
