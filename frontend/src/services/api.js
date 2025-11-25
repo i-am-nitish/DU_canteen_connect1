@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // 🔹 Create Axios instance
 const api = axios.create({
-  baseURL: 'https://du-canteen-connect1.onrender.com', // Render backend URL
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000',
 })
 
 // 🔹 Automatically attach JWT token (if exists) to every request
