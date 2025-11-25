@@ -5955,3 +5955,323 @@ AttributeError: 'NoneType' object has no attribute 'cursor'
 2025-11-25 15:18:08,292 - root - ERROR - Error connecting to the database: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
 2025-11-25 15:18:08,292 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
 2025-11-25 15:18:08,292 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 15:18:08] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-25 16:02:20,216 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:02:20,221 - app - INFO - Starting Flask application...
+2025-11-25 16:02:20,225 - app - INFO - Flask application created successfully
+2025-11-25 16:02:20,422 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.186.105.132:5000
+2025-11-25 16:02:20,423 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-25 16:02:20,427 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:02:23,497 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:02:23,498 - app - INFO - Starting Flask application...
+2025-11-25 16:02:23,502 - app - INFO - Flask application created successfully
+2025-11-25 16:02:23,619 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:02:23,632 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:03:42,145 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:42] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:03:42,498 - root - INFO - Database connection established.
+2025-11-25 16:03:42,507 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:42] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:03:44,850 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:44] "OPTIONS /canteen_info?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:45,174 - root - INFO - Database connection established.
+2025-11-25 16:03:45,178 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:45] "GET /canteen_info?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:45,432 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:45] "OPTIONS /canteen_menu_details?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:45,506 - root - INFO - Database connection established.
+2025-11-25 16:03:45,517 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:45] "GET /canteen_menu_details?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:45,756 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:45] "OPTIONS /canteen_review_ratings?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:45,853 - root - INFO - Database connection established.
+2025-11-25 16:03:45,872 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:45] "GET /canteen_review_ratings?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:47,895 - root - INFO - Database connection established.
+2025-11-25 16:03:48,122 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:48] "GET /canteen_info?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:48,559 - root - INFO - Database connection established.
+2025-11-25 16:03:48,567 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:48] "GET /canteen_menu_details?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:03:48,817 - root - INFO - Database connection established.
+2025-11-25 16:03:48,820 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:03:48] "GET /canteen_review_ratings?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:04:05,322 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:04:05] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:04:05,582 - root - INFO - Database connection established.
+2025-11-25 16:04:05,587 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:04:05] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:04:57,686 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\__init__.py', reloading
+2025-11-25 16:04:58,343 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:05:02,484 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:05:02,486 - app - INFO - Starting Flask application...
+2025-11-25 16:05:02,489 - app - INFO - Flask application created successfully
+2025-11-25 16:05:02,570 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:05:02,579 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:05:08,434 - root - INFO - Database connection established.
+2025-11-25 16:05:08,437 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:08] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:05:11,839 - root - INFO - Database connection established.
+2025-11-25 16:05:11,945 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:11] "GET /canteen_info?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:05:12,309 - root - INFO - Database connection established.
+2025-11-25 16:05:12,313 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:12] "GET /canteen_menu_details?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:05:12,571 - root - INFO - Database connection established.
+2025-11-25 16:05:12,575 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:12] "GET /canteen_review_ratings?canteen_id=71 HTTP/1.1" 200 -
+2025-11-25 16:05:22,674 - root - INFO - Database connection established.
+2025-11-25 16:05:22,679 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:22] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:05:23,937 - root - INFO - Database connection established.
+2025-11-25 16:05:23,948 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:23] "GET /canteen_info?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:05:24,290 - root - INFO - Database connection established.
+2025-11-25 16:05:24,294 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:24] "GET /canteen_menu_details?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:05:24,571 - root - INFO - Database connection established.
+2025-11-25 16:05:24,575 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:24] "GET /canteen_review_ratings?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:05:37,887 - root - INFO - Database connection established.
+2025-11-25 16:05:37,893 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:05:37] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:06:09,738 - root - INFO - Database connection established.
+2025-11-25 16:06:09,740 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:09] "GET /canteen_info?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:10,000 - root - INFO - Database connection established.
+2025-11-25 16:06:10,011 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:10] "GET /canteen_menu_details?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:10,094 - root - INFO - Database connection established.
+2025-11-25 16:06:10,104 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:10] "GET /canteen_review_ratings?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:26,415 - root - INFO - Database connection established.
+2025-11-25 16:06:26,547 - root - INFO - Database connection established.
+2025-11-25 16:06:27,699 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:27] "POST /login HTTP/1.1" 200 -
+2025-11-25 16:06:27,764 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:27] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:06:27,898 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:27] "POST /login HTTP/1.1" 200 -
+2025-11-25 16:06:28,125 - root - INFO - Database connection established.
+2025-11-25 16:06:28,130 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:28] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:06:30,790 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:30] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:06:31,057 - root - INFO - Database connection established.
+2025-11-25 16:06:31,060 - root - INFO - Database connection established.
+2025-11-25 16:06:31,065 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:31] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:06:31,115 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:31] "OPTIONS /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:06:31,385 - root - INFO - Database connection established.
+2025-11-25 16:06:31,391 - root - INFO - Database connection established.
+2025-11-25 16:06:31,398 - root - INFO - Database connection established.
+2025-11-25 16:06:31,405 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:31] "GET /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:06:43,011 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:43] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:06:43,275 - root - INFO - Database connection established.
+2025-11-25 16:06:43,280 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:43] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:06:44,182 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:44] "OPTIONS /canteen_info?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:44,538 - root - INFO - Database connection established.
+2025-11-25 16:06:44,547 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:44] "GET /canteen_info?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:44,789 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:44] "OPTIONS /canteen_menu_details?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:44,886 - root - INFO - Database connection established.
+2025-11-25 16:06:44,888 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:44] "GET /canteen_menu_details?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:45,111 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:45] "OPTIONS /canteen_review_ratings?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:06:45,213 - root - INFO - Database connection established.
+2025-11-25 16:06:45,216 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:06:45] "GET /canteen_review_ratings?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:07:49,867 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:49] "OPTIONS /canteen_info?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:07:50,126 - root - INFO - Database connection established.
+2025-11-25 16:07:50,128 - root - ERROR - Error fetching canteen info from DB: 'NoneType' object does not support item assignment
+2025-11-25 16:07:50,130 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:50] "[33mGET /canteen_info?canteen_id=72 HTTP/1.1[0m" 404 -
+2025-11-25 16:07:50,186 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:50] "OPTIONS /canteen_menu_details?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:07:50,463 - root - INFO - Database connection established.
+2025-11-25 16:07:50,470 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:50] "[33mGET /canteen_menu_details?canteen_id=72 HTTP/1.1[0m" 404 -
+2025-11-25 16:07:50,504 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:50] "OPTIONS /canteen_review_ratings?canteen_id=72 HTTP/1.1" 200 -
+2025-11-25 16:07:50,826 - root - INFO - Database connection established.
+2025-11-25 16:07:50,828 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:50] "[33mGET /canteen_review_ratings?canteen_id=72 HTTP/1.1[0m" 404 -
+2025-11-25 16:07:51,528 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:07:51] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:08:44,114 - root - INFO - Database connection established.
+2025-11-25 16:08:44,804 - root - INFO - Database connection established.
+2025-11-25 16:08:44,816 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:08:44] "[35m[1mPOST /signup HTTP/1.1[0m" 201 -
+2025-11-25 16:09:25,266 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:25] "OPTIONS /create_canteen_profile HTTP/1.1" 200 -
+2025-11-25 16:09:30,720 - root - INFO - Cloudinary upload result 1: 'https://res.cloudinary.com/dmvtvssvn/image/upload/v1764067170/du_canteen/menu/ykgvzg5qllxozkcffapj.jpg'
+2025-11-25 16:09:30,730 - root - INFO - Database connection established.
+2025-11-25 16:09:30,764 - root - INFO - Database connection established.
+2025-11-25 16:09:30,772 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:30] "[35m[1mPOST /create_canteen_profile HTTP/1.1[0m" 201 -
+2025-11-25 16:09:31,225 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:31] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:09:31,681 - root - INFO - Database connection established.
+2025-11-25 16:09:31,684 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:31] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:09:46,342 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:46] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:09:46,607 - root - INFO - Database connection established.
+2025-11-25 16:09:46,616 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:46] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:09:46,669 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:46] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:09:46,972 - root - INFO - Database connection established.
+2025-11-25 16:09:46,980 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:46] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:09:47,005 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:47] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:09:47,400 - root - INFO - Database connection established.
+2025-11-25 16:09:47,428 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:09:47] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:10:14,753 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-25 16:10:14,949 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:10:19,443 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:10:19,443 - app - INFO - Starting Flask application...
+2025-11-25 16:10:19,446 - app - INFO - Flask application created successfully
+2025-11-25 16:10:19,528 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:10:19,537 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:10:46,267 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\apis\\need_login.py', reloading
+2025-11-25 16:10:46,434 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:11:02,302 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:11:02,304 - app - INFO - Starting Flask application...
+2025-11-25 16:11:02,308 - app - INFO - Flask application created successfully
+2025-11-25 16:11:02,393 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.186.105.132:5000
+2025-11-25 16:11:02,395 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-25 16:11:02,400 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:11:05,482 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:11:05,482 - app - INFO - Starting Flask application...
+2025-11-25 16:11:05,486 - app - INFO - Flask application created successfully
+2025-11-25 16:11:05,583 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:11:05,594 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:11:08,866 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:08] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:08,943 - root - INFO - Database connection established.
+2025-11-25 16:11:08,948 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:08] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:09,293 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:09] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:09,565 - root - INFO - Database connection established.
+2025-11-25 16:11:09,599 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:09] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:09,636 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:09] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:09,964 - root - INFO - Database connection established.
+2025-11-25 16:11:09,967 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:09] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:36,699 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:36] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:36,958 - root - INFO - Database connection established.
+2025-11-25 16:11:36,962 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:36] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:37,010 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:37] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:37,280 - root - INFO - Database connection established.
+2025-11-25 16:11:37,284 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:37] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:37,321 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:37] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:11:37,607 - root - INFO - Database connection established.
+2025-11-25 16:11:37,610 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:11:37] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:12:15,554 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:15] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:12:15,814 - root - INFO - Database connection established.
+2025-11-25 16:12:15,824 - root - INFO - Database connection established.
+2025-11-25 16:12:15,829 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:15] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:12:15,897 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:15] "OPTIONS /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:12:16,250 - root - INFO - Database connection established.
+2025-11-25 16:12:16,264 - root - INFO - Database connection established.
+2025-11-25 16:12:16,273 - root - INFO - Database connection established.
+2025-11-25 16:12:16,280 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:16] "GET /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:12:29,679 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:29] "OPTIONS /add_food_item HTTP/1.1" 200 -
+2025-11-25 16:12:29,948 - root - INFO - Database connection established.
+2025-11-25 16:12:29,953 - root - INFO - Database connection established.
+2025-11-25 16:12:29,959 - root - INFO - Database connection established.
+2025-11-25 16:12:29,970 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:29] "[35m[1mPOST /add_food_item HTTP/1.1[0m" 201 -
+2025-11-25 16:12:44,634 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:44] "OPTIONS /add_food_item HTTP/1.1" 200 -
+2025-11-25 16:12:44,887 - root - INFO - Database connection established.
+2025-11-25 16:12:44,890 - root - INFO - Database connection established.
+2025-11-25 16:12:44,893 - root - INFO - Database connection established.
+2025-11-25 16:12:44,901 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:44] "[35m[1mPOST /add_food_item HTTP/1.1[0m" 201 -
+2025-11-25 16:12:52,416 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:52] "OPTIONS /add_food_item HTTP/1.1" 200 -
+2025-11-25 16:12:52,745 - root - INFO - Database connection established.
+2025-11-25 16:12:52,753 - root - INFO - Database connection established.
+2025-11-25 16:12:52,763 - root - INFO - Database connection established.
+2025-11-25 16:12:52,773 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:12:52] "[35m[1mPOST /add_food_item HTTP/1.1[0m" 201 -
+2025-11-25 16:13:06,670 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:13:06] "OPTIONS /upload_canteen_images HTTP/1.1" 200 -
+2025-11-25 16:13:13,615 - root - INFO - Database connection established.
+2025-11-25 16:13:13,626 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:13:13] "POST /upload_canteen_images HTTP/1.1" 200 -
+2025-11-25 16:13:15,685 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:13:15] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:13:15,954 - root - INFO - Database connection established.
+2025-11-25 16:13:15,957 - root - INFO - Database connection established.
+2025-11-25 16:13:15,959 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:13:15] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:13:29,518 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:13:29] "OPTIONS /upload_canteen_images HTTP/1.1" 200 -
+2025-11-25 16:14:26,018 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:26] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:14:26,332 - root - INFO - Database connection established.
+2025-11-25 16:14:26,335 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:26] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:14:27,841 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:27] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:28,164 - root - INFO - Database connection established.
+2025-11-25 16:14:28,168 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:28] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:28,480 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:28] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:28,794 - root - INFO - Database connection established.
+2025-11-25 16:14:28,797 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:28] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:29,110 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:29] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:29,432 - root - INFO - Database connection established.
+2025-11-25 16:14:29,437 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:29] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:14:48,536 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2406)')': /v1_1/dmvtvssvn/image/upload
+2025-11-25 16:14:55,107 - root - INFO - Database connection established.
+2025-11-25 16:14:55,128 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:14:55] "POST /upload_canteen_images HTTP/1.1" 200 -
+2025-11-25 16:16:24,103 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:24] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:16:24,355 - root - INFO - Database connection established.
+2025-11-25 16:16:24,358 - root - INFO - Database connection established.
+2025-11-25 16:16:24,360 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:24] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:16:26,321 - root - INFO - Database connection established.
+2025-11-25 16:16:26,382 - root - INFO - Database connection established.
+2025-11-25 16:16:26,390 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:26] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:16:26,717 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:26] "OPTIONS /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:16:26,971 - root - INFO - Database connection established.
+2025-11-25 16:16:26,977 - root - INFO - Database connection established.
+2025-11-25 16:16:26,983 - root - INFO - Database connection established.
+2025-11-25 16:16:26,983 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:26] "GET /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:16:35,388 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:35] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:35,668 - root - INFO - Database connection established.
+2025-11-25 16:16:35,672 - root - INFO - Database connection established.
+2025-11-25 16:16:35,676 - root - INFO - Database connection established.
+2025-11-25 16:16:35,679 - root - INFO - Database connection established.
+2025-11-25 16:16:35,686 - root - INFO - Database connection established.
+2025-11-25 16:16:35,690 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:35] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:44,126 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:44] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:44,402 - root - INFO - Database connection established.
+2025-11-25 16:16:44,405 - root - INFO - Database connection established.
+2025-11-25 16:16:44,408 - root - INFO - Database connection established.
+2025-11-25 16:16:44,412 - root - INFO - Database connection established.
+2025-11-25 16:16:44,416 - root - INFO - Database connection established.
+2025-11-25 16:16:44,423 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:44] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:51,671 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:51] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:51,941 - root - INFO - Database connection established.
+2025-11-25 16:16:51,951 - root - INFO - Database connection established.
+2025-11-25 16:16:51,963 - root - INFO - Database connection established.
+2025-11-25 16:16:51,995 - root - INFO - Database connection established.
+2025-11-25 16:16:52,009 - root - INFO - Database connection established.
+2025-11-25 16:16:52,018 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:52] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:16:58,356 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:58] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:16:58,718 - root - INFO - Database connection established.
+2025-11-25 16:16:58,721 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:16:58] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:17:00,145 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:00] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:00,400 - root - INFO - Database connection established.
+2025-11-25 16:17:00,403 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:00] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:00,461 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:00] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:00,718 - root - INFO - Database connection established.
+2025-11-25 16:17:00,724 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:00] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:00,774 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:00] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:48,996 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-25 16:17:49,171 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:17:55,146 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:17:55,148 - app - INFO - Starting Flask application...
+2025-11-25 16:17:55,150 - app - INFO - Flask application created successfully
+2025-11-25 16:17:55,232 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:17:55,237 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:17:55,851 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:55] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:55,887 - root - INFO - Database connection established.
+2025-11-25 16:17:55,892 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:55] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:56,212 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:56] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:56,477 - root - INFO - Database connection established.
+2025-11-25 16:17:56,481 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:56] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:56,523 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:56] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:17:56,801 - root - INFO - Database connection established.
+2025-11-25 16:17:56,806 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:17:56] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,058 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,300 - root - INFO - Database connection established.
+2025-11-25 16:18:32,305 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,381 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,622 - root - INFO - Database connection established.
+2025-11-25 16:18:32,625 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,690 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:18:32,955 - root - INFO - Database connection established.
+2025-11-25 16:18:32,958 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:18:32] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:08,326 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-25 16:19:08,491 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:19:12,086 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:19:12,086 - app - INFO - Starting Flask application...
+2025-11-25 16:19:12,089 - app - INFO - Flask application created successfully
+2025-11-25 16:19:12,136 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:19:12,154 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:19:13,218 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:13] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:15,028 - root - INFO - Database connection established.
+2025-11-25 16:19:15,169 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:15] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:15,554 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:15] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:15,941 - root - INFO - Database connection established.
+2025-11-25 16:19:15,943 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:15] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:16,188 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:16] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:16,413 - root - INFO - Database connection established.
+2025-11-25 16:19:16,430 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:16] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:19:23,272 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:23] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:19:23,520 - root - INFO - Database connection established.
+2025-11-25 16:19:23,526 - root - INFO - Database connection established.
+2025-11-25 16:19:23,530 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:23] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:19:23,602 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:23] "OPTIONS /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:19:23,877 - root - INFO - Database connection established.
+2025-11-25 16:19:23,897 - root - INFO - Database connection established.
+2025-11-25 16:19:24,000 - root - INFO - Database connection established.
+2025-11-25 16:19:24,045 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:19:24] "GET /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:20:38,522 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:38] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:20:38,885 - root - INFO - Database connection established.
+2025-11-25 16:20:38,938 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:38] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:20:43,035 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:20:43,287 - root - INFO - Database connection established.
+2025-11-25 16:20:43,293 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:20:43,350 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:20:43,618 - root - INFO - Database connection established.
+2025-11-25 16:20:43,622 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:20:43,665 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:20:43,947 - root - INFO - Database connection established.
+2025-11-25 16:20:43,949 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:21:14,181 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\models.py', reloading
+2025-11-25 16:21:14,310 - werkzeug - INFO -  * Restarting with stat

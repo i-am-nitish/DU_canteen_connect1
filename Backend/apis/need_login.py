@@ -123,7 +123,7 @@ def fetch_canteen_info_handler(owner_id):
         return jsonify({"message": "Internal Server Error"}), 500
     
 
-def add_food_item_handler(user_id, name, price, description=None, status=None):
+def add_food_item_handler(user_id, name, price, description=None, status="available"):
     """
     Business logic to validate form data, verify ownership, and insert food item.
     """

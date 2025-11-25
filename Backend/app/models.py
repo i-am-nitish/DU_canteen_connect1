@@ -177,7 +177,7 @@ def add_canteen_profile(profile_data):
 
         menu_values = (
             canteen_id,                          # canteen_id
-            "Yes",                                # day_wise
+            "yes",                                # day_wise
             None, None,                           # Monday, monday_price
             None, None,                           # Tuesday, tuesday_price
             None, None,                           # Wednesday, wednesday_price
@@ -625,30 +625,25 @@ def get_canteen_menu_from_db(canteen_id):
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
 
-        # Step 1: Fetch the menu row for this canteen
-        query_menu = """
-            SELECT *
-            FROM menu
-            WHERE canteen_id = %s
-        """
+        query_menu = "SELECT * FROM menu WHERE canteen_id = %s"
         cursor.execute(query_menu, (canteen_id,))
         menu = cursor.fetchone()
 
         if not menu:
             cursor.close()
             conn.close()
-            return None # it is changed from {"message": "Menu not found for this canteen"} as we are already handling menu not found in parent functions
+            return None
 
+        # Collect menu files
         menu_files = []
         if menu.get("menu_file_1"):
-            menu_files.append(menu.get("menu_file_1"))
+            menu_files.append(menu["menu_file_1"])
         if menu.get("menu_file_2"):
-            menu_files.append(menu.get("menu_file_2"))
+            menu_files.append(menu["menu_file_2"])
 
-        menu_id = menu["menu_id"]
-
-        # Step 3: If menu_file is null, handle based on day_wise
-        if menu["day_wise"].lower() == "yes":
+        # Collect day wise menu
+        day_wise_menu = []
+        if menu.get("day_wise", "").lower() == "yes":
             day_columns = [
                 ("Monday", "monday_price"),
                 ("Tuesday", "tuesday_price"),
@@ -658,7 +653,6 @@ def get_canteen_menu_from_db(canteen_id):
                 ("Saturday", "saturday_price"),
                 ("Sunday", "sunday_price")
             ]
-            day_wise_menu = [] # changed from {}
 
             for day, price_col in day_columns:
                 food_ids_text = menu.get(day)
@@ -667,48 +661,33 @@ def get_canteen_menu_from_db(canteen_id):
                 if not food_ids_text:
                     continue
 
-                # # Convert comma-separated food_ids into list
-                # food_ids = [fid.strip() for fid in food_ids_text.split(",") if fid.strip().isdigit()]
-
-                # if not food_ids:
-                #     continue
-
-                # # Fetch food item names
-                # format_strings = ','.join(['%s'] * len(food_ids))
-                # query_foods = f"SELECT name FROM food_items WHERE food_id IN ({format_strings}) AND menu_id = %s"
-                # cursor.execute(query_foods, (*food_ids, menu_id))
-                # food_names = [row["name"] for row in cursor.fetchall()]
-
-                # # Combine food names with price info
-                # day_wise_menu[day] = {
-                #     "items": ", ".join(food_names),
-                #     "price": prices_text
-                # }
-
-                newEntry = {
+                day_wise_menu.append({
                     "day": day,
                     "items": food_ids_text,
                     "price": prices_text,
-                }
+                })
 
-                day_wise_menu.append(newEntry)
+        cursor.close()
+        conn.close()
 
-            cursor.close()
-            conn.close()
+        # Decide final return type
+        menu_type = (
+            "both" if menu_files and day_wise_menu else
+            "image_only" if menu_files else
+            "day_wise" if day_wise_menu else
+            None
+        )
 
-            return {
-                "canteen_id": canteen_id,
-                "menu_type": "day_wise",
-                "menu": day_wise_menu,
-                "menu_files": menu_files
-            }
-
-        
+        return {
+            "canteen_id": canteen_id,
+            "menu": day_wise_menu if day_wise_menu else None,   
+            "menu_files": menu_files,
+            "menu_type": menu_type
+        }
 
     except Exception as e:
         logging.error(f"Error fetching canteen menu for canteen_id {canteen_id}: {str(e)}")
         return None
-
 
 
 
