@@ -5935,3 +5935,23 @@ AttributeError: 'NoneType' object has no attribute 'cursor'
 2025-11-24 12:40:37,257 - werkzeug - INFO - 127.0.0.1 - - [24/Nov/2025 12:40:37] "GET /canteen_review_ratings?canteen_id=70 HTTP/1.1" 200 -
 2025-11-24 12:41:36,847 - werkzeug - INFO -  * Detected change in 'E:\\Soft Eng\\Project\\DU_canteen_connect\\Backend\\apis\\no_login.py', reloading
 2025-11-24 12:41:36,944 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 15:14:27,081 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 15:14:27,081 - app - INFO - Starting Flask application...
+2025-11-25 15:14:27,087 - app - INFO - Flask application created successfully
+2025-11-25 15:14:27,279 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.186.105.89:5000
+2025-11-25 15:14:27,279 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-25 15:14:27,298 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 15:14:28,496 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 15:14:28,496 - app - INFO - Starting Flask application...
+2025-11-25 15:14:28,510 - app - INFO - Flask application created successfully
+2025-11-25 15:14:28,616 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 15:14:28,646 - werkzeug - INFO -  * Debugger PIN: 975-241-103
+2025-11-25 15:16:20,249 - root - ERROR - Error connecting to the database: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2025-11-25 15:16:20,249 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-25 15:16:20,257 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 15:16:20] "[33mGET /canteens HTTP/1.1[0m" 404 -
+2025-11-25 15:18:08,292 - root - ERROR - Error connecting to the database: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+2025-11-25 15:18:08,292 - root - ERROR - Error fetching canteens from DB: 'NoneType' object has no attribute 'cursor'
+2025-11-25 15:18:08,292 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 15:18:08] "[33mGET /canteens HTTP/1.1[0m" 404 -

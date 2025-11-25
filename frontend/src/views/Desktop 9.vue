@@ -9,7 +9,6 @@
       <div v-if="loading && !canteenInfo" class="loading">Loading canteen info...</div>
       <div v-else-if="error" class="error">{{ error }}</div>
       <div v-else-if="canteenInfo" class="profile-content">
-        <div class="profile-image"></div>
         <div class="profile-info">
         <div>
           <strong>Name:</strong>
@@ -810,13 +809,6 @@ body.dialog-open {
 .profile-content {
   display: flex;
   gap: 2rem;
-}
-
-.profile-image {
-  width: 120px;
-  height: 120px;
-  background: #d9d9d9;
-  border-radius: 12px;
 }
 
 .profile-info {

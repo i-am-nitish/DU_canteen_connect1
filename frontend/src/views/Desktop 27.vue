@@ -6,6 +6,7 @@
     <!-- Info Card -->
     <div class="card info-card" v-if="canteenInfo">
       <div class="info-content">
+        <div class="info-text-wrapper">
         <div class="info-text">
           <h2 class="canteen-name">{{ canteenInfo?.name || 'Canteen Name' }}</h2>
           <div class="info-row">
@@ -39,7 +40,8 @@
             </span>
           </div>
         </div>
-
+        </div>
+        <div class = "info-images">
         <div 
           class="image-square" 
           v-for="(image, index) in canteenInfo.images" 
@@ -50,6 +52,7 @@
             :alt="'Canteen Image ' + (index + 1)" 
             @click="openFullscreen(image)" 
           />
+          </div>
 
           <!-- If no images, show placeholders -->
           <div 
@@ -58,7 +61,7 @@
           >
             <span>No image available</span>
           </div>
-        </div>
+      </div>
       </div>
     </div>
 
@@ -355,7 +358,14 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex; 
   flex-direction: column; 
   gap: 1rem; 
-  justify-content: center; } 
+  justify-content: center; }
+
+.info-text-wrapper{
+  flex: 2;                 /* take more space than images */
+  max-height: 350px;       /* cap height so it doesn’t overflow card */
+  overflow-y: auto;        /* enable scrolling */
+  padding-right: 0.5rem;
+}
   
 .info-row { 
   display: flex; 
@@ -385,21 +395,32 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   align-self: stretch; 
   margin-top: 70px; } 
 
+.info-images {
+  flex: 1;              /* smaller share compared to text */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
 
+.image-square {
+  width: 100%;
+  max-height: 150px;
+  aspect-ratio: 1/1;
+  background: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
-.image-square { 
-  width: 100%; 
-  aspect-ratio: 1 / 1; 
-  background: #d9d9d9; 
-  border-radius: 10px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  font-size: 1.5rem; 
-  color: #333; 
-  overflow: hidden; } 
-  
-.canteen-name { 
+.image-square img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.canteen-name{
   font-size: 2rem; 
   font-weight: 600; 
   margin-bottom: 1rem; } 
@@ -476,18 +497,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
   gap: 0.75rem; } 
-  
-.image-square { 
-  width: 100%; 
-  object-fit: contain;
-  aspect-ratio: 1 / 1; 
-  background: #d9d9d9; 
-  border-radius: 10px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  font-size: 1.5rem; 
-  color: #333; } 
+
   
   /* Review Card */ 
 .review-card { 
