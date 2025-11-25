@@ -21,7 +21,7 @@ import cloudinary.uploader
 from app.models import _upload_to_cloudinary
 
 app = create_app()
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})  # Enable CORS for all routes
 
 def upload_files_to_cloudinary(files_in_order):
     

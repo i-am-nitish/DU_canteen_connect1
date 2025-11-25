@@ -49,6 +49,7 @@ def get_db_connection():
         db_password = os.getenv('DB_PASSWORD', '')
         db_name = os.getenv('DB_NAME', 'du_canteen_hub')
         db_port = os.getenv('DB_PORT', 3306)
+        db_ssl_mode = os.getenv('DB_SSL_MODE', 'DISABLED')
 
         connection = mysql.connector.connect(
             host=db_host,
@@ -56,6 +57,7 @@ def get_db_connection():
             password=db_password,
             database=db_name,
             port=int(db_port),
+            ssl_disabled=(db_ssl_mode.upper() == 'DISABLED')
         )
 
         logging.info("Database connection established.")
