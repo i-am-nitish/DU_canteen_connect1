@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // 🔹 Create Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // Replace with your Flask backend URL
+  baseURL: 'https://du-canteen-connect1.onrender.com', // Render backend URL
 })
 
 // 🔹 Automatically attach JWT token (if exists) to every request
