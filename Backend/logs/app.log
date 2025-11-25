@@ -6275,3 +6275,85 @@ AttributeError: 'NoneType' object has no attribute 'cursor'
 2025-11-25 16:20:43,949 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:20:43] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
 2025-11-25 16:21:14,181 - werkzeug - INFO -  * Detected change in 'E:\\Semester_5\\DU_canteen_connect\\Backend\\app\\models.py', reloading
 2025-11-25 16:21:14,310 - werkzeug - INFO -  * Restarting with stat
+2025-11-25 16:21:17,217 - app.logging_config - INFO - Logging initialized. Logs will be saved to logs\app.log
+2025-11-25 16:21:17,218 - app - INFO - Starting Flask application...
+2025-11-25 16:21:17,220 - app - INFO - Flask application created successfully
+2025-11-25 16:21:17,280 - werkzeug - WARNING -  * Debugger is active!
+2025-11-25 16:21:17,285 - werkzeug - INFO -  * Debugger PIN: 400-470-196
+2025-11-25 16:21:24,483 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:24] "OPTIONS /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:21:24,763 - root - INFO - Database connection established.
+2025-11-25 16:21:24,770 - root - INFO - Database connection established.
+2025-11-25 16:21:24,774 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:24] "GET /get_canteen_info_owner HTTP/1.1" 200 -
+2025-11-25 16:21:24,808 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:24] "OPTIONS /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:21:25,141 - root - INFO - Database connection established.
+2025-11-25 16:21:25,154 - root - INFO - Database connection established.
+2025-11-25 16:21:25,173 - root - INFO - Database connection established.
+2025-11-25 16:21:25,252 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:25] "GET /food_items_owner HTTP/1.1" 200 -
+2025-11-25 16:21:34,753 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:34] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:21:35,025 - root - INFO - Database connection established.
+2025-11-25 16:21:35,030 - root - INFO - Database connection established.
+2025-11-25 16:21:35,035 - root - INFO - Database connection established.
+2025-11-25 16:21:35,042 - root - INFO - Database connection established.
+2025-11-25 16:21:35,049 - root - INFO - Database connection established.
+2025-11-25 16:21:35,058 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:21:35] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:04,200 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:04] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:04,473 - root - INFO - Database connection established.
+2025-11-25 16:22:04,476 - root - INFO - Database connection established.
+2025-11-25 16:22:04,480 - root - INFO - Database connection established.
+2025-11-25 16:22:04,484 - root - INFO - Database connection established.
+2025-11-25 16:22:04,488 - root - INFO - Database connection established.
+2025-11-25 16:22:04,495 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:04] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:13,243 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:13] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:13,504 - root - INFO - Database connection established.
+2025-11-25 16:22:13,507 - root - INFO - Database connection established.
+2025-11-25 16:22:13,510 - root - INFO - Database connection established.
+2025-11-25 16:22:13,512 - root - INFO - Database connection established.
+2025-11-25 16:22:13,517 - root - INFO - Database connection established.
+2025-11-25 16:22:13,524 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:13] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:22,181 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:22] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:22,424 - root - INFO - Database connection established.
+2025-11-25 16:22:22,426 - root - INFO - Database connection established.
+2025-11-25 16:22:22,429 - root - INFO - Database connection established.
+2025-11-25 16:22:22,432 - root - INFO - Database connection established.
+2025-11-25 16:22:22,437 - root - INFO - Database connection established.
+2025-11-25 16:22:22,443 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:22] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:31,071 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:31] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:31,336 - root - INFO - Database connection established.
+2025-11-25 16:22:31,339 - root - INFO - Database connection established.
+2025-11-25 16:22:31,343 - root - INFO - Database connection established.
+2025-11-25 16:22:31,346 - root - INFO - Database connection established.
+2025-11-25 16:22:31,350 - root - INFO - Database connection established.
+2025-11-25 16:22:31,357 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:31] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:40,068 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:40] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:40,336 - root - INFO - Database connection established.
+2025-11-25 16:22:40,341 - root - INFO - Database connection established.
+2025-11-25 16:22:40,347 - root - INFO - Database connection established.
+2025-11-25 16:22:40,359 - root - INFO - Database connection established.
+2025-11-25 16:22:40,367 - root - INFO - Database connection established.
+2025-11-25 16:22:40,380 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:40] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:47,769 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:47] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:22:48,091 - root - INFO - Database connection established.
+2025-11-25 16:22:48,093 - root - INFO - Database connection established.
+2025-11-25 16:22:48,096 - root - INFO - Database connection established.
+2025-11-25 16:22:48,100 - root - INFO - Database connection established.
+2025-11-25 16:22:48,104 - root - INFO - Database connection established.
+2025-11-25 16:22:48,109 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:22:48] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:23:09,965 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:09] "OPTIONS /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:23:10,226 - root - INFO - Database connection established.
+2025-11-25 16:23:10,229 - root - INFO - Database connection established.
+2025-11-25 16:23:10,232 - root - INFO - Database connection established.
+2025-11-25 16:23:10,235 - root - INFO - Database connection established.
+2025-11-25 16:23:10,239 - root - INFO - Database connection established.
+2025-11-25 16:23:10,246 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:10] "POST /menu/update_day HTTP/1.1" 200 -
+2025-11-25 16:23:16,665 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:16] "OPTIONS /canteens HTTP/1.1" 200 -
+2025-11-25 16:23:17,022 - root - INFO - Database connection established.
+2025-11-25 16:23:17,026 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:17] "GET /canteens HTTP/1.1" 200 -
+2025-11-25 16:23:22,992 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:22] "OPTIONS /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:23:23,242 - root - INFO - Database connection established.
+2025-11-25 16:23:23,246 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:23] "GET /canteen_info?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:23:23,302 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:23] "OPTIONS /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:23:23,568 - root - INFO - Database connection established.
+2025-11-25 16:23:23,585 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:23] "GET /canteen_menu_details?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:23:23,614 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:23] "OPTIONS /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
+2025-11-25 16:23:24,024 - root - INFO - Database connection established.
+2025-11-25 16:23:24,028 - werkzeug - INFO - 127.0.0.1 - - [25/Nov/2025 16:23:24] "GET /canteen_review_ratings?canteen_id=73 HTTP/1.1" 200 -
