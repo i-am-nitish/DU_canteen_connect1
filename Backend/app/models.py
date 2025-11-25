@@ -48,12 +48,14 @@ def get_db_connection():
         db_user = os.getenv('DB_USER', 'root')
         db_password = os.getenv('DB_PASSWORD', '')
         db_name = os.getenv('DB_NAME', 'du_canteen_hub')
+        db_port = os.getenv('DB_PORT', 3306)
 
         connection = mysql.connector.connect(
             host=db_host,
             user=db_user,
             password=db_password,
-            database=db_name
+            database=db_name,
+            port=int(db_port),
         )
 
         logging.info("Database connection established.")
