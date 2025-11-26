@@ -6,6 +6,7 @@ import jwt
 from flask_jwt_extended import create_access_token
 from datetime import timedelta
 import re
+import os
 from app.cloudinary_setup import cloudinary
 
 from app.models import _upload_to_cloudinary
@@ -155,7 +156,7 @@ def create_canteen_profile_api():
                 "email": user["email"]
             },
             "canteen_id": canteen_id,
-            "redirect_url": f"http://localhost:5173/canteenpage?canteen_id={canteen_id}"
+            "redirect_url": f"{os.getenv('FRONTEND_URL', 'http://localhost:5173')}/canteenpage?canteen_id={canteen_id}"
         }), 201
 
     except Exception as e:
