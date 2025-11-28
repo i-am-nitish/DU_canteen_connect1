@@ -925,7 +925,7 @@ def get_reviews_by_id_db(user_id):
                 c.name AS canteen_name,
                 r.overall_rating,
                 r.review_text
-            FROM reviews r
+            FROM canteen_reviews r 
             JOIN canteens c ON r.canteen_id = c.canteen_id
             WHERE r.user_id = %s
             ORDER BY r.overall_rating DESC, r.created_at DESC
@@ -1653,119 +1653,26 @@ def get_food_items_by_ids(menu_id, food_id_list):
             pass
 
 
-def update_menu_day_columns(menu_id, day_col, price_col, append_item_names, append_item_prices):
+def update_menu_day_columns(menu_id, day_col, price_col, overwrite_item_names, overwrite_item_prices):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    query = f"""
+        UPDATE menu
+        SET {day_col} = %s,
+            {price_col} = %s
+        WHERE menu_id = %s
     """
-    Atomically fetch current day lists, append provided items/prices, and update the row.
-    - day_col: e.g. "Monday"
-    - price_col: e.g. "monday_price"
-    - append_item_names: list[str]
-    - append_item_prices: list[float|None]
-    Returns:
-      {"updated_items": [...], "updated_prices": [...]} on success
-      None on error
-    """
-    conn = None
-    cursor = None
-    try:
-        if not append_item_names:
-            return {"updated_items": [], "updated_prices": []}
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    cursor.execute(query, (json.dumps(overwrite_item_names), json.dumps(overwrite_item_prices), menu_id))
+    conn.commit()
+    cursor.close()
+    conn.close()
 
-        # Fetch current values FOR UPDATE to avoid race condition (driver+DB must support it)
-        # We'll try a SELECT ... FOR UPDATE; if fails, fall back to simple SELECT
-        try:
-            sel_q = f"SELECT {day_col}, {price_col} FROM menu WHERE menu_id = %s FOR UPDATE"
-            cursor.execute(sel_q, (menu_id,))
-            row = cursor.fetchone()
-            # row may be tuple or dict depending on cursor type
-            if row is None:
-                return None
-            if isinstance(row, dict):
-                cur_items_raw = row.get(day_col)
-                cur_prices_raw = row.get(price_col)
-            else:
-                # when cursor returns tuple, order is as selected
-                cur_items_raw = row[0]
-                cur_prices_raw = row[1]
-        except Exception:
-            # fallback select
-            cursor.execute(f"SELECT {day_col}, {price_col} FROM menu WHERE menu_id = %s", (menu_id,))
-            row = cursor.fetchone()
-            if row is None:
-                return None
-            if isinstance(row, dict):
-                cur_items_raw = row.get(day_col)
-                cur_prices_raw = row.get(price_col)
-            else:
-                cur_items_raw = row[0]
-                cur_prices_raw = row[1]
-
-        # Parse current lists
-        cur_items = _parse_list_column(cur_items_raw)
-        cur_prices = _parse_list_column(cur_prices_raw)
-
-        # Convert existing price strings to floats where possible
-        def _to_float_list(lst):
-            new = []
-            for x in lst:
-                if x is None or x == "":
-                    new.append(None)
-                    continue
-                try:
-                    new.append(float(x))
-                except Exception:
-                    # strip non-numeric
-                    s = ''.join(ch for ch in str(x) if (ch.isdigit() or ch in ".-"))
-                    try:
-                        new.append(float(s) if s else None)
-                    except Exception:
-                        new.append(None)
-            return new
-
-        cur_prices = _to_float_list(cur_prices)
-
-        # Append new ones (keeping indices aligned)
-        for nm, pr in zip(append_item_names, append_item_prices):
-            cur_items.append(nm)
-            cur_prices.append(pr)
-
-        # Serialize to JSON string for storage
-        items_to_store = json.dumps(cur_items, ensure_ascii=False)
-        prices_to_store = json.dumps(cur_prices)
-
-        # Update row
-        update_q = f"""
-            UPDATE menu
-            SET {day_col} = %s,
-                {price_col} = %s,
-                updated_at = %s
-            WHERE menu_id = %s
-        """
-        now = datetime.utcnow()
-        cursor.execute(update_q, (items_to_store, prices_to_store, now, menu_id))
-        conn.commit()
-
-        return {"updated_items": cur_items, "updated_prices": cur_prices}
-
-    except Exception as e:
-        logging.exception(f"DB error in update_menu_day_columns for menu {menu_id}: {e}")
-        try:
-            if conn:
-                conn.rollback()
-        except Exception:
-            pass
-        return None
-    finally:
-        try:
-            if cursor: cursor.close()
-        except Exception:
-            pass
-        try:
-            if conn: conn.close()
-        except Exception:
-            pass
+    return {
+        "updated_items": overwrite_item_names,
+        "updated_prices": overwrite_item_prices
+    }
 
 
 def update_user_info_db(user_id, update_fields):
