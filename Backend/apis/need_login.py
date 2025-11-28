@@ -206,8 +206,13 @@ def report_issue_by_canteen_owner_api(user_id, description: str):
         # Default status
         status_to_use = "open"
 
+        # Map user role to issues table role enum
+        # users.role: 'general', 'canteen_owner', 'admin'
+        # issues.role: 'user', 'owner'
+        issues_role = "owner" if role == "canteen_owner" else "user"
+
         # Insert issue
-        result = insert_issue_for_canteen_owner(user_id, role, canteen_id, description.strip(), status_to_use)
+        result = insert_issue_for_canteen_owner(user_id, issues_role, canteen_id, description.strip(), status_to_use)
         if result is None:
             logging.error(f"DB error while inserting issue for owner {user_id}")
             return jsonify({"message": "Internal Server Error"}), 500
