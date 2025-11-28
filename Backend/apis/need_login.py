@@ -28,6 +28,7 @@ def display_user_info_api(user_id):
 def display_user_reviews_api(user_id):
     try:
         reviews_info = get_reviews_by_id_db(user_id)
+        logging.info(f"Reviews fetched for user {user_id}: {reviews_info}")
         if not reviews_info:
             return jsonify({"message": "No reviews yet"}), 404
         return jsonify({

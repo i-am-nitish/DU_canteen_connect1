@@ -74,10 +74,10 @@
       <ul class="review-list">
         <li v-for="(review, index) in reviews" :key="index" class="review-item">
           <div class="review-header">
-            <span class="canteen-name">{{ review.canteenName }}</span>
-            <span class="stars">{{ getStars(review.rating) }}</span>
+            <span class="canteen-name">{{ review.canteen_name }}</span>
+            <span class="stars">{{ getStars(review.overall_rating) }}</span>
           </div>
-          <p class="review-text">{{ review.text }}</p>
+          <p class="review-text">{{ review.review_text }}</p>
           <div class="review-images">
             <div class="review-image" v-for="(img, i) in review.images" :key="i">
               <img :src="img" alt="Review image" />
