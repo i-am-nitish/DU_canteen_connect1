@@ -142,12 +142,15 @@ export default {
           const canteenName = food.canteen_name
           
           if (!canteenMap[canteenName]) {
+            // Create canteen entry from food search results (includes canteen details)
             canteenMap[canteenName] = {
+              canteen_id: food.canteen_id,
               name: canteenName,
-              canteen_id: null,
-              location: 'N/A',
-              timings: 'N/A',
-              rating: 0,
+              location: food.location || 'N/A',
+              timings: food.opening_time && food.closing_time 
+                ? `${food.opening_time} - ${food.closing_time}` 
+                : 'N/A',
+              rating: Math.round(food.overall_rating || 0),
               items: []
             }
           }

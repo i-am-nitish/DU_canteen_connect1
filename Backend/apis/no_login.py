@@ -78,7 +78,7 @@ def search_canteens_handler(query: str):
             return jsonify({"message": "Internal Server Error", "results": []}), 500
 
         if len(results) == 0:
-            return jsonify({"message": "No matching canteens found", "results": []}), 404
+            return jsonify({"message": "No matching canteens found", "results": []}), 200
 
         return jsonify({
             "message": "Canteens fetched successfully",
@@ -97,6 +97,7 @@ def search_food_items_handler(q: str, available_only: bool = False):
     """
     try:
         rows = get_food_items_by_name(q, available_only=available_only)
+        logging.info(f"Food search query: '{q}', results count: {len(rows) if rows else 0}")
         if rows is None:
             return jsonify({"message": "Internal Server Error", "results": []}), 500
 

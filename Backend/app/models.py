@@ -367,7 +367,12 @@ def get_food_items_by_name(q: str, available_only: bool = False, limit: int = 50
 
         query = """
             SELECT
+                c.canteen_id,
                 c.name AS canteen_name,
+                c.location,
+                c.opening_time,
+                c.closing_time,
+                c.overall_rating,
                 fi.name AS food_name,
                 fi.price
             FROM food_items fi
@@ -384,8 +389,10 @@ def get_food_items_by_name(q: str, available_only: bool = False, limit: int = 50
         query += " ORDER BY c.name ASC, fi.name ASC LIMIT %s"
         params.append(limit)
 
+        logging.info(f"Executing food search query with params: {params}")
         cursor.execute(query, tuple(params))
         rows = cursor.fetchall() or []
+        logging.info(f"Food search returned {len(rows)} rows")
         return rows
 
     except Exception as e:
