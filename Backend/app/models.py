@@ -931,7 +931,7 @@ def get_reviews_by_id_db(user_id):
             ORDER BY r.overall_rating DESC, r.created_at DESC
             LIMIT %s
         """
-        cursor.execute(query, (user_id, limit))
+        cursor.execute(query, (user_id, 10))
         rows = cursor.fetchall()
         return rows or []
 
