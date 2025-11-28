@@ -1409,34 +1409,16 @@ def insert_issue_for_canteen_owner(raised_by, role, canteen_id, description, sta
 
         now = datetime.utcnow()
 
-        # Try PostgreSQL RETURNING first, fallback to lastrowid
+        # MySQL doesn't support RETURNING, use lastrowid directly
+        insert_query = """
+            INSERT INTO issues (raised_by, role, canteen_id, description, status, created_at, resolved_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+        cursor.execute(insert_query, (raised_by, role, canteen_id, description, status, now, None))
         try:
-            insert_query_pg = """
-                INSERT INTO issues (raised_by, role, canteen_id, description, status, created_at)
-                VALUES (%s, %s, %s, %s, %s, %s)
-                RETURNING issue_id
-            """
-            cursor.execute(insert_query_pg, (raised_by, role, canteen_id, description, status, now))
-            row = cursor.fetchone()
-            if row:
-                issue_id = row[0]
-            else:
-                issue_id = None
+            issue_id = cursor.lastrowid
         except Exception:
-            # fallback (MySQL, sqlite)
-            try:
-                conn.rollback()
-            except Exception:
-                pass
-            insert_query = """
-                INSERT INTO issues (raised_by, role, canteen_id, description, status, created_at, resolved_at)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)
-            """
-            cursor.execute(insert_query, (raised_by, role, canteen_id, description, status, now, None))
-            try:
-                issue_id = cursor.lastrowid
-            except Exception:
-                issue_id = None
+            issue_id = None
 
         conn.commit()
         return {"issue_id": issue_id}
