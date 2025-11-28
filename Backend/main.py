@@ -384,65 +384,34 @@ def menu_daywise_route():
     
 @app.route("/menu/update_day", methods=["POST"])
 @jwt_required()
-def update_daywise_menu_handler():
+def update_daywise_menu_route():
+    """
+    Form-data:
+      canteen_id: required
+      day: required (Monday..Sunday)
+      food_ids: repeated form field OR comma-separated string
+    """
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
+        identity = get_jwt_identity()
+        user_id = identity.get("user_id") if isinstance(identity, dict) else identity
+        if not user_id:
+            return jsonify({"message": "Invalid token / user identity"}), 401
 
-        data = request.get_json()
-        canteen_id = data.get("canteen_id")
-        day = data.get("day")
-        food_ids = data.get("food_ids")
-        owner_username = request.headers.get("username")
+        canteen_id = request.form.get("canteen_id")
+        day = (request.form.get("day") or "").strip()
+        # Accept multiple food_ids
+        food_ids = request.form.getlist("food_ids")
+        if not food_ids:
+            # maybe comma separated in a single field
+            s = request.form.get("food_ids")
+            if s:
+                food_ids = [p.strip() for p in s.split(",") if p.strip()]
 
-        if not canteen_id or not day or not food_ids:
-            return jsonify({"error": "canteen_id, day & food_ids all required"}), 400
-
-        # Validate owner
-        cursor.execute("SELECT * FROM owner WHERE username = %s AND canteen_id = %s",
-                       (owner_username, canteen_id))
-        owner = cursor.fetchone()
-        if not owner:
-            return jsonify({"error": "Not authorized"}), 403
-
-        # Get menu row
-        cursor.execute("SELECT menu_id FROM menu WHERE canteen_id = %s", (canteen_id,))
-        menu = cursor.fetchone()
-        if not menu:
-            return jsonify({"error": "Menu not created for this canteen"}), 404
-
-        menu_id = menu["menu_id"]
-        day_col = f"{day.lower()}_menu"
-        price_col = f"{day.lower()}_price"
-
-        # Fetch names and prices of selected food items
-        append_names = []
-        append_prices = []
-
-        for fid in food_ids:
-            cursor.execute("SELECT food_name, price FROM food_items WHERE food_id = %s", (fid,))
-            item = cursor.fetchone()
-            if item:
-                append_names.append(item["food_name"])
-                append_prices.append(item["price"])
-
-        # Replace existing items
-        result = update_menu_day_columns(
-            menu_id=menu_id,
-            day_col=day_col,
-            price_col=price_col,
-            overwrite_item_names=append_names,
-            overwrite_item_prices=append_prices
-        )
-
-        return jsonify({
-            "message": f"{day} menu updated successfully",
-            "updated_items": result["updated_items"],
-            "updated_prices": result["updated_prices"]
-        }), 200
+        return update_daywise_menu_handler(user_id=user_id, canteen_id=canteen_id, day=day, food_ids=food_ids)
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        logging.exception("Unexpected error in update_daywise_menu_route")
+        return jsonify({"message": "Internal Server Error"}), 500
     
 
 @app.route("/user_profile_update", methods=["POST"])
