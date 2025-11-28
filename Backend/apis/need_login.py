@@ -203,8 +203,8 @@ def report_issue_by_canteen_owner_api(user_id, description: str):
         if canteen_id is None:
             return jsonify({"message": "Canteen not found for this owner"}), 404
 
-        # Default status
-        status_to_use = "open"
+        # Map status to issues table enum: 'pending', 'in_progress', 'resolved'
+        status_to_use = "pending"
 
         # Map user role to issues table role enum
         # users.role: 'general', 'canteen_owner', 'admin'

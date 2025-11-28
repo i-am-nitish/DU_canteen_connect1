@@ -1398,7 +1398,7 @@ def insert_food_item_for_menu(menu_id, name, description, price, status=None):
         except Exception:
             pass
 
-def insert_issue_for_canteen_owner(raised_by, role, canteen_id, description, status="open"):
+def insert_issue_for_canteen_owner(raised_by, role, canteen_id, description, status="pending"):
     
     
     conn = None
