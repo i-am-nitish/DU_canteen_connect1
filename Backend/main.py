@@ -382,7 +382,7 @@ def menu_daywise_route():
         logging.exception("Unexpected error in /menu/daywise")
         return jsonify({"message": "Internal Server Error"}), 500
     
-@app.route("/menu/update_daywise", methods=["POST"])
+@app.route("/menu/update_day", methods=["POST"])
 @jwt_required()
 def update_daywise_menu_handler():
     try:
