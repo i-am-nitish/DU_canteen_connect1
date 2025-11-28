@@ -918,13 +918,14 @@ def get_reviews_by_id_db(user_id):
     cursor = None
     try:
         conn = get_db_connection()
-        cursor = conn.cursor()
+        cursor = conn.cursor(dictionary=True)
 
         query = """
             SELECT
                 c.name AS canteen_name,
                 r.overall_rating,
-                r.review_text
+                r.review_text,
+                r.created_at
             FROM canteen_reviews r 
             JOIN canteens c ON r.canteen_id = c.canteen_id
             WHERE r.user_id = %s
